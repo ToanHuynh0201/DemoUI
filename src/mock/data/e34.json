@@ -1,0 +1,243 @@
+{
+  "questions": [
+    { "id": "q-01", "question_code": "CH-2026/0412", "journalist_profile_id": "p-02", "press_agency_id": "org-ptth", "title": "Số ca sốt xuất huyết tăng 18,6%, Sở Y tế có điều chỉnh phương án điều trị tuyến dưới không?", "content": "Theo số liệu Sở Y tế công bố, 6 tháng đầu năm toàn thành phố ghi nhận 1.284 ca sốt xuất huyết, tăng 18,6% so với cùng kỳ.\n\nĐề nghị Sở cho biết:\n1. Các trạm y tế phường, xã có được bổ sung dịch truyền và test nhanh NS1 không? Bổ sung bao nhiêu?\n2. Ngưỡng chuyển tuyến hiện nay có thay đổi so với năm ngoái?\n3. Số giường bệnh dự phòng cho tình huống dịch bùng phát là bao nhiêu?", "topic_id": "top-yte", "priority": "HIGH", "requested_deadline": "@-9", "due_at": "@-9T17:00", "status": "ANSWERED", "handling_org_id": "org-yte", "coordinator_id": "u-coord", "assignee_id": "u-staff-yte", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-14T08:20", "answered_at": "@-10T15:30" },
+
+    { "id": "q-02", "question_code": "CH-2026/0418", "journalist_profile_id": "p-03", "press_agency_id": "org-tuoitre", "title": "47 hộ chưa bàn giao mặt bằng dự án đường ven biển: phương án và mốc thời gian cụ thể?", "content": "Ghi nhận thực tế tại đoạn Km7+200 đến Km9+500 cho thấy công trường dừng thi công nhiều tuần.\n\nĐề nghị Sở Xây dựng cho biết:\n1. Vướng mắc cụ thể của 31 thửa đất chưa xác định được nguồn gốc là gì?\n2. Thành phố có phương án cưỡng chế hay tiếp tục vận động?\n3. Mốc hoàn thành giải phóng mặt bằng chính xác là ngày nào?", "topic_id": "top-hatang", "priority": "NORMAL", "requested_deadline": "@-13", "due_at": "@-13T17:00", "status": "ANSWERED", "handling_org_id": "org-xd", "coordinator_id": "u-coord", "assignee_id": "u-staff-xd", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-18T10:05", "answered_at": "@-14T09:40" },
+
+    { "id": "q-03", "question_code": "CH-2026/0425", "journalist_profile_id": "p-09", "press_agency_id": "org-tuoitre", "title": "Phụ huynh phản ánh bản đồ tuyến tuyển sinh mới khiến con phải học xa nhà hơn", "content": "Nhiều phụ huynh tại phường Hương Thủy phản ánh sau khi áp dụng bản đồ tuyến mới, con họ được phân về trường xa hơn trường cũ khoảng 2 km.\n\nĐề nghị Sở Giáo dục và Đào tạo cho biết nguyên tắc phân tuyến cụ thể, và có cơ chế xem xét lại cho các trường hợp cá biệt không?", "topic_id": "top-giaoduc", "priority": "NORMAL", "requested_deadline": "@-16", "due_at": "@-16T17:00", "status": "ANSWERED", "handling_org_id": "org-gddt", "coordinator_id": "u-coord2", "assignee_id": "u-staff-gddt", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-21T14:30", "answered_at": "@-17T11:00" },
+
+    { "id": "q-04", "question_code": "CH-2026/0451", "journalist_profile_id": "p-01", "press_agency_id": "org-baotp", "title": "Ba địa bàn còn chỉ số BI vượt ngưỡng: Sở Y tế có tăng cường lực lượng không?", "content": "Sau 2 tuần chiến dịch, phường Hương Thủy, xã Phú Vang và xã Quảng Điền vẫn còn chỉ số BI trên ngưỡng cảnh báo.\n\nĐề nghị Sở cho biết có tăng cường lực lượng, hóa chất cho 3 địa bàn này không, và thời gian dự kiến đưa chỉ số về dưới ngưỡng?", "topic_id": "top-yte", "priority": "HIGH", "requested_deadline": "@+1", "due_at": "@+1T17:00", "status": "PENDING_APPROVAL", "handling_org_id": "org-yte", "coordinator_id": "u-coord", "assignee_id": "u-staff-yte", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-4T09:15", "answered_at": null },
+
+    { "id": "q-05", "question_code": "CH-2026/0455", "journalist_profile_id": "p-03", "press_agency_id": "org-tuoitre", "title": "Điểm quan trắc hạ lưu cầu Chợ Dinh vượt ngưỡng amoni: nguồn thải đã xác định chưa?", "content": "Kết quả quan trắc tháng này cho thấy chỉ tiêu amoni tại điểm hạ lưu cầu Chợ Dinh vượt 1,3 lần ngưỡng cho phép.\n\nĐề nghị Sở Nông nghiệp và Môi trường cho biết đã rà soát được nguồn thải nào trong bán kính 2 km chưa, và có xử phạt cơ sở nào không?", "topic_id": "top-moitruong", "priority": "NORMAL", "requested_deadline": "@+3", "due_at": "@+3T17:00", "status": "IN_PROGRESS", "handling_org_id": "org-nnmt", "coordinator_id": "u-coord", "assignee_id": "u-staff-nnmt", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-2T11:20", "answered_at": null },
+
+    { "id": "q-06", "question_code": "CH-2026/0458", "journalist_profile_id": "p-04", "press_agency_id": "org-vnexpress", "title": "Tỷ lệ hồ sơ cấp phép xây dựng trực tuyến đạt 78%, phần còn lại vướng ở đâu?", "content": "Đề nghị Sở Xây dựng cho biết nhóm hồ sơ nào chưa nộp được trực tuyến, nguyên nhân và kế hoạch khắc phục trong 6 tháng tới.", "topic_id": "top-hanhchinh", "priority": "LOW", "requested_deadline": "@+5", "due_at": "@+5T17:00", "status": "ASSIGNED", "handling_org_id": "org-xd", "coordinator_id": "u-coord2", "assignee_id": "u-staff-xd", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-1T15:40", "answered_at": null },
+
+    { "id": "q-07", "question_code": "CH-2026/0460", "journalist_profile_id": "p-09", "press_agency_id": "org-tuoitre", "title": "14 điểm trường lẻ dự kiến sáp nhập: bao nhiêu học sinh bị ảnh hưởng?", "content": "Đề nghị Sở Giáo dục và Đào tạo cung cấp danh sách 14 điểm trường dự kiến sáp nhập, số học sinh từng điểm và phương án đưa đón học sinh sau sáp nhập.", "topic_id": "top-giaoduc", "priority": "NORMAL", "requested_deadline": "@+4", "due_at": "@+4T17:00", "status": "ROUTED", "handling_org_id": "org-gddt", "coordinator_id": "u-coord", "assignee_id": null, "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-1T09:00", "answered_at": null },
+
+    { "id": "q-08", "question_code": "CH-2026/0463", "journalist_profile_id": "p-05", "press_agency_id": "org-tapchivh", "title": "Giai đoạn 2 trùng tu điện Thái Hòa: kinh phí và thời điểm khởi công?", "content": "Đề nghị Sở Văn hóa, Thể thao và Du lịch cho biết tổng mức đầu tư giai đoạn 2 dự án trùng tu điện Thái Hòa, nguồn vốn và thời điểm khởi công dự kiến.\n\nNgoài ra, giai đoạn 2 có ảnh hưởng đến việc đón khách tham quan không?", "topic_id": "top-vanhoa", "priority": "NORMAL", "requested_deadline": "@+6", "due_at": null, "status": "SUBMITTED", "handling_org_id": null, "coordinator_id": null, "assignee_id": null, "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@0T08:10", "answered_at": null },
+
+    { "id": "q-09", "question_code": "CH-2026/0464", "journalist_profile_id": "p-06", "press_agency_id": "org-ttxvn", "title": "Kế hoạch cấp nước sạch nông thôn: 5 xã ưu tiên đã khởi công công trình nào?", "content": "Đề nghị cho biết trong 5 xã ưu tiên giai đoạn đầu, công trình cấp nước tập trung nào đã khởi công, tiến độ và thời điểm cấp nước cho hộ dân đầu tiên.", "topic_id": "top-nongnghiep", "priority": "NORMAL", "requested_deadline": "@+7", "due_at": null, "status": "ROUTING", "handling_org_id": null, "coordinator_id": "u-coord", "assignee_id": null, "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@0T07:30", "answered_at": null },
+
+    { "id": "q-10", "question_code": "CH-2026/0448", "journalist_profile_id": "p-07", "press_agency_id": "org-baotp", "title": "Đề nghị cung cấp danh sách 7 cơ sở bị đình chỉ do vi phạm an toàn thực phẩm", "content": "Thông cáo TC-2026/0140 nêu đã đình chỉ hoạt động 7 cơ sở vi phạm nghiêm trọng nhưng không nêu tên.\n\nĐề nghị Sở Y tế cung cấp danh sách 7 cơ sở này và hành vi vi phạm cụ thể của từng cơ sở.", "topic_id": "top-yte", "priority": "NORMAL", "requested_deadline": "@+2", "due_at": "@+2T17:00", "status": "AWAITING_CLARIFICATION", "handling_org_id": "org-yte", "coordinator_id": "u-coord", "assignee_id": "u-staff-yte2", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-6T13:50", "answered_at": null },
+
+    { "id": "q-11", "question_code": "CH-2026/0431", "journalist_profile_id": "p-01", "press_agency_id": "org-baotp", "title": "Khu đô thị phía bắc: vì sao thông cáo về điều chỉnh quy hoạch bị thu hồi?", "content": "Sở Xây dựng đã thu hồi thông cáo TC-2026/0136 về điều chỉnh quy hoạch khu đô thị phía bắc.\n\nĐề nghị cho biết nội dung nào chưa khớp với quyết định phê duyệt, và khi nào có thông cáo thay thế?", "topic_id": "top-hatang", "priority": "HIGH", "requested_deadline": "@-4", "due_at": "@-4T17:00", "status": "OVERDUE", "handling_org_id": "org-xd", "coordinator_id": "u-coord", "assignee_id": "u-staff-xd", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-15T16:00", "answered_at": null },
+
+    { "id": "q-12", "question_code": "CH-2026/0441", "journalist_profile_id": "p-08", "press_agency_id": "org-ptth", "title": "Đề nghị cung cấp lịch thi đấu chi tiết Giải chạy Cố đô Marathon", "content": "Đề nghị Sở Văn hóa, Thể thao và Du lịch cung cấp lịch thi đấu chi tiết và phương án phân luồng giao thông ngày thi đấu.", "topic_id": "top-thethao", "priority": "LOW", "requested_deadline": "@-8", "due_at": null, "status": "CANCELLED", "handling_org_id": null, "coordinator_id": null, "assignee_id": null, "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-12T10:00", "answered_at": null },
+
+    { "id": "q-13", "question_code": "CH-2026/0446", "journalist_profile_id": "p-12", "press_agency_id": "org-tapchivh", "title": "Đề nghị cung cấp hồ sơ nhân sự phòng Quản lý hạ tầng, Sở Xây dựng", "content": "Đề nghị cung cấp danh sách, lý lịch và mức lương của toàn bộ cán bộ phòng Quản lý hạ tầng.", "topic_id": "top-hanhchinh", "priority": "LOW", "requested_deadline": "@-6", "due_at": null, "status": "REJECTED", "handling_org_id": null, "coordinator_id": "u-coord", "assignee_id": null, "duplicate_of_question_id": null, "rejection_reason": "Nội dung yêu cầu thuộc phạm vi thông tin cá nhân và hồ sơ nhân sự nội bộ, không thuộc diện cung cấp cho báo chí theo quy định. Đề nghị phóng viên gửi lại câu hỏi về nội dung công vụ cụ thể.", "submitted_at": "@-9T09:30", "answered_at": null },
+
+    { "id": "q-14", "question_code": "CH-2026/0452", "journalist_profile_id": "p-06", "press_agency_id": "org-ttxvn", "title": "Chiến dịch phòng chống sốt xuất huyết có bổ sung dịch truyền cho trạm y tế không?", "content": "Đề nghị Sở Y tế cho biết các trạm y tế phường, xã có được bổ sung dịch truyền và test nhanh trong chiến dịch cao điểm không?", "topic_id": "top-yte", "priority": "NORMAL", "requested_deadline": "@+2", "due_at": null, "status": "REJECTED", "handling_org_id": "org-yte", "coordinator_id": "u-coord", "assignee_id": null, "duplicate_of_question_id": "q-01", "rejection_reason": "Trùng nội dung với câu hỏi CH-2026/0412 đã được Sở Y tế trả lời. Phản hồi chính thức đã được gửi tới phóng viên qua nền tảng.", "submitted_at": "@-3T14:20", "answered_at": null },
+
+    { "id": "q-15", "question_code": "CH-2026/0401", "journalist_profile_id": "p-05", "press_agency_id": "org-tapchivh", "title": "Festival Huế 2026 có bao nhiêu hoạt động miễn phí cho người dân?", "content": "Đề nghị cho biết trong 42 hoạt động chính của Festival, bao nhiêu hoạt động miễn phí và tổ chức tại địa điểm nào.", "topic_id": "top-vanhoa", "priority": "LOW", "requested_deadline": "@-26", "due_at": "@-26T17:00", "status": "ANSWERED", "handling_org_id": "org-vhttdl", "coordinator_id": "u-coord2", "assignee_id": "u-admin2", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-31T09:00", "answered_at": "@-27T14:00" },
+
+    { "id": "q-16", "question_code": "CH-2026/0404", "journalist_profile_id": "p-04", "press_agency_id": "org-vnexpress", "title": "Vốn FDI vào khu công nghiệp phía nam tăng 34%, dự án nào lớn nhất?", "content": "Đề nghị cung cấp danh sách các dự án FDI cấp mới trong 6 tháng, tổng vốn đăng ký và lĩnh vực đầu tư.", "topic_id": "top-kinhte", "priority": "NORMAL", "requested_deadline": "@-22", "due_at": "@-22T17:00", "status": "ANSWERED", "handling_org_id": "org-vhttdl", "coordinator_id": "u-coord", "assignee_id": "u-admin2", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-27T10:30", "answered_at": "@-23T16:20" },
+
+    { "id": "q-17", "question_code": "CH-2026/0408", "journalist_profile_id": "p-01", "press_agency_id": "org-baotp", "title": "Mô hình chính quyền hai cấp sau 3 tháng: thời gian xử lý hồ sơ thay đổi ra sao?", "content": "Đề nghị cung cấp số liệu so sánh thời gian xử lý hồ sơ hành chính trước và sau khi vận hành mô hình chính quyền hai cấp.", "topic_id": "top-hanhchinh", "priority": "NORMAL", "requested_deadline": "@-19", "due_at": "@-19T17:00", "status": "ANSWERED", "handling_org_id": "org-vhttdl", "coordinator_id": "u-coord", "assignee_id": "u-admin2", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-24T08:00", "answered_at": "@-20T10:15" },
+
+    { "id": "q-18", "question_code": "CH-2026/0414", "journalist_profile_id": "p-02", "press_agency_id": "org-ptth", "title": "Trạm bơm tiêu úng có đủ công suất cho đợt mưa lớn sắp tới không?", "content": "Đề nghị Sở Nông nghiệp và Môi trường cho biết công suất thiết kế và công suất thực tế của 6 trạm bơm tiêu úng.", "topic_id": "top-moitruong", "priority": "URGENT", "requested_deadline": "@-4", "due_at": "@-4T12:00", "status": "ANSWERED", "handling_org_id": "org-nnmt", "coordinator_id": "u-coord", "assignee_id": "u-staff-nnmt", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-5T17:00", "answered_at": "@-4T10:30" },
+
+    { "id": "q-19", "question_code": "CH-2026/0420", "journalist_profile_id": "p-07", "press_agency_id": "org-baotp", "title": "Chợ đầu mối mới khi nào đưa vào hoạt động, tiểu thương được hỗ trợ gì?", "content": "Đề nghị cho biết thời điểm chợ đầu mối mới đi vào hoạt động và chính sách hỗ trợ tiểu thương chuyển địa điểm kinh doanh.", "topic_id": "top-kinhte", "priority": "NORMAL", "requested_deadline": "@-25", "due_at": "@-25T17:00", "status": "ANSWERED", "handling_org_id": "org-xd", "coordinator_id": "u-coord2", "assignee_id": "u-staff-xd", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-30T11:00", "answered_at": "@-26T09:00" },
+
+    { "id": "q-20", "question_code": "CH-2026/0423", "journalist_profile_id": "p-13", "press_agency_id": "org-tapchivh", "title": "Du lịch đêm bên sông Hương: có mở rộng khung giờ hoạt động không?", "content": "Đề nghị cho biết thành phố có kế hoạch mở rộng khung giờ hoạt động của phố đi bộ và các dịch vụ du lịch đêm không.", "topic_id": "top-dulich", "priority": "LOW", "requested_deadline": "@-20", "due_at": "@-20T17:00", "status": "ANSWERED", "handling_org_id": "org-vhttdl", "coordinator_id": "u-coord2", "assignee_id": "u-admin2", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-25T15:00", "answered_at": "@-21T11:20" },
+
+    { "id": "q-21", "question_code": "CH-2026/0429", "journalist_profile_id": "p-03", "press_agency_id": "org-tuoitre", "title": "Ngập úng khu vực trung tâm: dự án thoát nước đang ở giai đoạn nào?", "content": "Đề nghị Sở Xây dựng cho biết tiến độ dự án cải tạo hệ thống thoát nước khu vực trung tâm và các tuyến đường sẽ hết ngập sau khi hoàn thành.", "topic_id": "top-hatang", "priority": "HIGH", "requested_deadline": "@-11", "due_at": "@-11T17:00", "status": "ANSWERED", "handling_org_id": "org-xd", "coordinator_id": "u-coord", "assignee_id": "u-staff-xd", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-16T09:20", "answered_at": "@-12T14:00" },
+
+    { "id": "q-22", "question_code": "CH-2026/0435", "journalist_profile_id": "p-09", "press_agency_id": "org-tuoitre", "title": "Tổ tư vấn tuyển sinh trực tuyến hoạt động thế nào, đã tiếp nhận bao nhiêu lượt?", "content": "Đề nghị Sở Giáo dục và Đào tạo cho biết số lượt tư vấn đã tiếp nhận và các nhóm câu hỏi phổ biến nhất của phụ huynh.", "topic_id": "top-giaoduc", "priority": "LOW", "requested_deadline": "@-28", "due_at": "@-28T17:00", "status": "ANSWERED", "handling_org_id": "org-gddt", "coordinator_id": "u-coord2", "assignee_id": "u-staff-gddt", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-32T10:00", "answered_at": "@-29T15:40" },
+
+    { "id": "q-23", "question_code": "CH-2026/0439", "journalist_profile_id": "p-06", "press_agency_id": "org-ttxvn", "title": "Quy hoạch phát triển du lịch đến 2035 đặt mục tiêu đón bao nhiêu lượt khách?", "content": "Đề nghị cung cấp các chỉ tiêu chính của quy hoạch phát triển du lịch đến năm 2035.", "topic_id": "top-dulich", "priority": "NORMAL", "requested_deadline": "@-14", "due_at": "@-14T17:00", "status": "ANSWERED", "handling_org_id": "org-vhttdl", "coordinator_id": "u-coord", "assignee_id": "u-admin2", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-19T14:00", "answered_at": "@-15T09:30" },
+
+    { "id": "q-24", "question_code": "CH-2026/0443", "journalist_profile_id": "p-04", "press_agency_id": "org-vnexpress", "title": "Có bao nhiêu cơ sở giáo dục đã lắp hệ thống lọc nước uống trực tiếp?", "content": "Đề nghị Sở Giáo dục và Đào tạo cung cấp số liệu cơ sở giáo dục đã lắp hệ thống lọc nước uống trực tiếp cho học sinh.", "topic_id": "top-giaoduc", "priority": "LOW", "requested_deadline": "@-7", "due_at": "@-7T17:00", "status": "ANSWERED", "handling_org_id": "org-gddt", "coordinator_id": "u-coord2", "assignee_id": "u-staff-gddt", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-11T08:30", "answered_at": "@-8T16:00" },
+
+    { "id": "q-25", "question_code": "CH-2026/0461", "journalist_profile_id": "p-13", "press_agency_id": "org-tapchivh", "title": "Sự cố mất điện tại khu vực lễ hội có ảnh hưởng đến lịch tổ chức không?", "content": "Đề nghị Sở Văn hóa, Thể thao và Du lịch xác nhận thông tin sự cố mất điện tại khu vực tổ chức lễ hội tối qua và ảnh hưởng đến lịch tổ chức các hoạt động tiếp theo.", "topic_id": "top-vanhoa", "priority": "URGENT", "requested_deadline": "@0", "due_at": "@0T17:00", "status": "IN_PROGRESS", "handling_org_id": "org-vhttdl", "coordinator_id": "u-coord", "assignee_id": "u-admin2", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@-1T20:15", "answered_at": null },
+
+    { "id": "q-26", "question_code": "CH-2026/0462", "journalist_profile_id": "p-01", "press_agency_id": "org-baotp", "title": "Thành phố có kế hoạch xử lý thông tin sai lệch về chất lượng nước sinh hoạt không?", "content": "Trên mạng xã hội đang lan truyền thông tin nước sinh hoạt tại một số phường bị nhiễm khuẩn nặng.\n\nĐề nghị Sở Nông nghiệp và Môi trường xác nhận thông tin và cho biết kết quả xét nghiệm mẫu nước gần nhất.", "topic_id": "top-moitruong", "priority": "URGENT", "requested_deadline": "@0", "due_at": "@0T15:00", "status": "ASSIGNED", "handling_org_id": "org-nnmt", "coordinator_id": "u-coord", "assignee_id": "u-staff-nnmt", "duplicate_of_question_id": null, "rejection_reason": null, "submitted_at": "@0T06:40", "answered_at": null }
+  ],
+
+  "question_status_history": [
+    { "id": "qh-01", "question_id": "q-01", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-02", "note": "Phóng viên gửi câu hỏi qua nền tảng.", "occurred_at": "@-14T08:20" },
+    { "id": "qh-02", "question_id": "q-01", "old_status": "SUBMITTED", "new_status": "ROUTING", "actor_id": null, "note": "AI phân loại chủ đề Y tế, độ tin cậy 94%. Gợi ý chuyển Sở Y tế.", "occurred_at": "@-14T08:22" },
+    { "id": "qh-03", "question_id": "q-01", "old_status": "ROUTING", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Chuyển Sở Y tế, hạn xử lý 5 ngày làm việc.", "occurred_at": "@-14T09:10" },
+    { "id": "qh-04", "question_id": "q-01", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-yte", "note": "Phân công chuyên viên Võ Thị Thanh Tâm xử lý.", "occurred_at": "@-13T08:30" },
+    { "id": "qh-05", "question_id": "q-01", "old_status": "ASSIGNED", "new_status": "IN_PROGRESS", "actor_id": "u-staff-yte", "note": "Bắt đầu soạn nội dung trả lời.", "occurred_at": "@-13T10:00" },
+    { "id": "qh-06", "question_id": "q-01", "old_status": "IN_PROGRESS", "new_status": "PENDING_APPROVAL", "actor_id": "u-staff-yte", "note": "Trình lãnh đạo Sở duyệt bản trả lời phiên bản 1.", "occurred_at": "@-11T15:20" },
+    { "id": "qh-07", "question_id": "q-01", "old_status": "PENDING_APPROVAL", "new_status": "IN_PROGRESS", "actor_id": "u-appr-yte", "note": "Trả lại: bổ sung số liệu giường bệnh dự phòng theo từng tuyến.", "occurred_at": "@-11T16:40" },
+    { "id": "qh-08", "question_id": "q-01", "old_status": "IN_PROGRESS", "new_status": "PENDING_APPROVAL", "actor_id": "u-staff-yte", "note": "Trình lại bản trả lời phiên bản 2, đã bổ sung số giường bệnh.", "occurred_at": "@-10T09:50" },
+    { "id": "qh-09", "question_id": "q-01", "old_status": "PENDING_APPROVAL", "new_status": "ANSWERED", "actor_id": "u-appr-yte", "note": "Duyệt và gửi phản hồi chính thức tới phóng viên.", "occurred_at": "@-10T15:30" },
+
+    { "id": "qh-10", "question_id": "q-02", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-03", "note": null, "occurred_at": "@-18T10:05" },
+    { "id": "qh-11", "question_id": "q-02", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Chuyển Sở Xây dựng.", "occurred_at": "@-18T11:00" },
+    { "id": "qh-12", "question_id": "q-02", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-xd", "note": "Phân công chuyên viên Ngô Đình Khánh.", "occurred_at": "@-17T08:00" },
+    { "id": "qh-13", "question_id": "q-02", "old_status": "ASSIGNED", "new_status": "IN_PROGRESS", "actor_id": "u-staff-xd", "note": null, "occurred_at": "@-17T09:30" },
+    { "id": "qh-14", "question_id": "q-02", "old_status": "IN_PROGRESS", "new_status": "PENDING_APPROVAL", "actor_id": "u-staff-xd", "note": null, "occurred_at": "@-15T14:00" },
+    { "id": "qh-15", "question_id": "q-02", "old_status": "PENDING_APPROVAL", "new_status": "ANSWERED", "actor_id": "u-appr-xd", "note": "Duyệt, gửi phản hồi kèm mốc thời gian cam kết.", "occurred_at": "@-14T09:40" },
+
+    { "id": "qh-16", "question_id": "q-04", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-01", "note": null, "occurred_at": "@-4T09:15" },
+    { "id": "qh-17", "question_id": "q-04", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Chuyển Sở Y tế, ưu tiên Cao.", "occurred_at": "@-4T09:50" },
+    { "id": "qh-18", "question_id": "q-04", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-yte", "note": null, "occurred_at": "@-4T10:30" },
+    { "id": "qh-19", "question_id": "q-04", "old_status": "ASSIGNED", "new_status": "IN_PROGRESS", "actor_id": "u-staff-yte", "note": null, "occurred_at": "@-3T08:00" },
+    { "id": "qh-20", "question_id": "q-04", "old_status": "IN_PROGRESS", "new_status": "PENDING_APPROVAL", "actor_id": "u-staff-yte", "note": "Trình duyệt, đã đối chiếu số liệu giám sát véc-tơ tuần gần nhất.", "occurred_at": "@0T09:40" },
+
+    { "id": "qh-21", "question_id": "q-05", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-03", "note": null, "occurred_at": "@-2T11:20" },
+    { "id": "qh-22", "question_id": "q-05", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Chuyển Sở Nông nghiệp và Môi trường.", "occurred_at": "@-2T13:00" },
+    { "id": "qh-23", "question_id": "q-05", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-nnmt", "note": null, "occurred_at": "@-2T15:10" },
+    { "id": "qh-24", "question_id": "q-05", "old_status": "ASSIGNED", "new_status": "IN_PROGRESS", "actor_id": "u-staff-nnmt", "note": "Đang chờ kết quả rà soát nguồn thải từ đơn vị quan trắc.", "occurred_at": "@-1T08:30" },
+
+    { "id": "qh-25", "question_id": "q-06", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-04", "note": null, "occurred_at": "@-1T15:40" },
+    { "id": "qh-26", "question_id": "q-06", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord2", "note": "Chuyển Sở Xây dựng.", "occurred_at": "@-1T16:20" },
+    { "id": "qh-27", "question_id": "q-06", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-xd", "note": null, "occurred_at": "@0T08:10" },
+
+    { "id": "qh-28", "question_id": "q-07", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-09", "note": null, "occurred_at": "@-1T09:00" },
+    { "id": "qh-29", "question_id": "q-07", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Chuyển Sở Giáo dục và Đào tạo.", "occurred_at": "@-1T10:15" },
+
+    { "id": "qh-30", "question_id": "q-08", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-05", "note": null, "occurred_at": "@0T08:10" },
+
+    { "id": "qh-31", "question_id": "q-09", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-06", "note": null, "occurred_at": "@0T07:30" },
+    { "id": "qh-32", "question_id": "q-09", "old_status": "SUBMITTED", "new_status": "ROUTING", "actor_id": null, "note": "AI phân loại chủ đề Nông nghiệp, độ tin cậy 88%. Gợi ý chuyển Sở Nông nghiệp và Môi trường.", "occurred_at": "@0T07:32" },
+
+    { "id": "qh-33", "question_id": "q-10", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-07", "note": null, "occurred_at": "@-6T13:50" },
+    { "id": "qh-34", "question_id": "q-10", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Chuyển Sở Y tế.", "occurred_at": "@-6T14:30" },
+    { "id": "qh-35", "question_id": "q-10", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-yte", "note": null, "occurred_at": "@-5T08:20" },
+    { "id": "qh-36", "question_id": "q-10", "old_status": "ASSIGNED", "new_status": "AWAITING_CLARIFICATION", "actor_id": "u-staff-yte2", "note": "Đề nghị phóng viên làm rõ phạm vi thông tin cần cung cấp.", "occurred_at": "@-4T11:00" },
+
+    { "id": "qh-37", "question_id": "q-11", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-01", "note": null, "occurred_at": "@-15T16:00" },
+    { "id": "qh-38", "question_id": "q-11", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Chuyển Sở Xây dựng.", "occurred_at": "@-15T16:40" },
+    { "id": "qh-39", "question_id": "q-11", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-xd", "note": null, "occurred_at": "@-14T09:00" },
+    { "id": "qh-40", "question_id": "q-11", "old_status": "ASSIGNED", "new_status": "IN_PROGRESS", "actor_id": "u-staff-xd", "note": null, "occurred_at": "@-13T10:00" },
+    { "id": "qh-41", "question_id": "q-11", "old_status": "IN_PROGRESS", "new_status": "OVERDUE", "actor_id": null, "note": "Hệ thống tự động đánh dấu quá hạn: đã qua hạn xử lý mà chưa có bản trả lời được duyệt.", "occurred_at": "@-3T00:05" },
+
+    { "id": "qh-42", "question_id": "q-12", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-08", "note": null, "occurred_at": "@-12T10:00" },
+    { "id": "qh-43", "question_id": "q-12", "old_status": "SUBMITTED", "new_status": "CANCELLED", "actor_id": "u-jn-08", "note": "Phóng viên rút câu hỏi: đã nhận được thông tin qua thông cáo TC-2026/0134.", "occurred_at": "@-11T14:20" },
+
+    { "id": "qh-44", "question_id": "q-13", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-12", "note": null, "occurred_at": "@-9T09:30" },
+    { "id": "qh-45", "question_id": "q-13", "old_status": "SUBMITTED", "new_status": "REJECTED", "actor_id": "u-coord", "note": "Từ chối tiếp nhận: nội dung thuộc phạm vi thông tin cá nhân, không thuộc diện cung cấp cho báo chí.", "occurred_at": "@-9T11:00" },
+
+    { "id": "qh-46", "question_id": "q-14", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-06", "note": null, "occurred_at": "@-3T14:20" },
+    { "id": "qh-47", "question_id": "q-14", "old_status": "SUBMITTED", "new_status": "ROUTING", "actor_id": null, "note": "AI phát hiện trùng lặp với CH-2026/0412, độ tương đồng 91%.", "occurred_at": "@-3T14:22" },
+    { "id": "qh-48", "question_id": "q-14", "old_status": "ROUTING", "new_status": "REJECTED", "actor_id": "u-coord", "note": "Đánh dấu trùng lặp với CH-2026/0412 và gửi lại phản hồi đã có cho phóng viên.", "occurred_at": "@-3T15:00" },
+
+    { "id": "qh-49", "question_id": "q-25", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-13", "note": null, "occurred_at": "@-1T20:15" },
+    { "id": "qh-50", "question_id": "q-25", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Ưu tiên Khẩn, chuyển Sở VHTTDL, hạn trả lời trong 24 giờ.", "occurred_at": "@-1T20:40" },
+    { "id": "qh-51", "question_id": "q-25", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-admin", "note": null, "occurred_at": "@0T07:20" },
+    { "id": "qh-52", "question_id": "q-25", "old_status": "ASSIGNED", "new_status": "IN_PROGRESS", "actor_id": "u-admin2", "note": null, "occurred_at": "@0T07:50" },
+
+    { "id": "qh-53", "question_id": "q-26", "old_status": null, "new_status": "SUBMITTED", "actor_id": "u-jn-01", "note": null, "occurred_at": "@0T06:40" },
+    { "id": "qh-54", "question_id": "q-26", "old_status": "SUBMITTED", "new_status": "ROUTED", "actor_id": "u-coord", "note": "Ưu tiên Khẩn: nội dung liên quan cảnh báo khủng hoảng đang theo dõi.", "occurred_at": "@0T06:55" },
+    { "id": "qh-55", "question_id": "q-26", "old_status": "ROUTED", "new_status": "ASSIGNED", "actor_id": "u-appr-nnmt", "note": null, "occurred_at": "@0T07:15" }
+  ],
+
+  "question_routings": [
+    { "id": "qr-01", "question_id": "q-01", "target_org_id": "org-yte", "coordinator_id": "u-coord", "due_at": "@-9T17:00", "is_rerouting": false, "reason": "Nội dung thuộc thẩm quyền Sở Y tế.", "occurred_at": "@-14T09:10" },
+    { "id": "qr-02", "question_id": "q-02", "target_org_id": "org-xd", "coordinator_id": "u-coord", "due_at": "@-13T17:00", "is_rerouting": false, "reason": null, "occurred_at": "@-18T11:00" },
+    { "id": "qr-03", "question_id": "q-03", "target_org_id": "org-gddt", "coordinator_id": "u-coord2", "due_at": "@-16T17:00", "is_rerouting": false, "reason": null, "occurred_at": "@-21T15:10" },
+    { "id": "qr-04", "question_id": "q-04", "target_org_id": "org-yte", "coordinator_id": "u-coord", "due_at": "@+1T17:00", "is_rerouting": false, "reason": null, "occurred_at": "@-4T09:50" },
+    { "id": "qr-05", "question_id": "q-05", "target_org_id": "org-nnmt", "coordinator_id": "u-coord", "due_at": "@+3T17:00", "is_rerouting": false, "reason": null, "occurred_at": "@-2T13:00" },
+    { "id": "qr-06", "question_id": "q-06", "target_org_id": "org-xd", "coordinator_id": "u-coord2", "due_at": "@+5T17:00", "is_rerouting": false, "reason": null, "occurred_at": "@-1T16:20" },
+    { "id": "qr-07", "question_id": "q-07", "target_org_id": "org-gddt", "coordinator_id": "u-coord", "due_at": "@+4T17:00", "is_rerouting": false, "reason": null, "occurred_at": "@-1T10:15" },
+    { "id": "qr-08", "question_id": "q-10", "target_org_id": "org-yte", "coordinator_id": "u-coord", "due_at": "@+2T17:00", "is_rerouting": false, "reason": null, "occurred_at": "@-6T14:30" },
+    { "id": "qr-09", "question_id": "q-11", "target_org_id": "org-vhttdl", "coordinator_id": "u-coord", "due_at": "@-8T17:00", "is_rerouting": false, "reason": "Ban đầu xác định thuộc Sở VHTTDL do liên quan quy hoạch không gian văn hóa.", "occurred_at": "@-15T16:40" },
+    { "id": "qr-10", "question_id": "q-11", "target_org_id": "org-xd", "coordinator_id": "u-coord", "due_at": "@-4T17:00", "is_rerouting": true, "reason": "Chuyển lại Sở Xây dựng: nội dung thuộc thẩm quyền quản lý quy hoạch xây dựng.", "occurred_at": "@-14T08:30" },
+    { "id": "qr-11", "question_id": "q-25", "target_org_id": "org-vhttdl", "coordinator_id": "u-coord", "due_at": "@0T17:00", "is_rerouting": false, "reason": "Ưu tiên Khẩn, hạn 24 giờ theo quy chế.", "occurred_at": "@-1T20:40" },
+    { "id": "qr-12", "question_id": "q-26", "target_org_id": "org-nnmt", "coordinator_id": "u-coord", "due_at": "@0T15:00", "is_rerouting": false, "reason": "Liên quan cảnh báo khủng hoảng CB-2026/007 đang theo dõi.", "occurred_at": "@0T06:55" }
+  ],
+
+  "question_assignments": [
+    { "id": "qa-01", "question_id": "q-01", "assignee_id": "u-staff-yte", "assigned_by_id": "u-appr-yte", "due_at": "@-9T17:00", "status": "COMPLETED", "is_reassignment": false, "reason": null, "assigned_at": "@-13T08:30", "ended_at": "@-10T15:30" },
+    { "id": "qa-02", "question_id": "q-02", "assignee_id": "u-staff-xd", "assigned_by_id": "u-appr-xd", "due_at": "@-13T17:00", "status": "COMPLETED", "is_reassignment": false, "reason": null, "assigned_at": "@-17T08:00", "ended_at": "@-14T09:40" },
+    { "id": "qa-03", "question_id": "q-03", "assignee_id": "u-staff-gddt", "assigned_by_id": "u-appr-gddt", "due_at": "@-16T17:00", "status": "COMPLETED", "is_reassignment": false, "reason": null, "assigned_at": "@-20T08:30", "ended_at": "@-17T11:00" },
+    { "id": "qa-04", "question_id": "q-04", "assignee_id": "u-staff-yte2", "assigned_by_id": "u-appr-yte", "due_at": "@+1T17:00", "status": "REASSIGNED", "is_reassignment": false, "reason": null, "assigned_at": "@-4T10:30", "ended_at": "@-3T07:50" },
+    { "id": "qa-05", "question_id": "q-04", "assignee_id": "u-staff-yte", "assigned_by_id": "u-appr-yte", "due_at": "@+1T17:00", "status": "IN_PROGRESS", "is_reassignment": true, "reason": "Chuyên viên Lê Hữu Phước đang xử lý 4 câu hỏi cùng lúc, hệ thống cảnh báo quá tải. Chuyển sang chuyên viên Võ Thị Thanh Tâm.", "assigned_at": "@-3T07:50", "ended_at": null },
+    { "id": "qa-06", "question_id": "q-05", "assignee_id": "u-staff-nnmt", "assigned_by_id": "u-appr-nnmt", "due_at": "@+3T17:00", "status": "IN_PROGRESS", "is_reassignment": false, "reason": null, "assigned_at": "@-2T15:10", "ended_at": null },
+    { "id": "qa-07", "question_id": "q-06", "assignee_id": "u-staff-xd", "assigned_by_id": "u-appr-xd", "due_at": "@+5T17:00", "status": "IN_PROGRESS", "is_reassignment": false, "reason": null, "assigned_at": "@0T08:10", "ended_at": null },
+    { "id": "qa-08", "question_id": "q-10", "assignee_id": "u-staff-yte2", "assigned_by_id": "u-appr-yte", "due_at": "@+2T17:00", "status": "IN_PROGRESS", "is_reassignment": false, "reason": null, "assigned_at": "@-5T08:20", "ended_at": null },
+    { "id": "qa-09", "question_id": "q-11", "assignee_id": "u-staff-xd", "assigned_by_id": "u-appr-xd", "due_at": "@-4T17:00", "status": "IN_PROGRESS", "is_reassignment": false, "reason": null, "assigned_at": "@-14T09:00", "ended_at": null },
+    { "id": "qa-10", "question_id": "q-25", "assignee_id": "u-admin2", "assigned_by_id": "u-admin", "due_at": "@0T17:00", "status": "IN_PROGRESS", "is_reassignment": false, "reason": null, "assigned_at": "@0T07:20", "ended_at": null },
+    { "id": "qa-11", "question_id": "q-26", "assignee_id": "u-staff-nnmt", "assigned_by_id": "u-appr-nnmt", "due_at": "@0T15:00", "status": "IN_PROGRESS", "is_reassignment": false, "reason": null, "assigned_at": "@0T07:15", "ended_at": null },
+    { "id": "qa-12", "question_id": "q-18", "assignee_id": "u-staff-nnmt", "assigned_by_id": "u-appr-nnmt", "due_at": "@-4T12:00", "status": "COMPLETED", "is_reassignment": false, "reason": null, "assigned_at": "@-5T17:30", "ended_at": "@-4T10:30" },
+    { "id": "qa-13", "question_id": "q-21", "assignee_id": "u-staff-xd", "assigned_by_id": "u-appr-xd", "due_at": "@-11T17:00", "status": "COMPLETED", "is_reassignment": false, "reason": null, "assigned_at": "@-15T09:00", "ended_at": "@-12T14:00" }
+  ],
+
+  "clarification_requests": [
+    { "id": "cr-01", "question_id": "q-10", "requested_by_id": "u-staff-yte2", "request_content": "Đề nghị phóng viên làm rõ: câu hỏi cần danh sách tên cơ sở kinh doanh, hay chỉ cần loại hình và địa bàn của 7 cơ sở bị đình chỉ? Việc công bố tên cơ sở cần đối chiếu với quy định về công khai kết quả xử lý vi phạm hành chính.", "requested_at": "@-4T11:00", "response_content": null, "responded_at": null },
+    { "id": "cr-02", "question_id": "q-02", "requested_by_id": "u-staff-xd", "request_content": "Đề nghị phóng viên xác nhận mốc thời gian ghi nhận công trường dừng thi công, để đối chiếu với nhật ký thi công của chủ đầu tư.", "requested_at": "@-17T10:00", "response_content": "Ghi nhận trong hai lần khảo sát thực tế, cách nhau 9 ngày, tại đoạn Km8+100. Tôi có kèm ảnh chụp và video trong phần đính kèm câu hỏi.", "responded_at": "@-17T14:20" }
+  ],
+
+  "extension_requests": [
+    { "id": "er-01", "question_id": "q-11", "requested_by_id": "u-staff-xd", "current_due_at": "@-8T17:00", "proposed_due_at": "@-4T17:00", "reason": "Cần thời gian đối chiếu với quyết định phê duyệt quy hoạch mới ban hành của UBND thành phố trước khi trả lời chính thức.", "status": "APPROVED", "approved_by_id": "u-appr-xd", "decided_at": "@-9T08:30", "decision_note": "Đồng ý gia hạn 4 ngày làm việc. Đề nghị hoàn thành đúng hạn mới.", "submitted_at": "@-10T16:00" },
+    { "id": "er-02", "question_id": "q-11", "requested_by_id": "u-staff-xd", "current_due_at": "@-4T17:00", "proposed_due_at": "@+2T17:00", "reason": "Văn bản trả lời của Viện Quy hoạch chưa được gửi về, chưa đủ căn cứ trả lời câu hỏi về nội dung sai lệch.", "status": "PENDING_APPROVAL", "approved_by_id": null, "decided_at": null, "decision_note": null, "submitted_at": "@-2T09:00" },
+    { "id": "er-03", "question_id": "q-05", "requested_by_id": "u-staff-nnmt", "current_due_at": "@+1T17:00", "proposed_due_at": "@+3T17:00", "reason": "Chờ kết quả phân tích mẫu bổ sung từ phòng thí nghiệm, dự kiến có sau 2 ngày làm việc.", "status": "APPROVED", "approved_by_id": "u-appr-nnmt", "decided_at": "@-1T10:00", "decision_note": "Đồng ý. Lưu ý thông báo lại mốc thời gian mới cho phóng viên.", "submitted_at": "@-1T09:20" },
+    { "id": "er-04", "question_id": "q-10", "requested_by_id": "u-staff-yte2", "current_due_at": "@+2T17:00", "proposed_due_at": "@+6T17:00", "reason": "Cần xin ý kiến bộ phận pháp chế về phạm vi công bố tên cơ sở vi phạm.", "status": "REJECTED", "approved_by_id": "u-appr-yte", "decided_at": "@-3T14:00", "decision_note": "Không gia hạn. Phần thông tin không vướng pháp chế cần trả lời đúng hạn; phần còn lại trả lời bổ sung sau.", "submitted_at": "@-3T10:30" }
+  ],
+
+  "answers": [
+    {
+      "id": "ans-01", "question_id": "q-01", "version": 1,
+      "content": "Sở Y tế trả lời như sau:\n\n1. Về bổ sung vật tư cho tuyến xã: đã cấp bổ sung 2.400 test nhanh NS1 và 1.800 chai dịch truyền Ringer Lactat cho 68 trạm y tế phường, xã.\n\n2. Về ngưỡng chuyển tuyến: giữ nguyên theo hướng dẫn chẩn đoán, điều trị hiện hành của Bộ Y tế.",
+      "drafted_by_id": "u-staff-yte", "status": "NEEDS_REVISION", "approved_by_id": null,
+      "submitted_at": "@-11T15:20", "approved_at": null, "sent_at": null,
+      "is_digitally_signed": false, "signature_transaction_id": null, "created_at": "@-13T10:00"
+    },
+    {
+      "id": "ans-02", "question_id": "q-01", "version": 2,
+      "content": "Sở Y tế thành phố Huế trả lời như sau:\n\n1. Về bổ sung vật tư cho tuyến xã\nĐã cấp bổ sung 2.400 test nhanh NS1 và 1.800 chai dịch truyền Ringer Lactat cho 68 trạm y tế phường, xã, ưu tiên 8 địa bàn trọng điểm. Đợt cấp thứ hai dự kiến thực hiện trong 2 tuần tới, số lượng căn cứ báo cáo sử dụng thực tế.\n\n2. Về ngưỡng chuyển tuyến\nGiữ nguyên theo Hướng dẫn chẩn đoán, điều trị sốt xuất huyết Dengue hiện hành của Bộ Y tế. Sở không ban hành ngưỡng riêng. Các trạm y tế được tập huấn lại về dấu hiệu cảnh báo và tiêu chí chuyển tuyến trong tháng vừa qua.\n\n3. Về giường bệnh dự phòng\nTổng số giường dự phòng cho tình huống dịch bùng phát là 420 giường, phân bổ: Bệnh viện Trung ương 180 giường, Bệnh viện thành phố 140 giường, các trung tâm y tế khu vực 100 giường. Trong trường hợp vượt quá năng lực, Sở kích hoạt phương án mở rộng thêm 200 giường tại khu điều trị dã chiến.\n\nSở Y tế sẵn sàng cung cấp số liệu cập nhật hằng tuần cho các cơ quan báo chí qua nền tảng này.",
+      "drafted_by_id": "u-staff-yte", "status": "SENT", "approved_by_id": "u-appr-yte",
+      "submitted_at": "@-10T09:50", "approved_at": "@-10T15:20", "sent_at": "@-10T15:30",
+      "is_digitally_signed": true, "signature_transaction_id": "SIG-2026-0071842", "created_at": "@-11T17:00"
+    },
+    {
+      "id": "ans-03", "question_id": "q-02", "version": 1,
+      "content": "Sở Xây dựng thành phố Huế trả lời như sau:\n\n1. Về 31 thửa đất chưa xác định được nguồn gốc\nĐây là các thửa đất người dân sử dụng ổn định từ trước năm 1993 nhưng không có giấy tờ theo quy định. UBND phường Hương Thủy và xã Phú Vang đang hoàn tất việc xác minh nguồn gốc sử dụng đất thông qua lấy ý kiến khu dân cư.\n\n2. Về phương án\nThành phố tiếp tục thực hiện vận động, đối thoại với người dân. Chỉ áp dụng biện pháp hành chính đối với trường hợp đã được bồi thường, hỗ trợ đầy đủ theo phương án được duyệt nhưng cố tình không bàn giao mặt bằng.\n\n3. Về mốc thời gian\nUBND thành phố chỉ đạo hoàn thành công tác giải phóng mặt bằng trước ngày cuối quý này. Chủ đầu tư cam kết thông xe kỹ thuật toàn tuyến trong tháng 12 năm nay.\n\nSở Xây dựng sẽ công bố tiến độ cập nhật hằng tháng trên nền tảng.",
+      "drafted_by_id": "u-staff-xd", "status": "SENT", "approved_by_id": "u-appr-xd",
+      "submitted_at": "@-15T14:00", "approved_at": "@-14T09:30", "sent_at": "@-14T09:40",
+      "is_digitally_signed": true, "signature_transaction_id": "SIG-2026-0069120", "created_at": "@-17T09:30"
+    },
+    {
+      "id": "ans-04", "question_id": "q-03", "version": 1,
+      "content": "Sở Giáo dục và Đào tạo trả lời như sau:\n\n1. Nguyên tắc phân tuyến căn cứ địa chỉ cư trú thực tế và năng lực tiếp nhận của từng trường, bảo đảm khoảng cách không quá 3 km. Một số trường hợp phải điều chỉnh do trường gần nhất đã đủ chỉ tiêu.\n\n2. Sở có cơ chế xem xét lại: phụ huynh gửi đơn đề nghị kèm minh chứng về hoàn cảnh đặc biệt tới phòng chuyên môn trong vòng 10 ngày kể từ ngày công bố phân tuyến. Hội đồng tuyển sinh xem xét từng trường hợp.\n\n3. Riêng địa bàn phường Hương Thủy, Sở đã rà soát và điều chỉnh tuyến cho 46 học sinh sau khi tiếp nhận phản ánh.",
+      "drafted_by_id": "u-staff-gddt", "status": "SENT", "approved_by_id": "u-appr-gddt",
+      "submitted_at": "@-18T10:00", "approved_at": "@-17T10:50", "sent_at": "@-17T11:00",
+      "is_digitally_signed": true, "signature_transaction_id": "SIG-2026-0066431", "created_at": "@-20T09:00"
+    },
+    {
+      "id": "ans-05", "question_id": "q-04", "version": 1,
+      "content": "Sở Y tế trả lời như sau:\n\n1. Về tăng cường lực lượng\nSở đã điều động bổ sung 4 tổ giám sát véc-tơ và 6 máy phun ULV cho phường Hương Thủy, xã Phú Vang và xã Quảng Điền, duy trì đến khi chỉ số BI về dưới ngưỡng 20.\n\n2. Về hóa chất\nCấp bổ sung 320 lít hóa chất diệt muỗi Deltamethrin cho 3 địa bàn, đủ cho 2 đợt phun diện rộng.\n\n3. Về thời gian dự kiến\nTheo diễn biến chỉ số BI hai tuần gần nhất, Sở dự kiến đưa cả 3 địa bàn về dưới ngưỡng cảnh báo trong vòng 10 đến 14 ngày, với điều kiện thời tiết không có mưa kéo dài.\n\nSở sẽ công bố chỉ số BI cập nhật hằng tuần trên cổng thông tin.",
+      "drafted_by_id": "u-staff-yte", "status": "PENDING_APPROVAL", "approved_by_id": null,
+      "submitted_at": "@0T09:40", "approved_at": null, "sent_at": null,
+      "is_digitally_signed": false, "signature_transaction_id": null, "created_at": "@-3T08:00"
+    },
+    {
+      "id": "ans-06", "question_id": "q-05", "version": 1,
+      "content": "Bản nháp — đang chờ kết quả rà soát nguồn thải.\n\nDự kiến nội dung trả lời:\n1. Đã khoanh vùng 14 cơ sở có hoạt động xả thải trong bán kính 2 km quanh điểm quan trắc.\n2. Đang lấy mẫu nước thải tại từng cơ sở, kết quả phân tích dự kiến có sau 2 ngày làm việc.\n3. Chưa xử phạt cơ sở nào do chưa đủ căn cứ xác định nguồn thải gây vượt ngưỡng.",
+      "drafted_by_id": "u-staff-nnmt", "status": "DRAFT", "approved_by_id": null,
+      "submitted_at": null, "approved_at": null, "sent_at": null,
+      "is_digitally_signed": false, "signature_transaction_id": null, "created_at": "@-1T08:30"
+    },
+    {
+      "id": "ans-07", "question_id": "q-18", "version": 1,
+      "content": "Sở Nông nghiệp và Môi trường trả lời như sau:\n\nTổng công suất thiết kế của 6 trạm bơm tiêu úng là 84.000 m³/giờ. Công suất khai thác thực tế hiện đạt 78.000 m³/giờ, tương đương 93% công suất thiết kế, do 2 tổ máy tại trạm Phú Vang đang trong kỳ bảo dưỡng.\n\nVới lượng mưa dự báo 200–350 mm trong 48 giờ, hệ thống đáp ứng được yêu cầu tiêu úng cho khu vực đô thị trung tâm. Với kịch bản mưa trên 400 mm, dự kiến vẫn xảy ra ngập cục bộ tại 4 điểm trũng, thời gian rút nước từ 3 đến 5 giờ sau khi ngớt mưa.\n\nSở đã hoàn tất bảo dưỡng và đưa 2 tổ máy còn lại vào vận hành trước thời điểm mưa lớn.",
+      "drafted_by_id": "u-staff-nnmt", "status": "SENT", "approved_by_id": "u-appr-nnmt",
+      "submitted_at": "@-4T09:00", "approved_at": "@-4T10:20", "sent_at": "@-4T10:30",
+      "is_digitally_signed": true, "signature_transaction_id": "SIG-2026-0073055", "created_at": "@-5T18:00"
+    },
+    {
+      "id": "ans-08", "question_id": "q-21", "version": 1,
+      "content": "Sở Xây dựng trả lời như sau:\n\nDự án cải tạo hệ thống thoát nước khu vực trung tâm đang ở giai đoạn thi công tuyến cống chính, đạt 54% khối lượng. Dự kiến hoàn thành trong quý IV.\n\nSau khi hoàn thành, 7 trong 12 điểm ngập thường xuyên sẽ được xử lý dứt điểm, gồm các đoạn trên đường Hùng Vương, Bà Triệu và Nguyễn Huệ. 5 điểm còn lại thuộc phạm vi dự án giai đoạn 2, dự kiến triển khai từ năm sau.",
+      "drafted_by_id": "u-staff-xd", "status": "SENT", "approved_by_id": "u-appr-xd",
+      "submitted_at": "@-13T15:00", "approved_at": "@-12T13:50", "sent_at": "@-12T14:00",
+      "is_digitally_signed": true, "signature_transaction_id": "SIG-2026-0068004", "created_at": "@-15T10:00"
+    },
+    {
+      "id": "ans-09", "question_id": "q-11", "version": 1,
+      "content": "Bản nháp — chưa hoàn chỉnh, đang chờ văn bản trả lời của Viện Quy hoạch.\n\nNội dung dự kiến: nêu rõ chỉ tiêu mật độ xây dựng trong thông cáo đã thu hồi được lấy từ dự thảo lần 3, trong khi quyết định phê duyệt cuối cùng sử dụng chỉ tiêu của dự thảo lần 4.",
+      "drafted_by_id": "u-staff-xd", "status": "DRAFT", "approved_by_id": null,
+      "submitted_at": null, "approved_at": null, "sent_at": null,
+      "is_digitally_signed": false, "signature_transaction_id": null, "created_at": "@-13T10:00"
+    },
+    {
+      "id": "ans-10", "question_id": "q-25", "version": 1,
+      "content": "Bản nháp — đang xác minh với đơn vị điện lực.\n\nDự kiến nội dung: xác nhận sự cố mất điện trong 42 phút tại khu vực sân khấu chính do quá tải cục bộ; các hoạt động tiếp theo giữ nguyên lịch, ban tổ chức đã bổ sung 2 máy phát dự phòng.",
+      "drafted_by_id": "u-admin2", "status": "DRAFT", "approved_by_id": null,
+      "submitted_at": null, "approved_at": null, "sent_at": null,
+      "is_digitally_signed": false, "signature_transaction_id": null, "created_at": "@0T07:50"
+    }
+  ]
+}

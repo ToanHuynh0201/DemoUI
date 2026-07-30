@@ -1,0 +1,161 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@import "@fontsource/be-vietnam-pro/400.css";
+@import "@fontsource/be-vietnam-pro/500.css";
+@import "@fontsource/be-vietnam-pro/600.css";
+@import "@fontsource/be-vietnam-pro/700.css";
+@import "@fontsource-variable/jetbrains-mono";
+
+@theme inline {
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-state-neutral: var(--state-neutral);
+  --color-state-info: var(--state-info);
+  --color-state-warning: var(--state-warning);
+  --color-state-good: var(--state-good);
+  --color-state-critical: var(--state-critical);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+  Bảng màu "hành chính công hiện đại".
+  Xanh công vụ #0B4F9E làm màu chủ đạo, navy #0A2A4A cho thanh điều hướng,
+  đỏ #B3122B chỉ dùng cho quá hạn / khủng hoảng — không dùng làm màu trang trí.
+  Nhóm chart-* đã qua scripts/validate_palette.js (đạt toàn bộ 6 kiểm tra, chế độ
+  --pairs all): tương phản đủ với nền và phân biệt được với 3 dạng mù màu.
+*/
+:root {
+  --background: #f1f4f8;
+  --foreground: #0f1b2a;
+  --card: #ffffff;
+  --card-foreground: #0f1b2a;
+  --popover: #ffffff;
+  --popover-foreground: #0f1b2a;
+  --primary: #0b4f9e;
+  --primary-foreground: #ffffff;
+  --secondary: #e7edf5;
+  --secondary-foreground: #0b3b75;
+  --muted: #eef2f7;
+  --muted-foreground: #5a6b80;
+  --accent: #e7edf5;
+  --accent-foreground: #0b3b75;
+  --destructive: #b3122b;
+  --border: #dce3ec;
+  --input: #cfd9e6;
+  --ring: #0b4f9e;
+  --radius: 0.375rem;
+
+  /* Thanh điều hướng: navy đậm, tách bạch với vùng nội dung */
+  --sidebar: #0a2a4a;
+  --sidebar-foreground: #c7d6e6;
+  --sidebar-primary: #0b4f9e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #123a60;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #17395c;
+  --sidebar-ring: #4a82c0;
+
+  /* Chuỗi phân loại (chủ đề, đơn vị) — KHÔNG dùng cho trạng thái */
+  --chart-1: #0b4f9e;
+  --chart-2: #b4690e;
+  --chart-3: #0e8f7d;
+  --chart-4: #b3122b;
+  --chart-5: #7c3aed;
+
+  /* Màu trạng thái — dành riêng, luôn đi kèm nhãn chữ */
+  --state-neutral: #5a6b80;
+  --state-info: #0b4f9e;
+  --state-warning: #b4690e;
+  --state-good: #157f4d;
+  --state-critical: #b3122b;
+
+  /* Thang đơn sắc cho bản đồ nhiệt / treemap (E7) */
+  --ramp-1: #e8eff8;
+  --ramp-2: #c3d6ec;
+  --ramp-3: #8fb4dc;
+  --ramp-4: #4a82c0;
+  --ramp-5: #0b4f9e;
+  --ramp-6: #073a75;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  /* Số liệu, mã văn bản, mốc thời gian dùng chữ đều nét để so hàng theo cột */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /*
+    Mã hồ sơ / mã câu hỏi / mã thông cáo — mô phỏng số công văn hành chính.
+    Dùng nhất quán ở mọi bảng và màn chi tiết.
+  */
+  .doc-code {
+    @apply font-mono text-[12px] font-medium tracking-tight text-primary;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

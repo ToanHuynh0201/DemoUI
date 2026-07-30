@@ -1,0 +1,343 @@
+{
+  "summarize": {
+    "_default": {
+      "confidence": 0.88,
+      "headline": "Tóm tắt tự động toàn văn thông cáo",
+      "body": "Văn bản trình bày bối cảnh, số liệu chính và đề nghị cụ thể đối với cơ quan báo chí. Nội dung không chứa thông tin định danh cá nhân và không mâu thuẫn với các thông cáo đã phát hành trước đó.",
+      "items": [
+        { "label": "Độ dài", "detail": "Rút gọn còn khoảng 18% so với bản gốc" },
+        { "label": "Mức rủi ro nội dung", "detail": "Thấp", "tone": "good" }
+      ]
+    },
+    "r-12": {
+      "confidence": 0.91,
+      "headline": "Tổ chức đợt tiêm bù 2 tuần cho trẻ dưới 5 tuổi chưa tiêm đủ mũi",
+      "body": "Sở Y tế dự kiến tổ chức đợt tiêm chủng bổ sung kéo dài 2 tuần cho nhóm trẻ dưới 5 tuổi chưa tiêm đủ mũi theo lịch tiêm chủng mở rộng. Số lượng đối tượng đang được 68 trạm y tế phường, xã rà soát và chưa có trong bản thảo.",
+      "items": [
+        { "label": "Thiếu thông tin", "detail": "Chưa có số liệu đối tượng, chưa có địa điểm và khung giờ tiêm", "tone": "warning" },
+        { "label": "Mức rủi ro nội dung", "detail": "Thấp", "tone": "good" }
+      ]
+    },
+    "r-13": {
+      "confidence": 0.86,
+      "headline": "Sau 6 tháng, 78% hồ sơ cấp phép xây dựng nộp trực tuyến, thời gian xử lý giảm 6 ngày",
+      "body": "Bản thảo nêu kết quả 6 tháng triển khai cấp phép xây dựng trực tuyến toàn trình: tỷ lệ hồ sơ nộp trực tuyến đạt 78%, thời gian xử lý trung bình giảm từ 14 ngày còn 8 ngày làm việc.",
+      "items": [
+        { "label": "Thiếu thông tin", "detail": "Chưa nêu nhóm hồ sơ chưa nộp trực tuyến được và nguyên nhân", "tone": "warning" },
+        { "label": "Mức rủi ro nội dung", "detail": "Thấp", "tone": "good" }
+      ]
+    }
+  },
+
+  "suggest_title": {
+    "_default": {
+      "confidence": 0.79,
+      "headline": "Ba phương án tiêu đề",
+      "items": [
+        { "label": "Bám số liệu", "detail": "Nêu con số nổi bật nhất ngay đầu tiêu đề để báo chí dễ trích dẫn" },
+        { "label": "Bám hành động", "detail": "Nêu việc cơ quan sẽ làm, phù hợp thông cáo về kế hoạch" },
+        { "label": "Bám tác động", "detail": "Nêu ảnh hưởng tới người dân, phù hợp thông cáo về chính sách" }
+      ]
+    },
+    "r-12": {
+      "confidence": 0.83,
+      "headline": "Ba phương án tiêu đề",
+      "items": [
+        { "label": "Tổ chức tiêm bù cho trẻ dưới 5 tuổi trong 2 tuần" },
+        { "label": "Rà soát và tiêm bù cho trẻ chưa tiêm đủ mũi tại 68 trạm y tế" },
+        { "label": "Đợt tiêm chủng bổ sung: những mốc thời gian phụ huynh cần biết" }
+      ]
+    },
+    "r-13": {
+      "confidence": 0.81,
+      "headline": "Ba phương án tiêu đề",
+      "items": [
+        { "label": "78% hồ sơ cấp phép xây dựng đã nộp qua mạng" },
+        { "label": "Cấp phép xây dựng trực tuyến: thời gian xử lý giảm gần một nửa" },
+        { "label": "Sáu tháng cấp phép xây dựng toàn trình, người dân bớt đi lại" }
+      ]
+    }
+  },
+
+  "suggest_qa": {
+    "_default": {
+      "confidence": 0.76,
+      "headline": "Bộ câu hỏi báo chí có thể đặt",
+      "items": [
+        { "label": "Số liệu nêu trong thông cáo được tổng hợp từ nguồn nào và tính đến thời điểm nào?" },
+        { "label": "Đơn vị nào chịu trách nhiệm chính và đầu mối cung cấp thông tin bổ sung là ai?" },
+        { "label": "Nếu không đạt mục tiêu đề ra thì phương án xử lý tiếp theo là gì?" },
+        { "label": "Kinh phí thực hiện lấy từ nguồn nào?" }
+      ]
+    },
+    "r-12": {
+      "confidence": 0.8,
+      "headline": "Bộ câu hỏi báo chí có thể đặt",
+      "items": [
+        { "label": "Bao nhiêu trẻ thuộc diện tiêm bù, phân bố theo phường, xã ra sao?" },
+        { "label": "Vì sao số trẻ chưa tiêm đủ mũi tăng so với năm trước?" },
+        { "label": "Phụ huynh tra cứu lịch sử tiêm chủng của con ở đâu?" },
+        { "label": "Vắc-xin cho đợt tiêm bù đã đủ chưa và nguồn cung từ đâu?" }
+      ]
+    }
+  },
+
+  "classify_question": {
+    "_default": {
+      "confidence": 0.85,
+      "headline": "Phân loại chủ đề và gợi ý cơ quan xử lý",
+      "items": [
+        { "label": "Chủ đề", "detail": "Cải cách hành chính", "confidence": 0.85 },
+        { "label": "Cơ quan xử lý", "detail": "Sở Văn hóa, Thể thao và Du lịch", "confidence": 0.72 },
+        { "label": "Độ ưu tiên đề xuất", "detail": "Bình thường" }
+      ]
+    },
+    "q-08": {
+      "confidence": 0.93,
+      "headline": "Phân loại chủ đề và gợi ý cơ quan xử lý",
+      "body": "Câu hỏi nhắc tới di tích điện Thái Hòa và kinh phí trùng tu giai đoạn 2, thuộc thẩm quyền quản lý di sản.",
+      "items": [
+        { "label": "Chủ đề", "detail": "Văn hóa, di sản", "confidence": 0.93 },
+        { "label": "Cơ quan xử lý", "detail": "Sở Văn hóa, Thể thao và Du lịch", "confidence": 0.9 },
+        { "label": "Độ ưu tiên đề xuất", "detail": "Bình thường" },
+        { "label": "Câu hỏi liên quan đã trả lời", "detail": "CH-2026/0401 về Festival Huế 2026", "confidence": 0.41 }
+      ]
+    },
+    "q-09": {
+      "confidence": 0.88,
+      "headline": "Phân loại chủ đề và gợi ý cơ quan xử lý",
+      "body": "Câu hỏi về tiến độ công trình cấp nước tập trung tại 5 xã ưu tiên, gắn với kế hoạch đã phát hành tại TC-2026/0119.",
+      "items": [
+        { "label": "Chủ đề", "detail": "Nông nghiệp", "confidence": 0.88 },
+        { "label": "Cơ quan xử lý", "detail": "Sở Nông nghiệp và Môi trường", "confidence": 0.94 },
+        { "label": "Độ ưu tiên đề xuất", "detail": "Bình thường" },
+        { "label": "Thông cáo liên quan", "detail": "TC-2026/0119 — Kế hoạch cấp nước sạch nông thôn", "confidence": 0.87 }
+      ]
+    }
+  },
+
+  "detect_duplicate": {
+    "_default": {
+      "confidence": 0.24,
+      "headline": "Không phát hiện câu hỏi trùng lặp",
+      "body": "Không có câu hỏi nào trong 90 ngày gần nhất đạt ngưỡng tương đồng 70%.",
+      "items": [{ "label": "Mức tương đồng cao nhất", "detail": "24%", "tone": "good" }]
+    },
+    "q-14": {
+      "confidence": 0.91,
+      "headline": "Phát hiện câu hỏi trùng lặp",
+      "body": "Nội dung trùng 91% với câu hỏi CH-2026/0412 đã được Sở Y tế trả lời và ký số.",
+      "items": [
+        { "label": "Câu hỏi gốc", "detail": "CH-2026/0412 — Số ca sốt xuất huyết tăng 18,6%", "confidence": 0.91, "tone": "warning" },
+        { "label": "Đề xuất", "detail": "Đánh dấu trùng lặp và gửi lại phản hồi đã có cho phóng viên" }
+      ]
+    }
+  },
+
+  "draft_answer": {
+    "_default": {
+      "confidence": 0.74,
+      "headline": "Bản nháp trả lời do AI đề xuất",
+      "body": "Kính gửi quý cơ quan báo chí,\n\nVề nội dung câu hỏi, đơn vị xin thông tin như sau:\n\n1. Về hiện trạng: [cán bộ bổ sung số liệu từ báo cáo gần nhất].\n2. Về nguyên nhân: [cán bộ nêu nguyên nhân khách quan và chủ quan].\n3. Về giải pháp và mốc thời gian: [cán bộ nêu giải pháp kèm mốc thời gian cụ thể].\n\nĐơn vị sẵn sàng cung cấp thông tin bổ sung khi quý cơ quan có yêu cầu.",
+      "items": [
+        { "label": "Nguồn tham chiếu", "detail": "Chưa tìm được thông cáo liên quan trong 90 ngày gần nhất", "tone": "warning" }
+      ]
+    },
+    "q-05": {
+      "confidence": 0.82,
+      "headline": "Bản nháp trả lời do AI đề xuất",
+      "body": "Sở Nông nghiệp và Môi trường trả lời như sau:\n\n1. Về rà soát nguồn thải\nSở đã khoanh vùng 14 cơ sở có hoạt động xả thải trong bán kính 2 km quanh điểm quan trắc hạ lưu cầu Chợ Dinh và đang lấy mẫu nước thải tại từng cơ sở.\n\n2. Về kết quả phân tích\nKết quả phân tích mẫu dự kiến có sau 2 ngày làm việc. Sở sẽ công bố ngay khi có kết quả chính thức.\n\n3. Về xử phạt\nĐến thời điểm hiện tại chưa xử phạt cơ sở nào do chưa đủ căn cứ xác định nguồn thải gây vượt ngưỡng amoni.\n\n4. Về giám sát tiếp theo\nSở tăng tần suất quan trắc tại điểm này từ hằng tháng lên hằng tuần cho đến khi chỉ tiêu amoni trở lại ngưỡng cho phép.",
+      "items": [
+        { "label": "Nguồn tham chiếu", "detail": "TC-2026/0147 — Kết quả quan trắc chất lượng nước sông Hương", "confidence": 0.89 },
+        { "label": "Cần bổ sung", "detail": "Chèn số liệu amoni cụ thể sau khi có kết quả phân tích", "tone": "warning" }
+      ]
+    },
+    "q-06": {
+      "confidence": 0.79,
+      "headline": "Bản nháp trả lời do AI đề xuất",
+      "body": "Sở Xây dựng trả lời như sau:\n\n1. Nhóm hồ sơ chưa nộp trực tuyến được\nChủ yếu là hồ sơ có thành phần bản vẽ khổ lớn vượt dung lượng tải lên và hồ sơ của người dân chưa có tài khoản định danh điện tử mức 2.\n\n2. Nguyên nhân\n- Giới hạn dung lượng tệp đính kèm trên cổng dịch vụ công.\n- Một bộ phận người dân, nhất là ở khu vực nông thôn, chưa quen thao tác trực tuyến.\n\n3. Kế hoạch khắc phục 6 tháng tới\n- Nâng giới hạn dung lượng tệp đính kèm và bổ sung công cụ nén bản vẽ.\n- Duy trì bộ phận hỗ trợ nộp hồ sơ trực tuyến tại trung tâm phục vụ hành chính công.\n- Đặt mục tiêu nâng tỷ lệ hồ sơ trực tuyến lên 90%.",
+      "items": [
+        { "label": "Nguồn tham chiếu", "detail": "TC-2026/0151 (bản nháp) — Cấp phép xây dựng trực tuyến mức độ 4", "confidence": 0.84 },
+        { "label": "Cần bổ sung", "detail": "Xác nhận lại mục tiêu 90% với lãnh đạo trước khi trình duyệt", "tone": "warning" }
+      ]
+    },
+    "q-26": {
+      "confidence": 0.86,
+      "headline": "Bản nháp trả lời do AI đề xuất",
+      "body": "Sở Nông nghiệp và Môi trường trả lời như sau:\n\n1. Về thông tin lan truyền\nThông tin nước sinh hoạt bị nhiễm khuẩn nặng đang lan truyền trên mạng xã hội là không chính xác. Hình ảnh trong bài đăng có mức lan tỏa lớn nhất đã được xác định xuất hiện trên mạng từ 3 năm trước và không chụp tại thành phố Huế.\n\n2. Về kết quả xét nghiệm\nSở đã lấy 12 mẫu nước tại các điểm được phản ánh. Kết quả xét nghiệm 14 chỉ tiêu theo QCVN 01-1:2018/BYT của mẫu gần nhất đều đạt quy chuẩn.\n\n3. Về hiện tượng nước có mùi\nHiện tượng nước có mùi clo nhẹ vào giờ cao điểm buổi sáng là do đơn vị cấp nước tăng liều lượng khử trùng trong mùa mưa, nằm trong ngưỡng cho phép và không ảnh hưởng sức khỏe.\n\n4. Đề nghị\nĐề nghị người dân tiếp nhận thông tin từ nguồn chính thống. Sở công bố kết quả quan trắc định kỳ trên cổng thông tin của Sở.",
+      "items": [
+        { "label": "Nguồn tham chiếu", "detail": "Cảnh báo CB-2026/007 và nhiệm vụ ứng phó đang triển khai", "confidence": 0.92 },
+        { "label": "Cảnh báo", "detail": "Chỉ phát hành sau khi có kết quả xét nghiệm 12 mẫu chiều nay", "tone": "critical" }
+      ]
+    }
+  },
+
+  "check_sensitive": {
+    "_default": {
+      "confidence": 0.93,
+      "headline": "Không phát hiện rủi ro nội dung",
+      "body": "Bản trả lời không chứa thông tin định danh cá nhân, không nêu số liệu chưa được công bố và không mâu thuẫn với các phát ngôn trước đó.",
+      "items": [{ "label": "Mức rủi ro", "detail": "Thấp", "tone": "good" }]
+    },
+    "ans-05": {
+      "confidence": 0.87,
+      "headline": "Phát hiện 1 điểm cần đối chiếu",
+      "body": "Bản trả lời nêu chỉ số BI của 3 địa bàn. Số liệu này khác với bản đã công bố tại thông cáo TC-2026/0118 phát hành 8 ngày trước.",
+      "items": [
+        { "label": "Mâu thuẫn phát ngôn", "detail": "Chỉ số BI phường Hương Thủy: bản trả lời ghi 28, thông cáo TC-2026/0118 ghi 31", "tone": "warning" },
+        { "label": "Thông tin nhạy cảm", "detail": "Không phát hiện", "tone": "good" },
+        { "label": "Mức rủi ro tổng thể", "detail": "Trung bình", "tone": "warning" }
+      ]
+    }
+  },
+
+  "tag_asset": {
+    "_default": {
+      "confidence": 0.82,
+      "headline": "Nhãn do AI đề xuất",
+      "items": [
+        { "label": "Họp báo", "detail": "Loại: Sự kiện", "confidence": 0.82 },
+        { "label": "Lãnh đạo thành phố", "detail": "Loại: Nhân vật", "confidence": 0.71 }
+      ]
+    },
+    "a-11": {
+      "confidence": 0.92,
+      "headline": "Nhãn do AI đề xuất",
+      "body": "Nhận diện được sân khấu ngoài trời, cờ hội và đám đông khán giả. Không nhận diện được nhân vật cụ thể trong ảnh.",
+      "items": [
+        { "label": "Lễ hội", "detail": "Loại: Sự kiện", "confidence": 0.92 },
+        { "label": "Di sản cố đô", "detail": "Loại: Lĩnh vực", "confidence": 0.71 },
+        { "label": "Lãnh đạo thành phố", "detail": "Loại: Nhân vật — độ tin cậy thấp, cần người duyệt", "confidence": 0.48, "tone": "warning" }
+      ]
+    },
+    "a-25": {
+      "confidence": 0.93,
+      "headline": "Nhãn do AI đề xuất",
+      "items": [
+        { "label": "Cầu đường", "detail": "Loại: Lĩnh vực", "confidence": 0.93 },
+        { "label": "Khánh thành công trình", "detail": "Loại: Sự kiện", "confidence": 0.68, "tone": "warning" }
+      ]
+    }
+  },
+
+  "extract_text": {
+    "_default": {
+      "confidence": 0.9,
+      "headline": "Đã trích xuất văn bản",
+      "body": "Toàn bộ văn bản trong tài nguyên đã được nhận dạng và đưa vào chỉ mục tìm kiếm.",
+      "items": [{ "label": "Phương pháp", "detail": "OCR tiếng Việt có dấu" }]
+    },
+    "a-04": {
+      "confidence": 0.74,
+      "headline": "Trích xuất văn bản từ ảnh (OCR)",
+      "body": "CÔNG TRÌNH: NÂNG CẤP TUYẾN ĐƯỜNG VEN BIỂN\nGÓI THẦU SỐ 03 — ĐOẠN KM7+200 ĐẾN KM9+500\nCHỦ ĐẦU TƯ: BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG KHU VỰC\nTHỜI GIAN THI CÔNG: 540 NGÀY",
+      "items": [
+        { "label": "Phương pháp", "detail": "OCR tiếng Việt có dấu" },
+        { "label": "Vùng không đọc được", "detail": "Góc dưới bên phải bị lóa sáng", "tone": "warning" }
+      ]
+    },
+    "a-20": {
+      "confidence": 0.61,
+      "headline": "Trích xuất văn bản từ ảnh (OCR)",
+      "body": "ĐIỂM QUAN TRẮC NƯỚC MẶT — HẠ LƯU CẦU CHỢ DINH\nSỞ NÔNG NGHIỆP VÀ MÔI TRƯỜNG",
+      "items": [
+        { "label": "Phương pháp", "detail": "OCR tiếng Việt có dấu" },
+        { "label": "Chất lượng nhận dạng", "detail": "Trung bình — ảnh chụp nghiêng, chữ trên biển bị mờ", "tone": "warning" }
+      ]
+    },
+    "a-16": {
+      "confidence": 0.95,
+      "headline": "Trích xuất nội dung bảng tính",
+      "body": "Phổ điểm 3 môn thi tuyển sinh lớp 10: Toán, Ngữ văn, Tiếng Anh. 24 trường trung học phổ thông công lập, 14.286 thí sinh.",
+      "items": [{ "label": "Phương pháp", "detail": "Đọc trực tiếp nội dung bảng tính" }]
+    },
+    "a-28": {
+      "confidence": 0.55,
+      "headline": "Không tìm thấy văn bản trong ảnh",
+      "body": "Ảnh chụp trạm bơm, không có biển hiệu hoặc chữ đủ rõ để nhận dạng.",
+      "items": [{ "label": "Đề xuất", "detail": "Nhập mô tả thủ công để tài nguyên có thể tìm kiếm được", "tone": "warning" }]
+    }
+  },
+
+  "semantic_search": {
+    "_default": {
+      "confidence": 0.8,
+      "headline": "Tìm kiếm bằng ngôn ngữ tự nhiên",
+      "body": "Hệ thống hiểu câu hỏi theo ngữ nghĩa, không chỉ khớp từ khóa. Kết quả bên dưới đã được xếp theo mức độ liên quan.",
+      "items": [
+        { "label": "Đã mở rộng truy vấn", "detail": "Bổ sung các từ đồng nghĩa và cụm liên quan" }
+      ]
+    }
+  },
+
+  "sentiment": {
+    "_default": {
+      "confidence": 0.89,
+      "headline": "Phân tích sắc thái tin bài",
+      "body": "Sắc thái được chấm trên thang từ −1 (rất tiêu cực) đến +1 (rất tích cực), dựa trên tiêu đề, đoạn trích và bình luận thu thập được.",
+      "items": [
+        { "label": "Chủ đề tiêu cực nhất 7 ngày", "detail": "Môi trường — chất lượng nước sinh hoạt", "tone": "critical" },
+        { "label": "Chủ đề tích cực nhất 7 ngày", "detail": "Văn hóa, di sản — Festival Huế 2026", "tone": "good" },
+        { "label": "Độ chính xác trên tập kiểm thử", "detail": "89% với văn bản tiếng Việt có dấu" }
+      ]
+    }
+  },
+
+  "trend": {
+    "_default": {
+      "confidence": 0.84,
+      "headline": "Phân tích xu hướng và mức độ lan tỏa",
+      "body": "Trong 7 ngày gần nhất, tổng lượt tương tác tăng 68% so với tuần liền trước, chủ yếu do hai chủ đề: Festival Huế 2026 (tích cực) và chất lượng nước sinh hoạt (tiêu cực).",
+      "items": [
+        { "label": "Chủ đề tăng nhanh nhất", "detail": "Chất lượng nước sinh hoạt — tăng 19 lần trong 24 giờ", "tone": "critical" },
+        { "label": "Kênh lan tỏa mạnh nhất", "detail": "Mạng xã hội, chiếm 62% tổng lượt tương tác" },
+        { "label": "Dự báo 48 giờ tới", "detail": "Lan tỏa tiếp tục tăng nếu chưa có phát ngôn chính thức", "tone": "warning" }
+      ]
+    }
+  },
+
+  "fake_news": {
+    "_default": {
+      "confidence": 0.86,
+      "headline": "Phân tích dấu hiệu tin giả",
+      "body": "Đối chiếu nội dung với kho thông cáo chính thống, kiểm tra nguồn gốc hình ảnh và mẫu hành vi lan truyền.",
+      "items": [
+        { "label": "Kết luận", "detail": "Chưa đủ căn cứ khẳng định tin giả", "tone": "warning" }
+      ]
+    },
+    "cb-01": {
+      "confidence": 0.94,
+      "headline": "Phát hiện dấu hiệu tin giả rõ rệt",
+      "body": "Bài đăng có mức lan tỏa lớn nhất sử dụng hình ảnh đã xuất hiện trên mạng từ 3 năm trước tại địa phương khác. Mẫu lan truyền cho thấy 68% lượt chia sẻ đến từ các tài khoản mới tạo dưới 30 ngày.",
+      "items": [
+        { "label": "Đối chiếu hình ảnh", "detail": "Ảnh gốc đăng lần đầu cách đây 3 năm, không chụp tại thành phố Huế", "confidence": 0.96, "tone": "critical" },
+        { "label": "Mẫu hành vi lan truyền", "detail": "68% lượt chia sẻ từ tài khoản tạo dưới 30 ngày", "confidence": 0.88, "tone": "critical" },
+        { "label": "Đối chiếu thông cáo chính thống", "detail": "Không có thông cáo nào của cơ quan chức năng nêu nước nhiễm khuẩn", "confidence": 0.99 },
+        { "label": "Khuyến nghị", "detail": "Phát hành thông cáo đính chính trong 24 giờ và chuyển hồ sơ cho cơ quan chức năng", "tone": "warning" }
+      ]
+    },
+    "cb-05": {
+      "confidence": 0.9,
+      "headline": "Chú thích không khớp nội dung video",
+      "body": "Video ghi lại sự cố mất điện tại sân khấu chính. Chú thích kèm theo cho rằng sân khấu bị cháy — không có khung hình nào trong video cho thấy dấu hiệu cháy.",
+      "items": [
+        { "label": "Phân tích khung hình", "detail": "Không phát hiện lửa, khói hoặc lực lượng chữa cháy trong 62 giây video", "confidence": 0.93, "tone": "critical" },
+        { "label": "Khuyến nghị", "detail": "Công bố video đầy đủ kèm giải thích nguyên nhân sự cố", "tone": "warning" }
+      ]
+    }
+  },
+
+  "forecast": {
+    "_default": {
+      "confidence": 0.72,
+      "headline": "Dự báo rủi ro dư luận 7 ngày tới",
+      "body": "Dự báo dựa trên chuỗi số liệu 30 ngày, có tính tới lịch sự kiện đã công bố và các câu hỏi báo chí đang chờ trả lời.",
+      "items": [
+        { "label": "Lĩnh vực rủi ro cao nhất", "detail": "Môi trường — chất lượng nước sinh hoạt và ngập úng đô thị", "tone": "critical" },
+        { "label": "Yếu tố làm tăng rủi ro", "detail": "2 câu hỏi ưu tiên Khẩn chưa có phản hồi chính thức", "tone": "warning" },
+        { "label": "Yếu tố làm giảm rủi ro", "detail": "Festival Huế 2026 đang tạo dòng tin tích cực chiếm ưu thế", "tone": "good" },
+        { "label": "Lưu ý", "detail": "Đây là gợi ý của AI, cần đối chiếu trước khi đưa vào báo cáo chính thức" }
+      ]
+    }
+  }
+}
