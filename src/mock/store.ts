@@ -135,7 +135,7 @@ interface Store {
   checkInByCode: (eventId: ID, qrCode: string, device: string) => CheckinOutcome
   sendPostEventPackage: (eventId: ID) => void
   createInterviewRequest: (input: { eventId: ID | null; subject: string; content: string; proposedIntervieweeId: ID | null; slotStart: string | null; slotEnd: string | null }) => void
-  handleInterviewRequest: (requestId: ID, status: InterviewRequestStatus, note: string) => void
+  handleInterviewRequest: (requestId: ID, status: InterviewRequestStatus, note: string, assigneeId: ID | null) => void
 
   /* Thông báo */
   markNotificationRead: (notificationId: ID) => void
@@ -1186,13 +1186,14 @@ export const useStore = create<Store>((set, get) => {
       touch()
     },
 
-    handleInterviewRequest: (requestId, status, note) => {
+    handleInterviewRequest: (requestId, status, note, assigneeId) => {
       const { db } = get()
       const request = db.interview_requests.find((item) => item.id === requestId)
       if (!request) return
       request.status = status
       request.handled_by_id = actor()
       request.note = note
+      request.proposed_interviewee_id = assigneeId
       audit({ action: 'Xử lý yêu cầu phỏng vấn', reason: note })
       notify({
         recipientId: journalistUserId(request.journalist_profile_id),

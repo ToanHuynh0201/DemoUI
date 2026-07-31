@@ -31,6 +31,9 @@ export function InterviewRequests() {
   const [slot, setSlot] = useState('')
   const [status, setStatus] = useState<InterviewRequestStatus>('ASSIGNED')
   const [note, setNote] = useState('')
+  const [assignee, setAssignee] = useState('')
+
+  const responderOptions = db.users.filter((item) => item.role === 'APPROVER' || item.role === 'LEADER')
 
   const requests = canHandle
     ? db.interview_requests
@@ -104,21 +107,22 @@ export function InterviewRequests() {
                 </div>
                 <div className="flex shrink-0 items-center gap-2">
                   <StatusBadge meta={interviewRequestStatus[request.status]} />
-                  {canHandle && request.status === 'NEW' && (
+                  {canHandle && request.status !== 'REJECTED' && request.status !== 'COMPLETED' && (
                     <ActionDialog
                       trigger={
                         <Button size="sm" variant="outline">
-                          Xử lý
+                          {request.status === 'NEW' ? 'Xử lý' : 'Cập nhật'}
                         </Button>
                       }
                       title="Xử lý yêu cầu phỏng vấn"
                       confirmLabel="Cập nhật"
                       onOpen={() => {
-                        setStatus('ASSIGNED')
-                        setNote('')
+                        setStatus(request.status === 'NEW' ? 'ASSIGNED' : request.status)
+                        setNote(request.note ?? '')
+                        setAssignee(request.proposed_interviewee_id ?? '')
                       }}
                       onConfirm={() => {
-                        store.handleInterviewRequest(request.id, status, note)
+                        store.handleInterviewRequest(request.id, status, note, assignee || null)
                         toast.success('Đã cập nhật yêu cầu phỏng vấn.')
                       }}
                     >
@@ -130,7 +134,22 @@ export function InterviewRequests() {
                           <SelectContent>
                             <SelectItem value="ASSIGNED">Phân công người trả lời</SelectItem>
                             <SelectItem value="CONFIRMED">Xác nhận lịch phỏng vấn</SelectItem>
+                            <SelectItem value="COMPLETED">Đã phỏng vấn</SelectItem>
                             <SelectItem value="REJECTED">Từ chối</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </Field>
+                      <Field label="Người trả lời phỏng vấn">
+                        <Select value={assignee} onValueChange={setAssignee}>
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Chọn người trả lời" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {responderOptions.map((item) => (
+                              <SelectItem key={item.id} value={item.id}>
+                                {item.full_name}
+                              </SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                       </Field>

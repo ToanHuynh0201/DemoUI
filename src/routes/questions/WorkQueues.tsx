@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { DocCode, PageHeader } from '@/components/common/PageHeader'
 import { EmptyState } from '@/components/common/EmptyState'
 import { StatusBadge, ToneText } from '@/components/common/StatusBadge'
@@ -11,6 +12,17 @@ import { deadlineInfo, formatDateTime, formatRelative } from '@/lib/format'
 import { useCurrentUser, useDb } from '@/mock/store'
 import { isOverdue, journalistAgency, journalistName, orgName, topicName } from '@/mock/selectors'
 import type { Question } from '@/mock/types'
+
+function TabLabel({ children, count }: { children: React.ReactNode; count: number }) {
+  return (
+    <>
+      {children}
+      <span className="bg-muted text-muted-foreground rounded px-1.5 text-xs font-medium tabular">
+        {count}
+      </span>
+    </>
+  )
+}
 
 /** Thẻ tóm tắt một câu hỏi trong hàng đợi công việc. */
 function QueueCard({ question, actionLabel }: { question: Question; actionLabel: string }) {
@@ -103,25 +115,39 @@ export function CoordinatorQueue() {
         description="Tiếp nhận câu hỏi mới và chuyển tới đúng cơ quan phát ngôn. Câu hỏi ưu tiên Khẩn phải chuyển trong ngày."
       />
       <Section
-        title="Chờ điều phối"
-        description="Câu hỏi phóng viên vừa gửi, chưa xác định đơn vị xử lý."
-        questions={incoming}
-        actionLabel="Điều phối"
-        emptyText="Không còn câu hỏi nào chờ điều phối"
-      />
-      <Section
-        title="Đã chuyển, chờ đơn vị phân công"
-        questions={routed}
-        actionLabel="Xem"
-        emptyText="Các đơn vị đã phân công hết"
-      />
-      <Section
         title="Đang quá hạn"
         description="Cần đôn đốc đơn vị xử lý hoặc xem xét định tuyến lại."
         questions={overdue}
         actionLabel="Xem"
         emptyText="Không có câu hỏi quá hạn"
       />
+      <Tabs defaultValue="incoming">
+        <TabsList variant="line">
+          <TabsTrigger value="incoming">
+            <TabLabel count={incoming.length}>Chờ điều phối</TabLabel>
+          </TabsTrigger>
+          <TabsTrigger value="routed">
+            <TabLabel count={routed.length}>Đã chuyển, chờ đơn vị phân công</TabLabel>
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="incoming">
+          <Section
+            title="Chờ điều phối"
+            description="Câu hỏi phóng viên vừa gửi, chưa xác định đơn vị xử lý."
+            questions={incoming}
+            actionLabel="Điều phối"
+            emptyText="Không còn câu hỏi nào chờ điều phối"
+          />
+        </TabsContent>
+        <TabsContent value="routed">
+          <Section
+            title="Đã chuyển, chờ đơn vị phân công"
+            questions={routed}
+            actionLabel="Xem"
+            emptyText="Các đơn vị đã phân công hết"
+          />
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }
@@ -165,27 +191,44 @@ export function MyTasks() {
           emptyText="Không có việc quá hạn"
         />
       )}
-      <Section
-        title="Đang xử lý"
-        description="Soạn nội dung trả lời, yêu cầu làm rõ hoặc xin gia hạn nếu cần."
-        questions={todo}
-        actionLabel="Soạn trả lời"
-        emptyText="Bạn không có câu hỏi nào đang chờ xử lý"
-      />
-      <Section
-        title="Đang chờ bên khác"
-        description="Chờ phóng viên làm rõ hoặc chờ lãnh đạo duyệt bản trả lời."
-        questions={waiting}
-        actionLabel="Xem"
-        emptyText="Không có việc nào đang chờ"
-      />
 
-      {drafts.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Bản thảo thông tin nguồn</CardTitle>
-          </CardHeader>
-          <CardContent>
+      <Tabs defaultValue="todo">
+        <TabsList variant="line">
+          <TabsTrigger value="todo">
+            <TabLabel count={todo.length}>Đang xử lý</TabLabel>
+          </TabsTrigger>
+          <TabsTrigger value="waiting">
+            <TabLabel count={waiting.length}>Đang chờ bên khác</TabLabel>
+          </TabsTrigger>
+          <TabsTrigger value="drafts">
+            <TabLabel count={drafts.length}>Bản thảo thông tin nguồn</TabLabel>
+          </TabsTrigger>
+          <TabsTrigger value="done">
+            <TabLabel count={done.length}>Đã hoàn thành</TabLabel>
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="todo">
+          <Section
+            title="Đang xử lý"
+            description="Soạn nội dung trả lời, yêu cầu làm rõ hoặc xin gia hạn nếu cần."
+            questions={todo}
+            actionLabel="Soạn trả lời"
+            emptyText="Bạn không có câu hỏi nào đang chờ xử lý"
+          />
+        </TabsContent>
+        <TabsContent value="waiting">
+          <Section
+            title="Đang chờ bên khác"
+            description="Chờ phóng viên làm rõ hoặc chờ lãnh đạo duyệt bản trả lời."
+            questions={waiting}
+            actionLabel="Xem"
+            emptyText="Không có việc nào đang chờ"
+          />
+        </TabsContent>
+        <TabsContent value="drafts">
+          {drafts.length === 0 ? (
+            <EmptyState title="Không có bản thảo thông tin nguồn nào đang soạn" />
+          ) : (
             <ul className="space-y-2.5">
               {drafts.map((release) => (
                 <li key={release.id} className="bg-card flex items-center justify-between gap-3 rounded-md border p-3">
@@ -199,11 +242,12 @@ export function MyTasks() {
                 </li>
               ))}
             </ul>
-          </CardContent>
-        </Card>
-      )}
-
-      <Section title="Đã hoàn thành" questions={done} actionLabel="Xem lại" emptyText="Chưa có việc hoàn thành" />
+          )}
+        </TabsContent>
+        <TabsContent value="done">
+          <Section title="Đã hoàn thành" questions={done} actionLabel="Xem lại" emptyText="Chưa có việc hoàn thành" />
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }
@@ -238,27 +282,44 @@ export function ApprovalQueue() {
         description={`Việc cần quyết định của ${orgName(db, user?.org_id)}: phân công, duyệt trả lời, duyệt gia hạn và duyệt thông tin nguồn.`}
       />
 
-      <Section
-        title="Bản trả lời chờ duyệt"
-        description="Kiểm tra nội dung và cảnh báo rủi ro của AI trước khi phát hành."
-        questions={awaitingApproval}
-        actionLabel="Duyệt"
-        emptyText="Không có bản trả lời nào chờ duyệt"
-      />
-      <Section
-        title="Câu hỏi chưa phân công"
-        questions={unassigned}
-        actionLabel="Phân công"
-        emptyText="Đã phân công hết câu hỏi của đơn vị"
-      />
       <Section title="Câu hỏi quá hạn" questions={overdue} actionLabel="Xem" emptyText="Không có câu hỏi quá hạn" />
 
-      {pendingExtensions.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Đề nghị gia hạn chờ quyết định</CardTitle>
-          </CardHeader>
-          <CardContent>
+      <Tabs defaultValue="approval">
+        <TabsList variant="line">
+          <TabsTrigger value="approval">
+            <TabLabel count={awaitingApproval.length}>Bản trả lời chờ duyệt</TabLabel>
+          </TabsTrigger>
+          <TabsTrigger value="unassigned">
+            <TabLabel count={unassigned.length}>Câu hỏi chưa phân công</TabLabel>
+          </TabsTrigger>
+          <TabsTrigger value="extensions">
+            <TabLabel count={pendingExtensions.length}>Đề nghị gia hạn chờ quyết định</TabLabel>
+          </TabsTrigger>
+          <TabsTrigger value="releases">
+            <TabLabel count={pendingReleases.length}>Thông tin nguồn chờ duyệt phát hành</TabLabel>
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="approval">
+          <Section
+            title="Bản trả lời chờ duyệt"
+            description="Kiểm tra nội dung và cảnh báo rủi ro của AI trước khi phát hành."
+            questions={awaitingApproval}
+            actionLabel="Duyệt"
+            emptyText="Không có bản trả lời nào chờ duyệt"
+          />
+        </TabsContent>
+        <TabsContent value="unassigned">
+          <Section
+            title="Câu hỏi chưa phân công"
+            questions={unassigned}
+            actionLabel="Phân công"
+            emptyText="Đã phân công hết câu hỏi của đơn vị"
+          />
+        </TabsContent>
+        <TabsContent value="extensions">
+          {pendingExtensions.length === 0 ? (
+            <EmptyState title="Không có đề nghị gia hạn nào chờ quyết định" />
+          ) : (
             <ul className="space-y-2.5">
               {pendingExtensions.map((request) => {
                 const question = db.questions.find((item) => item.id === request.question_id)
@@ -276,16 +337,12 @@ export function ApprovalQueue() {
                 )
               })}
             </ul>
-          </CardContent>
-        </Card>
-      )}
-
-      {pendingReleases.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Thông tin nguồn chờ duyệt phát hành</CardTitle>
-          </CardHeader>
-          <CardContent>
+          )}
+        </TabsContent>
+        <TabsContent value="releases">
+          {pendingReleases.length === 0 ? (
+            <EmptyState title="Không có thông tin nguồn nào chờ duyệt phát hành" />
+          ) : (
             <ul className="space-y-2.5">
               {pendingReleases.map((release) => (
                 <li key={release.id} className="bg-card flex items-center justify-between gap-3 rounded-md border p-3">
@@ -299,9 +356,9 @@ export function ApprovalQueue() {
                 </li>
               ))}
             </ul>
-          </CardContent>
-        </Card>
-      )}
+          )}
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }

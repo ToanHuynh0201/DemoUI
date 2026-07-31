@@ -56,6 +56,15 @@ export type NotificationType =
   | 'BADGE_ISSUED'
   | 'POST_EVENT_PACKAGE'
   | 'INTERVIEW_ASSIGNED'
+  | 'CRISIS_ALERT'
+  | 'CRISIS_TASK_ASSIGNED'
+  | 'PROFILE_EXPIRING'
+  | 'PROFILE_EXPIRED'
+  | 'STAFF_OVERLOADED'
+  | 'INTEGRATION_FAILURE'
+  | 'SENSITIVE_CONTENT'
+  | 'STATEMENT_CONTRADICTION'
+  | 'COMPLIANCE_VIOLATION'
 
 /* ─────────────────────────── Enum — nhóm nghiệp vụ ───────────────────────── */
 

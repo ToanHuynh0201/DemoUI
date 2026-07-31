@@ -308,6 +308,15 @@ export const notificationType: Dict<NotificationType> = {
   BADGE_ISSUED: g('Đã cấp thẻ tác nghiệp'),
   POST_EVENT_PACKAGE: i('Tài liệu sau sự kiện'),
   INTERVIEW_ASSIGNED: i('Yêu cầu phỏng vấn được phân công'),
+  CRISIS_ALERT: c('Cảnh báo khủng hoảng'),
+  CRISIS_TASK_ASSIGNED: c('Được phân công xử lý khủng hoảng'),
+  PROFILE_EXPIRING: w('Hồ sơ sắp hết hạn'),
+  PROFILE_EXPIRED: c('Hồ sơ đã hết hạn'),
+  STAFF_OVERLOADED: w('Nhân sự quá tải'),
+  INTEGRATION_FAILURE: c('Tích hợp gửi thất bại'),
+  SENSITIVE_CONTENT: c('Phát hiện nội dung nhạy cảm'),
+  STATEMENT_CONTRADICTION: w('Phát hiện phát ngôn mâu thuẫn'),
+  COMPLIANCE_VIOLATION: c('Vi phạm tuân thủ'),
 }
 
 /* ───────────────────────────────── Tiện ích ──────────────────────────────── */

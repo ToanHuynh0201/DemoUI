@@ -9,6 +9,7 @@ import { ProcessTimeline } from '@/components/common/ProcessTimeline'
 import { StatusBadge } from '@/components/common/StatusBadge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { accessAction, releaseStatus, scopeType, securityLevel } from '@/lib/enums'
 import { formatBytes, formatDateTime } from '@/lib/format'
@@ -26,10 +27,20 @@ export function ReleaseDetail() {
   const [note, setNote] = useState('')
   const [correctionContent, setCorrectionContent] = useState('')
   const [withdrawReason, setWithdrawReason] = useState('')
+  const [title, setTitle] = useState('')
+  const [summary, setSummary] = useState('')
+  const [content, setContent] = useState('')
 
   useEffect(() => {
     if (release) setCorrectionContent(release.content)
   }, [release?.id, release?.content])
+
+  useEffect(() => {
+    if (!release) return
+    setTitle(release.title)
+    setSummary(release.summary ?? '')
+    setContent(release.content)
+  }, [release?.id, release?.title, release?.summary, release?.content])
 
   useEffect(() => {
     if (!release || !user) return
@@ -57,6 +68,8 @@ export function ReleaseDetail() {
   const canApprove = true
   const canSubmit = true
   const isJournalistReader = user.role === 'JOURNALIST' || user.role === 'MEDIA_ORG'
+
+  const isEditable = release.status === 'DRAFT' || release.status === 'NEEDS_REVISION'
 
   const scopeLabel = () => {
     if (!scope) return 'Toàn bộ báo chí'
@@ -90,12 +103,37 @@ export function ReleaseDetail() {
               <DocCode>{release.release_code}</DocCode>
             </CardHeader>
             <CardContent className="space-y-4">
-              {release.summary && (
-                <p className="bg-muted/40 rounded border p-3 text-sm leading-6 font-medium text-pretty">
-                  {release.summary}
-                </p>
+              {isEditable ? (
+                <>
+                  <Field label="Tiêu đề">
+                    <Input value={title} onChange={(event) => setTitle(event.target.value)} />
+                  </Field>
+                  <Field label="Tóm tắt">
+                    <Textarea value={summary} onChange={(event) => setSummary(event.target.value)} rows={2} />
+                  </Field>
+                  <Field label="Nội dung">
+                    <Textarea value={content} onChange={(event) => setContent(event.target.value)} rows={10} />
+                  </Field>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      store.updateRelease(release.id, { title, summary, content })
+                      toast.success('Đã lưu nháp.')
+                    }}
+                  >
+                    Lưu nháp
+                  </Button>
+                </>
+              ) : (
+                <>
+                  {release.summary && (
+                    <p className="bg-muted/40 rounded border p-3 text-sm leading-6 font-medium text-pretty">
+                      {release.summary}
+                    </p>
+                  )}
+                  <p className="text-sm leading-7 whitespace-pre-line text-pretty">{release.content}</p>
+                </>
               )}
-              <p className="text-sm leading-7 whitespace-pre-line text-pretty">{release.content}</p>
 
               {attachments.length > 0 && (
                 <div className="space-y-2 border-t pt-3">

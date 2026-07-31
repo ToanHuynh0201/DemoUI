@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { PageHeader } from '@/components/common/PageHeader'
 import { StatusBadge } from '@/components/common/StatusBadge'
 import { EmptyState } from '@/components/common/EmptyState'
-import { deliveryChannel, notificationType, severity as severityLabels } from '@/lib/enums'
+import { deliveryChannel, meta, notificationType, severity as severityLabels } from '@/lib/enums'
 import { formatDateTime, formatRelative } from '@/lib/format'
 import { useCurrentUser, useDb, useStore } from '@/mock/store'
 import type { EntityType, ID } from '@/mock/types'
@@ -91,9 +91,9 @@ export function Notifications() {
                   <span className="min-w-0 flex-1 space-y-1">
                     <span className="flex flex-wrap items-center gap-2">
                       <span className="text-sm font-medium">{item.title}</span>
-                      <StatusBadge meta={notificationType[item.notification_type]} dot={false} />
+                      <StatusBadge meta={meta(notificationType, item.notification_type)} dot={false} />
                       {item.severity && item.severity !== 'LOW' && (
-                        <StatusBadge meta={severityLabels[item.severity]} />
+                        <StatusBadge meta={meta(severityLabels, item.severity)} />
                       )}
                     </span>
                     <span className="text-muted-foreground block text-sm text-pretty">{item.body}</span>
