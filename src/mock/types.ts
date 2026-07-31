@@ -172,6 +172,7 @@ export type ReportFormat = 'PDF' | 'EXCEL'
 
 /** Khớp RBAC_Matrix.md §1 */
 export type RoleCode =
+  | 'SUPERADMIN'
   | 'ADMIN'
   | 'COORDINATOR'
   | 'APPROVER'

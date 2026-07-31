@@ -222,6 +222,7 @@ export function attachmentsOf(db: Database, targetType: string, targetId: ID) {
 }
 
 const ROLE_ID_BY_CODE: Record<RoleCode, string> = {
+  SUPERADMIN: 'role-superadmin',
   ADMIN: 'role-admin',
   COORDINATOR: 'role-coordinator',
   APPROVER: 'role-approver',

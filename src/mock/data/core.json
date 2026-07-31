@@ -59,6 +59,7 @@
   ],
 
   "roles": [
+    { "id": "role-superadmin", "role_code": "SUPERADMIN", "role_name": "Quản trị tối cao", "description": "Toàn quyền trên mọi module của hệ thống, không giới hạn theo phân tách trách nhiệm.", "is_system_role": true },
     { "id": "role-admin", "role_code": "ADMIN", "role_name": "Quản trị viên Sở VHTTDL", "description": "Quản trị tài khoản, phân quyền, cấu hình hệ thống, tổng hợp báo cáo toàn hệ thống.", "is_system_role": true },
     { "id": "role-coordinator", "role_code": "COORDINATOR", "role_name": "Điều phối viên", "description": "Tiếp nhận và chuyển tiếp câu hỏi báo chí đến đúng cơ quan phát ngôn.", "is_system_role": true },
     { "id": "role-approver", "role_code": "APPROVER", "role_name": "Lãnh đạo cơ quan phát ngôn", "description": "Phân công xử lý, phê duyệt thông cáo và câu trả lời trước khi phát hành.", "is_system_role": true },
@@ -94,6 +95,8 @@
   ],
 
   "users": [
+    { "id": "u-superadmin", "org_id": "org-vhttdl", "username": "sysadmin", "email": "sysadmin@hue.gov.vn", "phone": "0905 000 001", "full_name": "Quản trị hệ thống", "job_title": "Quản trị tối cao", "status": "ACTIVE", "mfa_required": true, "last_login_at": "@0T07:00", "role": "SUPERADMIN", "created_at": "@-410" },
+
     { "id": "u-admin", "org_id": "org-vhttdl", "username": "hoaian.nt", "email": "hoaian.nt@hue.gov.vn", "phone": "0905 111 001", "full_name": "Nguyễn Thị Hoài An", "job_title": "Trưởng phòng Báo chí - Xuất bản", "status": "ACTIVE", "mfa_required": true, "last_login_at": "@0T07:45", "role": "ADMIN", "created_at": "@-410" },
     { "id": "u-admin2", "org_id": "org-vhttdl", "username": "hieu.lq", "email": "hieu.lq@hue.gov.vn", "phone": "0905 111 002", "full_name": "Lê Quang Hiếu", "job_title": "Chuyên viên quản trị hệ thống", "status": "ACTIVE", "mfa_required": true, "last_login_at": "@-1T16:20", "role": "ADMIN", "created_at": "@-410" },
 
@@ -155,6 +158,7 @@
     { "id": "ur-17", "user_id": "u-leader", "role_id": "role-leader", "scope_org_id": null, "effective_from": "@-400", "effective_to": null, "granted_by_id": "u-admin", "revocation_reason": null },
     { "id": "ur-18", "user_id": "u-otherdept", "role_id": "role-otherdept", "scope_org_id": "org-catp", "effective_from": "@-380", "effective_to": null, "granted_by_id": "u-admin", "revocation_reason": null },
     { "id": "ur-19", "user_id": "u-gate", "role_id": "role-gatestaff", "scope_org_id": "org-vhttdl", "effective_from": "@-370", "effective_to": null, "granted_by_id": "u-admin", "revocation_reason": null },
-    { "id": "ur-20", "user_id": "u-jn-14", "role_id": "role-journalist", "scope_org_id": "org-vnexpress", "effective_from": "@-320", "effective_to": "@-60", "granted_by_id": "u-admin", "revocation_reason": "Thẻ nhà báo hết hiệu lực, hệ thống tự động thu hồi quyền theo quy định." }
+    { "id": "ur-20", "user_id": "u-jn-14", "role_id": "role-journalist", "scope_org_id": "org-vnexpress", "effective_from": "@-320", "effective_to": "@-60", "granted_by_id": "u-admin", "revocation_reason": "Thẻ nhà báo hết hiệu lực, hệ thống tự động thu hồi quyền theo quy định." },
+    { "id": "ur-21", "user_id": "u-superadmin", "role_id": "role-superadmin", "scope_org_id": null, "effective_from": "@-410", "effective_to": null, "granted_by_id": null, "revocation_reason": null }
   ]
 }

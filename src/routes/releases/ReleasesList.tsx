@@ -37,7 +37,7 @@ export function ReleasesList() {
 
   const scoped = useMemo(() => {
     if (!user) return []
-    if (user.role === 'ADMIN') return db.press_releases
+    if (user.role === 'ADMIN' || user.role === 'SUPERADMIN') return db.press_releases
     return db.press_releases.filter((release) => release.publishing_org_id === user.org_id)
   }, [db, user])
 

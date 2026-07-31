@@ -42,7 +42,7 @@ export function QuestionsList() {
     if (!user) return []
     const all = db.questions
     // Quản trị viên Sở và điều phối viên nhìn toàn hệ thống; đơn vị khác chỉ thấy việc của mình
-    if (user.role === 'ADMIN' || user.role === 'COORDINATOR') return all
+    if (user.role === 'ADMIN' || user.role === 'SUPERADMIN' || user.role === 'COORDINATOR') return all
     return all.filter((question) => question.handling_org_id === user.org_id)
   }, [db, user])
 
@@ -148,7 +148,7 @@ export function QuestionsList() {
         module="E3·E4"
         title="Câu hỏi báo chí"
         description={
-          user?.role === 'ADMIN' || user?.role === 'COORDINATOR'
+          user?.role === 'ADMIN' || user?.role === 'SUPERADMIN' || user?.role === 'COORDINATOR'
             ? 'Toàn bộ câu hỏi báo chí trên hệ thống, kèm đơn vị xử lý và hạn trả lời.'
             : `Câu hỏi báo chí đã chuyển tới ${orgName(db, user?.org_id)}.`
         }

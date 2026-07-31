@@ -145,6 +145,7 @@ export function navFor(role: RoleCode): NavSection[] {
 
 /** Trang mặc định sau khi đăng nhập, khác nhau theo vai trò. */
 export const HOME_BY_ROLE: Record<RoleCode, string> = {
+  SUPERADMIN: '/dashboard',
   ADMIN: '/dashboard',
   COORDINATOR: '/dieu-phoi',
   APPROVER: '/duyet-tra-loi',

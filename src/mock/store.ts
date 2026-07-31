@@ -279,7 +279,7 @@ export const useStore = create<Store>((set, get) => {
   return {
     db: createSeedDatabase(),
     revision: 0,
-    currentUserId: null,
+    currentUserId: 'u-superadmin',
 
     login: (userId) => {
       set({ currentUserId: userId })
@@ -319,7 +319,7 @@ export const useStore = create<Store>((set, get) => {
       if (profile && profile.status === 'DRAFT') profile.status = 'PENDING_APPROVAL'
       audit({ action: 'Gửi yêu cầu về hồ sơ phóng viên', targetType: 'JOURNALIST_PROFILE', targetId: profileId })
       db.users
-        .filter((user) => user.role === 'ADMIN')
+        .filter((user) => user.role === 'ADMIN' || user.role === 'SUPERADMIN')
         .forEach((admin) =>
           notify({
             recipientId: admin.id,
@@ -1382,7 +1382,7 @@ export const useStore = create<Store>((set, get) => {
       })
       audit({ action: 'Gửi yêu cầu phỏng vấn' })
       db.users
-        .filter((item) => item.role === 'ADMIN')
+        .filter((item) => item.role === 'ADMIN' || item.role === 'SUPERADMIN')
         .forEach((admin) =>
           notify({
             recipientId: admin.id,

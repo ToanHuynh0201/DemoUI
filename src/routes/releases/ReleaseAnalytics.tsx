@@ -14,7 +14,12 @@ export function ReleaseAnalytics() {
   const scoped = useMemo(() => {
     const releaseIds = new Set(
       db.press_releases
-        .filter((release) => user?.role === 'ADMIN' || release.publishing_org_id === user?.org_id)
+        .filter(
+          (release) =>
+            user?.role === 'ADMIN' ||
+            user?.role === 'SUPERADMIN' ||
+            release.publishing_org_id === user?.org_id,
+        )
         .map((release) => release.id),
     )
     return db.release_accesses.filter((access) => releaseIds.has(access.release_id))

@@ -91,6 +91,7 @@ export const userStatus: Dict<UserStatus> = {
 }
 
 export const roleCode: Dict<RoleCode> = {
+  SUPERADMIN: c('Quản trị tối cao'),
   ADMIN: i('Quản trị viên Sở'),
   COORDINATOR: i('Điều phối viên'),
   APPROVER: i('Lãnh đạo duyệt'),

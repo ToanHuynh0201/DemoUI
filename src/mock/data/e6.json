@@ -112,7 +112,10 @@
     { "id": "aar-15", "security_level": "CONFIDENTIAL", "role_id": "role-staff", "can_view": false, "can_download": false },
     { "id": "aar-16", "security_level": "CONFIDENTIAL", "role_id": "role-approver", "can_view": true, "can_download": false },
     { "id": "aar-17", "security_level": "CONFIDENTIAL", "role_id": "role-admin", "can_view": true, "can_download": true },
-    { "id": "aar-18", "security_level": "CONFIDENTIAL", "role_id": "role-leader", "can_view": true, "can_download": false }
+    { "id": "aar-18", "security_level": "CONFIDENTIAL", "role_id": "role-leader", "can_view": true, "can_download": false },
+    { "id": "aar-19", "security_level": "PUBLIC", "role_id": "role-superadmin", "can_view": true, "can_download": true },
+    { "id": "aar-20", "security_level": "INTERNAL", "role_id": "role-superadmin", "can_view": true, "can_download": true },
+    { "id": "aar-21", "security_level": "CONFIDENTIAL", "role_id": "role-superadmin", "can_view": true, "can_download": true }
   ],
 
   "asset_access_logs": [

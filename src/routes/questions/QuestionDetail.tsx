@@ -93,7 +93,7 @@ export function QuestionDetail() {
   const orgOptions = db.organizations.filter(
     (org) => org.org_type === 'SPOKESPERSON_AGENCY' || org.org_type === 'GOVERNMENT_DEPARTMENT' || org.org_type === 'DEPT_CULTURE_SPORTS_TOURISM',
   )
-  const staffOptions = db.users.filter((item) => item.org_id === question.handling_org_id && (item.role === 'STAFF' || item.role === 'ADMIN'))
+  const staffOptions = db.users.filter((item) => item.org_id === question.handling_org_id && (item.role === 'STAFF' || item.role === 'ADMIN' || item.role === 'SUPERADMIN'))
   /** Đếm việc đang mở của từng cán bộ, để lãnh đạo thấy ai đang quá tải khi phân công */
   const workload = (userId: string) =>
     db.questions.filter(

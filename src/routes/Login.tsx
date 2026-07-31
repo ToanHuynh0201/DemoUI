@@ -16,7 +16,7 @@ const DEMO_ACCOUNTS: { group: string; note: string; userIds: string[] }[] = [
   {
     group: 'Sở Văn hóa, Thể thao và Du lịch',
     note: 'Đơn vị quản trị và vận hành nền tảng',
-    userIds: ['u-admin', 'u-coord'],
+    userIds: ['u-superadmin', 'u-admin', 'u-coord'],
   },
   {
     group: 'Cơ quan phát ngôn',
@@ -69,7 +69,7 @@ export function Login() {
           <dl className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
             {[
               { value: '10', label: 'phân hệ nghiệp vụ' },
-              { value: '9', label: 'vai trò phân quyền' },
+              { value: '10', label: 'vai trò phân quyền' },
               { value: '3', label: 'luồng nghiệp vụ chính' },
             ].map((item) => (
               <div key={item.label}>

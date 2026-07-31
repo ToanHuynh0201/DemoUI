@@ -14,7 +14,7 @@ export function RolesAdmin() {
       <PageHeader
         module="E0"
         title="Vai trò và quyền"
-        description="9 vai trò hệ thống theo RBAC_Matrix.md. Vai trò hệ thống không thể xóa."
+        description="10 vai trò hệ thống theo RBAC_Matrix.md. Vai trò hệ thống không thể xóa."
       />
 
       <div className="grid gap-4 md:grid-cols-2">
