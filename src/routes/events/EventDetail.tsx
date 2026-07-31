@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { badgeStatus, eventStatus, interviewRequestStatus, invitationStatus } from '@/lib/enums'
 import { formatDateTime } from '@/lib/format'
@@ -23,6 +24,7 @@ export function EventDetail() {
 
   const event = db.events.find((item) => item.id === id)
   const [selectedProfiles, setSelectedProfiles] = useState<string[]>([])
+  const [orgFilter, setOrgFilter] = useState<string>('all')
   const [rescheduleTime, setRescheduleTime] = useState('')
   const [note, setNote] = useState('')
 
@@ -36,6 +38,8 @@ export function EventDetail() {
   const notInvited = db.journalist_profiles.filter(
     (profile) => profile.status === 'APPROVED' && !invitations.some((invite) => invite.journalist_profile_id === profile.id),
   )
+  const notInvitedOrgIds = [...new Set(notInvited.map((profile) => profile.press_agency_id).filter(Boolean))] as string[]
+  const visibleNotInvited = orgFilter === 'all' ? notInvited : notInvited.filter((profile) => profile.press_agency_id === orgFilter)
   const badges = db.press_badges.filter((item) => item.event_id === event.id)
   const checkins = db.event_checkins.filter((item) => item.event_id === event.id)
   const interviews = db.interview_requests.filter((item) => item.event_id === event.id)
@@ -110,7 +114,10 @@ export function EventDetail() {
                     title="Gửi giấy mời điện tử"
                     description={`Chọn phóng viên trong ${notInvited.length} hồ sơ đã duyệt chưa được mời.`}
                     confirmLabel="Gửi giấy mời"
-                    onOpen={() => setSelectedProfiles([])}
+                    onOpen={() => {
+                      setSelectedProfiles([])
+                      setOrgFilter('all')
+                    }}
                     onConfirm={() => {
                       if (selectedProfiles.length === 0) {
                         toast.error('Chọn ít nhất một phóng viên.')
@@ -120,8 +127,35 @@ export function EventDetail() {
                       toast.success(`Đã gửi giấy mời tới ${selectedProfiles.length} phóng viên.`)
                     }}
                   >
+                    <Select value={orgFilter} onValueChange={setOrgFilter}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Lọc theo cơ quan" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Tất cả cơ quan</SelectItem>
+                        {notInvitedOrgIds.map((orgId) => (
+                          <SelectItem key={orgId} value={orgId}>
+                            {orgName(db, orgId)}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <label className="hover:bg-accent flex items-center gap-2 rounded px-2 py-1.5 text-sm font-medium">
+                      <Checkbox
+                        checked={visibleNotInvited.length > 0 && visibleNotInvited.every((profile) => selectedProfiles.includes(profile.id))}
+                        onCheckedChange={(checked) => {
+                          const visibleIds = visibleNotInvited.map((profile) => profile.id)
+                          setSelectedProfiles((previous) =>
+                            checked
+                              ? [...new Set([...previous, ...visibleIds])]
+                              : previous.filter((id) => !visibleIds.includes(id)),
+                          )
+                        }}
+                      />
+                      <span>Chọn tất cả</span>
+                    </label>
                     <div className="max-h-64 space-y-1 overflow-y-auto">
-                      {notInvited.map((profile) => (
+                      {visibleNotInvited.map((profile) => (
                         <label key={profile.id} className="hover:bg-accent flex items-center gap-2 rounded px-2 py-1.5 text-sm">
                           <Checkbox
                             checked={selectedProfiles.includes(profile.id)}

@@ -15,9 +15,10 @@ export function MyInvitations() {
   const user = useCurrentUser()
   const store = useStore()
   const profile = profileOfUser(db, user?.id)
+  const isAdmin = user?.role === 'ADMIN' || user?.role === 'SUPERADMIN'
 
   const invitations = db.invitations
-    .filter((item) => item.journalist_profile_id === profile?.id)
+    .filter((item) => isAdmin || item.journalist_profile_id === profile?.id)
     .map((item) => ({ invitation: item, event: db.events.find((event) => event.id === item.event_id) }))
     .filter((item): item is { invitation: typeof item.invitation; event: NonNullable<typeof item.event> } => Boolean(item.event))
     .sort((left, right) => left.event.start_time.localeCompare(right.event.start_time))

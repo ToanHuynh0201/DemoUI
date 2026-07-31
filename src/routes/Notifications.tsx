@@ -36,8 +36,9 @@ export function Notifications() {
   const markRead = useStore((state) => state.markNotificationRead)
   const markAllRead = useStore((state) => state.markAllNotificationsRead)
 
+  const isAdmin = user?.role === 'ADMIN' || user?.role === 'SUPERADMIN'
   const items = db.notifications
-    .filter((item) => item.recipient_id === user?.id)
+    .filter((item) => isAdmin || item.recipient_id === user?.id)
     .sort((left, right) => right.created_at.localeCompare(left.created_at))
   const unreadCount = items.filter((item) => !item.read_at).length
 

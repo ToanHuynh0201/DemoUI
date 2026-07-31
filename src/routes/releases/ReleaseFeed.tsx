@@ -19,8 +19,10 @@ export function ReleaseFeed() {
     const published = db.press_releases.filter((release) =>
       ['PUBLISHED', 'CORRECTED'].includes(release.status),
     )
+    const isAdmin = user?.role === 'ADMIN' || user?.role === 'SUPERADMIN'
     return published
       .filter((release) => {
+        if (isAdmin) return true
         const scope = db.release_scopes.find((item) => item.release_id === release.id)
         if (!scope || scope.scope_type === 'ALL') return true
         if (scope.scope_type === 'ORGANIZATION') {

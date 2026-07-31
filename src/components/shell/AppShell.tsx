@@ -35,7 +35,10 @@ export function AppShell() {
   if (!user) return null
 
   const sections = NAV
-  const unread = unreadNotifications(db, user.id).length
+  const isAdmin = user.role === 'ADMIN' || user.role === 'SUPERADMIN'
+  const unread = isAdmin
+    ? db.notifications.filter((item) => !item.read_at).length
+    : unreadNotifications(db, user.id).length
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     cn(

@@ -131,9 +131,10 @@ export function MyTasks() {
   const db = useDb()
   const user = useCurrentUser()
 
+  const isAdmin = user?.role === 'ADMIN' || user?.role === 'SUPERADMIN'
   const mine = useMemo(
-    () => db.questions.filter((question) => question.assignee_id === user?.id),
-    [db, user],
+    () => db.questions.filter((question) => isAdmin || question.assignee_id === user?.id),
+    [db, user, isAdmin],
   )
   const todo = mine.filter((question) => ['ASSIGNED', 'IN_PROGRESS'].includes(question.status))
   const waiting = mine.filter((question) =>
@@ -143,7 +144,9 @@ export function MyTasks() {
   const done = mine.filter((question) => question.status === 'ANSWERED')
 
   const drafts = db.press_releases.filter(
-    (release) => release.drafted_by_id === user?.id && ['DRAFT', 'NEEDS_REVISION'].includes(release.status),
+    (release) =>
+      (isAdmin || release.drafted_by_id === user?.id) &&
+      ['DRAFT', 'NEEDS_REVISION'].includes(release.status),
   )
 
   return (
@@ -210,7 +213,8 @@ export function ApprovalQueue() {
   const db = useDb()
   const user = useCurrentUser()
 
-  const inOrg = db.questions.filter((question) => question.handling_org_id === user?.org_id)
+  const isAdmin = user?.role === 'ADMIN' || user?.role === 'SUPERADMIN'
+  const inOrg = db.questions.filter((question) => isAdmin || question.handling_org_id === user?.org_id)
   const awaitingApproval = inOrg.filter((question) => question.status === 'PENDING_APPROVAL')
   const unassigned = inOrg.filter((question) => question.status === 'ROUTED')
   const overdue = inOrg.filter((question) => isOverdue(question))
@@ -218,11 +222,12 @@ export function ApprovalQueue() {
   const pendingExtensions = db.extension_requests.filter((request) => {
     if (request.status !== 'PENDING_APPROVAL') return false
     const question = db.questions.find((item) => item.id === request.question_id)
-    if (!question || question.handling_org_id !== user?.org_id) return false
+    if (!question || (!isAdmin && question.handling_org_id !== user?.org_id)) return false
     return !['ANSWERED', 'CANCELLED', 'REJECTED'].includes(question.status)
   })
   const pendingReleases = db.press_releases.filter(
-    (release) => release.publishing_org_id === user?.org_id && release.status === 'PENDING_APPROVAL',
+    (release) =>
+      (isAdmin || release.publishing_org_id === user?.org_id) && release.status === 'PENDING_APPROVAL',
   )
 
   return (
