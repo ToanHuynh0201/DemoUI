@@ -1,11 +1,8 @@
 /**
- * Kiểu dữ liệu bản demo — ánh xạ 1-1 với DB/DATABASE_REPORT.md (42 bảng, 33 enum).
- *
- * LƯU Ý CHO ĐỘI DB: bốn bảng ở cuối file (monitoring_sources, media_articles,
- * crisis_alerts, crisis_tasks) KHÔNG có trong DB/schema.plantuml. Phân hệ E7
- * (theo dõi & phân tích truyền thông) và E8 (cảnh báo & xử lý khủng hoảng) chưa
- * được mô hình hóa trong schema hiện tại, nên phần này là ĐỀ XUẤT dựng từ use
- * case E7/E8 để bản demo chạy được. Cần rà lại khi bổ sung schema thật.
+ * Kiểu dữ liệu bản demo — chỉ còn 3 luồng nghiệp vụ chính: E2 (thông tin
+ * nguồn), E3+E4 (hỏi & đáp báo chí), E5 (sự kiện & tác nghiệp), cộng hạ tầng
+ * dùng chung (tổ chức, người dùng, thông báo, kho tài nguyên tối thiểu cho
+ * đính kèm).
  */
 
 export type ID = string
@@ -25,19 +22,6 @@ export type DeliveryChannel = 'IN_APP' | 'EMAIL' | 'SMS' | 'ZALO_OA' | 'PUSH'
 export type DeliveryStatus = 'PENDING' | 'SENT' | 'FAILED'
 export type ActionResult = 'SUCCESS' | 'DENIED' | 'ERROR'
 export type SecurityLevel = 'PUBLIC' | 'INTERNAL' | 'CONFIDENTIAL'
-export type ExternalSystemCode =
-  | 'IOC'
-  | 'CONG_DVC'
-  | 'VBDT'
-  | 'ZALO_OA'
-  | 'SMS'
-  | 'EMAIL'
-  | 'PRESS_CMS'
-  | 'DIGITAL_SIGNATURE'
-  | 'MAM_DAM'
-export type IntegrationStatus = 'ACTIVE' | 'ERROR' | 'SUSPENDED'
-export type IntegrationDirection = 'OUTBOUND' | 'INBOUND'
-export type LocalityLevel = 'PROVINCE' | 'DISTRICT' | 'WARD'
 export type EntityType =
   | 'ORGANIZATION'
   | 'USER'
@@ -53,9 +37,6 @@ export type Severity = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
 export type NotificationType =
   | 'PROFILE_APPROVED'
   | 'PROFILE_REJECTED'
-  | 'PROFILE_EXPIRING'
-  | 'PROFILE_EXPIRED'
-  | 'COMPLIANCE_VIOLATION'
   | 'RELEASE_PUBLISHED'
   | 'RELEASE_CORRECTED'
   | 'RELEASE_WITHDRAWN'
@@ -69,19 +50,12 @@ export type NotificationType =
   | 'EXTENSION_APPROVED'
   | 'EXTENSION_REJECTED'
   | 'ANSWER_RETURNED'
-  | 'SENSITIVE_CONTENT'
-  | 'STATEMENT_CONTRADICTION'
-  | 'STAFF_OVERLOADED'
   | 'EVENT_INVITATION'
   | 'EVENT_RESCHEDULED'
   | 'EVENT_CANCELLED'
   | 'BADGE_ISSUED'
   | 'POST_EVENT_PACKAGE'
   | 'INTERVIEW_ASSIGNED'
-  | 'INTERVIEW_SCHEDULE_CONFLICT'
-  | 'INTEGRATION_FAILURE'
-  | 'CRISIS_ALERT'
-  | 'CRISIS_TASK_ASSIGNED'
 
 /* ─────────────────────────── Enum — nhóm nghiệp vụ ───────────────────────── */
 
@@ -92,9 +66,6 @@ export type ProfileStatus =
   | 'REJECTED'
   | 'EXPIRED'
   | 'REVOKED'
-export type ProfileRequestType = 'NEW_REGISTRATION' | 'RENEWAL' | 'UPDATE'
-export type LinkStatus = 'ACTIVE' | 'TERMINATED'
-export type VerificationStatus = 'UNVERIFIED' | 'VERIFIED' | 'REJECTED'
 export type ReleaseStatus =
   | 'DRAFT'
   | 'PENDING_APPROVAL'
@@ -148,29 +119,14 @@ export type InterviewRequestStatus =
   | 'REJECTED'
   | 'COMPLETED'
 
-/* ───────────────────── Enum — nhóm AI & kho tài nguyên ───────────────────── */
+/* ───────────────────── Enum — nhóm kho tài nguyên tối thiểu ──────────────── */
 
 export type MediaType = 'DOCUMENT' | 'IMAGE' | 'VIDEO' | 'AUDIO'
 export type MetadataStatus = 'COMPLETE' | 'INCOMPLETE'
-export type TagType = 'PERSON' | 'EVENT' | 'TOPIC' | 'KEYWORD'
-export type TagSource = 'AI' | 'MANUAL'
-export type TagReviewStatus = 'PENDING_REVIEW' | 'CONFIRMED' | 'REJECTED'
-export type AssetAccessAction = 'VIEW' | 'DOWNLOAD' | 'DENIED'
-
-/* ─── Enum — E7/E8, chưa có trong schema (xem ghi chú đầu file) ──────────── */
-
-export type SourceChannel = 'ONLINE_NEWS' | 'SOCIAL' | 'BROADCAST' | 'RADIO'
-export type SourceStatus = 'ACTIVE' | 'ERROR' | 'PAUSED'
-export type Sentiment = 'POSITIVE' | 'NEUTRAL' | 'NEGATIVE'
-export type FakeNewsFlag = 'NONE' | 'SUSPECTED' | 'CONFIRMED'
-export type AlertStatus = 'NEW' | 'ACKNOWLEDGED' | 'RESPONDING' | 'RESOLVED' | 'DISMISSED'
-export type CrisisTaskStatus = 'ASSIGNED' | 'IN_PROGRESS' | 'SUBMITTED' | 'DONE'
-export type ReportJobStatus = 'QUEUED' | 'RUNNING' | 'READY' | 'FAILED'
-export type ReportFormat = 'PDF' | 'EXCEL'
 
 /* ────────────────────────── Vai trò trên hệ thống ────────────────────────── */
 
-/** Khớp RBAC_Matrix.md §1 */
+/** Chỉ còn dùng để hiển thị nhãn (chức danh) — không còn gác quyền theo vai trò. */
 export type RoleCode =
   | 'SUPERADMIN'
   | 'ADMIN'
@@ -212,36 +168,18 @@ export interface User {
   status: UserStatus
   mfa_required: boolean
   last_login_at?: Timestamp | null
-  /** Vai trò hiệu lực — rút gọn từ user_roles cho bản demo */
+  /** Chức danh hiển thị — không còn dùng để phân quyền */
   role: RoleCode
   created_at: Timestamp
 }
 
-export interface Role {
-  id: ID
-  role_code: RoleCode
-  role_name: string
-  description?: string
-  is_system_role: boolean
-}
-
-export interface Permission {
-  id: ID
-  permission_code: string
-  module: string
-  action: string
-  description?: string
-}
-
-export interface UserRole {
-  id: ID
-  user_id: ID
-  role_id: ID
-  scope_org_id?: ID | null
-  effective_from: Timestamp
-  effective_to?: Timestamp | null
-  granted_by_id?: ID | null
-  revocation_reason?: string | null
+/** Lĩnh vực quan tâm của phóng viên — dùng để lọc người nhận khi phát hành thông cáo theo lĩnh vực (E2). */
+export interface JournalistTopic {
+  profile_id: ID
+  topic_id: ID
+  source: 'AI' | 'MANUAL'
+  confidence?: number
+  confirmed_by_id?: ID | null
 }
 
 export interface JournalistProfile {
@@ -276,13 +214,10 @@ export interface MediaAsset {
   owner_org_id: ID
   uploaded_by_id: ID
   topic_id?: ID | null
-  /** Văn bản trích xuất bằng OCR (ảnh/tài liệu) hoặc STT (audio/video) */
   extracted_text?: string
   metadata_status: MetadataStatus
   created_at: Timestamp
 }
-
-/* ────────────────────────── Bảng — E0 audit & tích hợp ───────────────────── */
 
 export interface AuditLog {
   id: ID
@@ -294,29 +229,6 @@ export interface AuditLog {
   ip_address?: string
   result: ActionResult
   reason?: string
-  occurred_at: Timestamp
-}
-
-export interface Integration {
-  id: ID
-  system_code: ExternalSystemCode
-  display_name: string
-  endpoint: string
-  auth_type: string
-  status: IntegrationStatus
-  last_checked_at?: Timestamp | null
-  last_check_result?: string
-}
-
-export interface IntegrationLog {
-  id: ID
-  integration_id: ID
-  direction: IntegrationDirection
-  endpoint?: string
-  payload_summary?: string
-  status_code?: number
-  is_success: boolean
-  error_message?: string | null
   occurred_at: Timestamp
 }
 
@@ -345,91 +257,6 @@ export interface Topic {
   parent_topic_id?: ID | null
   sort_order: number
   is_active: boolean
-}
-
-export interface Locality {
-  id: ID
-  code: string
-  name: string
-  level: LocalityLevel
-  parent_locality_id?: ID | null
-  is_active: boolean
-}
-
-export interface Tag {
-  id: ID
-  code: string
-  name: string
-  tag_type: TagType
-}
-
-/* ────────────────────────────── Bảng — E1 nhà báo ────────────────────────── */
-
-export interface ProfileRequest {
-  id: ID
-  profile_id: ID
-  request_type: ProfileRequestType
-  changed_summary?: string
-  status: ProfileStatus
-  submitted_at: Timestamp
-  handled_by_id?: ID | null
-  handled_at?: Timestamp | null
-  reason?: string | null
-}
-
-export interface JournalistAgencyLink {
-  id: ID
-  profile_id: ID
-  press_agency_id: ID
-  start_date: string
-  end_date?: string | null
-  status: LinkStatus
-  confirmed_by_id?: ID | null
-  note?: string
-}
-
-export interface JournalistTopic {
-  profile_id: ID
-  topic_id: ID
-  source: TagSource
-  confidence?: number
-  confirmed_by_id?: ID | null
-}
-
-export interface PressWork {
-  id: ID
-  profile_id: ID
-  title: string
-  genre?: string
-  published_date?: string
-  publisher?: string
-  url?: string
-  topic_id?: ID | null
-  verification_status: VerificationStatus
-  verified_by_id?: ID | null
-  created_at: Timestamp
-}
-
-export interface PressAward {
-  id: ID
-  profile_id: ID
-  work_id?: ID | null
-  award_name: string
-  award_level?: string
-  awarding_body?: string
-  year: number
-  verification_status: VerificationStatus
-}
-
-export interface ComplianceViolation {
-  id: ID
-  profile_id: ID
-  violation_type: string
-  description?: string
-  severity: Severity
-  penalty_points: number
-  recorded_by_id?: ID | null
-  occurred_at: Timestamp
 }
 
 /* ───────────────────────────── Bảng — E2 thông cáo ───────────────────────── */
@@ -650,7 +477,8 @@ export interface InterviewRequest {
   created_at: Timestamp
 }
 
-/* ──────────────────────────── Bảng — E6 kho dữ liệu ──────────────────────── */
+/* ────────────────────── Bảng — kho tài nguyên tối thiểu ──────────────────── */
+/** Chỉ giữ đủ để hiển thị đính kèm trên thông cáo (E2) và câu hỏi (E3+E4). */
 
 export interface Attachment {
   id: ID
@@ -662,139 +490,17 @@ export interface Attachment {
   attached_by_id?: ID | null
 }
 
-export interface AssetTag {
-  asset_id: ID
-  tag_id: ID
-  source: TagSource
-  confidence?: number
-  review_status: TagReviewStatus
-  confirmed_by_id?: ID | null
-}
-
-export interface AssetAccessRule {
-  id: ID
-  security_level: SecurityLevel
-  role_id: ID
-  can_view: boolean
-  can_download: boolean
-}
-
-export interface AssetAccessLog {
-  id: ID
-  asset_id: ID
-  user_id: ID
-  action: AssetAccessAction
-  ip_address?: string
-  occurred_at: Timestamp
-}
-
-/* ─── Bảng ĐỀ XUẤT — E7 theo dõi & phân tích (chưa có trong schema) ──────── */
-
-export interface MonitoringSource {
-  id: ID
-  name: string
-  channel: SourceChannel
-  url?: string
-  keywords: string[]
-  topic_id?: ID | null
-  status: SourceStatus
-  last_fetched_at?: Timestamp | null
-  last_error?: string | null
-  articles_last_7d: number
-}
-
-export interface MediaArticle {
-  id: ID
-  source_id: ID
-  title: string
-  excerpt: string
-  url?: string
-  author?: string
-  topic_id?: ID | null
-  locality_id?: ID | null
-  sentiment: Sentiment
-  /** −1 (rất tiêu cực) … +1 (rất tích cực), do AI chấm */
-  sentiment_score: number
-  /** Mức lan tỏa tổng hợp: lượt chia sẻ, bình luận, dẫn lại */
-  reach_score: number
-  fake_news_flag: FakeNewsFlag
-  published_at: Timestamp
-}
-
-/* ─── Bảng ĐỀ XUẤT — E8 cảnh báo & khủng hoảng (chưa có trong schema) ────── */
-
-export interface CrisisAlert {
-  id: ID
-  alert_code: string
-  title: string
-  description: string
-  topic_id?: ID | null
-  locality_id?: ID | null
-  severity: Severity
-  status: AlertStatus
-  /** Điểm rủi ro do AI chấm, 0–100 */
-  risk_score: number
-  fake_news_flag: FakeNewsFlag
-  article_ids: ID[]
-  detected_at: Timestamp
-  acknowledged_by_id?: ID | null
-  acknowledged_at?: Timestamp | null
-  resolved_at?: Timestamp | null
-  /** Số bài/ngày trong 14 ngày gần nhất, để vẽ biểu đồ diễn biến */
-  trend: number[]
-}
-
-export interface CrisisTask {
-  id: ID
-  alert_id: ID
-  title: string
-  assigned_org_id: ID
-  assigned_by_id: ID
-  due_at: Timestamp
-  status: CrisisTaskStatus
-  progress_note?: string
-  updated_at: Timestamp
-}
-
-/* ─── Bảng ĐỀ XUẤT — E9 job xuất báo cáo (chưa có trong schema) ──────────── */
-
-export interface ReportJob {
-  id: ID
-  report_name: string
-  period_from: string
-  period_to: string
-  format: ReportFormat
-  requested_by_id: ID
-  status: ReportJobStatus
-  progress: number
-  row_count?: number
-  created_at: Timestamp
-  finished_at?: Timestamp | null
-}
-
 /* ─────────────────────────── Toàn bộ dữ liệu demo ────────────────────────── */
 
 export interface Database {
   organizations: Organization[]
   users: User[]
-  roles: Role[]
-  permissions: Permission[]
-  user_roles: UserRole[]
   journalist_profiles: JournalistProfile[]
+  journalist_topics: JournalistTopic[]
   media_assets: MediaAsset[]
   audit_logs: AuditLog[]
-  integrations: Integration[]
-  integration_logs: IntegrationLog[]
   notifications: Notification[]
   topics: Topic[]
-  localities: Locality[]
-  tags: Tag[]
-  profile_requests: ProfileRequest[]
-  journalist_agency_links: JournalistAgencyLink[]
-  journalist_topics: JournalistTopic[]
-  press_works: PressWork[]
-  press_awards: PressAward[]
-  compliance_violations: ComplianceViolation[]
   press_releases: PressRelease[]
   release_scopes: ReleaseScope[]
   release_accesses: ReleaseAccess[]
@@ -812,12 +518,4 @@ export interface Database {
   event_checkins: EventCheckin[]
   interview_requests: InterviewRequest[]
   attachments: Attachment[]
-  asset_tags: AssetTag[]
-  asset_access_rules: AssetAccessRule[]
-  asset_access_logs: AssetAccessLog[]
-  monitoring_sources: MonitoringSource[]
-  media_articles: MediaArticle[]
-  crisis_alerts: CrisisAlert[]
-  crisis_tasks: CrisisTask[]
-  report_jobs: ReportJob[]
 }

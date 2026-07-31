@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button'
 import { DataTable } from '@/components/common/DataTable'
 import { DocCode, PageHeader } from '@/components/common/PageHeader'
 import { StatusBadge } from '@/components/common/StatusBadge'
-import { can } from '@/lib/permissions'
 import { releaseStatus, releaseVersionType, securityLevel } from '@/lib/enums'
 import { formatDate } from '@/lib/format'
 import { useCurrentUser, useDb } from '@/mock/store'
@@ -113,7 +112,7 @@ export function ReleasesList() {
         title="Thông cáo báo chí"
         description="Toàn bộ thông tin nguồn của đơn vị: bản thảo, chờ duyệt, đã phát hành, đính chính và thu hồi."
         actions={
-          user && can(user.role, 'e2.release.draft') ? (
+          user ? (
             <Button asChild>
               <Link to="/thong-cao/moi">
                 <Plus className="size-4" />

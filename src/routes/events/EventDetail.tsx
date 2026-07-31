@@ -10,7 +10,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { can } from '@/lib/permissions'
 import { badgeStatus, eventStatus, interviewRequestStatus, invitationStatus } from '@/lib/enums'
 import { formatDateTime } from '@/lib/format'
 import { useCurrentUser, useDb, useStore } from '@/mock/store'
@@ -31,11 +30,8 @@ export function EventDetail() {
     return <p className="text-muted-foreground py-10 text-center text-sm">Không tìm thấy sự kiện.</p>
   }
 
-  // e5.event.manage chi thuoc ve ADMIN (So VHTTDL), don vi to chuc su kien
-  // toan nen tang chu khong rieng theo org_id — khong duoc gioi han theo
-  // event.org_id, neu khong su kien cua cac so khac se vinh vien khong ai
-  // quan ly duoc (chi co 1 Admin duy nhat, thuoc org-vhttdl).
-  const canManage = can(user.role, 'e5.event.manage')
+  // Không còn RBAC — tài khoản duy nhất quản lý mọi sự kiện.
+  const canManage = true
   const invitations = db.invitations.filter((item) => item.event_id === event.id)
   const notInvited = db.journalist_profiles.filter(
     (profile) => profile.status === 'APPROVED' && !invitations.some((invite) => invite.journalist_profile_id === profile.id),

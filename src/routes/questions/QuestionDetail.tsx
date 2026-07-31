@@ -12,7 +12,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
-import { can } from '@/lib/permissions'
 import {
   answerStatus,
   extensionStatus,
@@ -78,17 +77,16 @@ export function QuestionDetail() {
   const assignments = db.question_assignments.filter((item) => item.question_id === question.id)
   const duplicateOf = db.questions.find((item) => item.id === question.duplicate_of_question_id)
 
-  const isOwner = db.journalist_profiles.find((item) => item.id === question.journalist_profile_id)?.user_id === user.id
-  const isAssignee = question.assignee_id === user.id
-  const inMyOrg = question.handling_org_id === user.org_id
+  // Không còn RBAC — tài khoản duy nhất thao tác được mọi bước của luồng.
+  const isOwner = true
   const openStatuses = ['SUBMITTED', 'ROUTING', 'ROUTED']
   const deadline = deadlineInfo(question.due_at)
 
-  const canRoute = can(user.role, 'e3.question.route') && !['ANSWERED', 'CANCELLED', 'REJECTED'].includes(question.status)
-  const canAssign = can(user.role, 'e4.question.assign') && inMyOrg && !['ANSWERED', 'CANCELLED', 'REJECTED'].includes(question.status)
-  const canDraft = can(user.role, 'e4.answer.draft') && isAssignee && !['ANSWERED', 'CANCELLED', 'REJECTED'].includes(question.status)
-  const canApprove = can(user.role, 'e4.answer.approve') && inMyOrg
-  const canCancel = isOwner && openStatuses.includes(question.status)
+  const canRoute = !['ANSWERED', 'CANCELLED', 'REJECTED'].includes(question.status)
+  const canAssign = !['ANSWERED', 'CANCELLED', 'REJECTED'].includes(question.status)
+  const canDraft = !['ANSWERED', 'CANCELLED', 'REJECTED'].includes(question.status)
+  const canApprove = true
+  const canCancel = openStatuses.includes(question.status)
 
   const orgOptions = db.organizations.filter(
     (org) => org.org_type === 'SPOKESPERSON_AGENCY' || org.org_type === 'GOVERNMENT_DEPARTMENT' || org.org_type === 'DEPT_CULTURE_SPORTS_TOURISM',

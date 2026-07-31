@@ -1,55 +1,38 @@
 /**
- * Nhãn tiếng Việt + sắc thái hiển thị cho toàn bộ enum trong schema.
- * Mọi nơi hiển thị trạng thái đều đọc từ đây — không viết chuỗi tiếng Việt rời rạc
- * trong từng màn hình, để nhãn luôn thống nhất.
+ * Nhãn tiếng Việt + sắc thái hiển thị cho toàn bộ enum còn dùng (3 luồng
+ * chính + hạ tầng dùng chung). Mọi nơi hiển thị trạng thái đều đọc từ đây —
+ * không viết chuỗi tiếng Việt rời rạc trong từng màn hình, để nhãn luôn
+ * thống nhất.
  */
 import type {
   AccessAction,
   ActionResult,
-  AlertStatus,
   AnswerStatus,
   ApprovalAction,
-  AssetAccessAction,
   AssignmentStatus,
   BadgeStatus,
-  CrisisTaskStatus,
   DeliveryChannel,
   DeliveryStatus,
   EntityType,
   EventStatus,
   ExtensionStatus,
-  ExternalSystemCode,
-  FakeNewsFlag,
-  IntegrationStatus,
   InterviewRequestStatus,
   InvitationStatus,
-  LinkStatus,
-  LocalityLevel,
   MediaType,
   MetadataStatus,
   NotificationType,
   OrganizationStatus,
   OrganizationType,
   Priority,
-  ProfileRequestType,
   ProfileStatus,
   QuestionStatus,
   ReleaseStatus,
   ReleaseVersionType,
-  ReportFormat,
-  ReportJobStatus,
   RoleCode,
   ScopeType,
   SecurityLevel,
-  Sentiment,
   Severity,
-  SourceChannel,
-  SourceStatus,
-  TagReviewStatus,
-  TagSource,
-  TagType,
   UserStatus,
-  VerificationStatus,
 } from '@/mock/types'
 
 /** Sắc thái dùng chung — ánh xạ sang màu trạng thái trong index.css */
@@ -129,30 +112,6 @@ export const securityLevel: Dict<SecurityLevel> = {
   CONFIDENTIAL: c('Mật'),
 }
 
-export const externalSystemCode: Dict<ExternalSystemCode> = {
-  IOC: n('Trung tâm điều hành thông minh (IOC)'),
-  CONG_DVC: n('Cổng dịch vụ công'),
-  VBDT: n('Quản lý văn bản điện tử'),
-  ZALO_OA: n('Zalo OA'),
-  SMS: n('Tổng đài SMS'),
-  EMAIL: n('Máy chủ email'),
-  PRESS_CMS: n('CMS cơ quan báo chí'),
-  DIGITAL_SIGNATURE: n('Hệ thống ký số'),
-  MAM_DAM: n('Kho MAM/DAM ngoài'),
-}
-
-export const integrationStatus: Dict<IntegrationStatus> = {
-  ACTIVE: g('Đang kết nối'),
-  ERROR: c('Mất kết nối'),
-  SUSPENDED: n('Tạm ngưng'),
-}
-
-export const localityLevel: Dict<LocalityLevel> = {
-  PROVINCE: n('Tỉnh, thành phố'),
-  DISTRICT: n('Quận, huyện'),
-  WARD: n('Phường, xã'),
-}
-
 export const entityType: Dict<EntityType> = {
   ORGANIZATION: n('Tổ chức'),
   USER: n('Người dùng'),
@@ -173,8 +132,6 @@ export const severity: Dict<Severity> = {
   CRITICAL: c('Nghiêm trọng'),
 }
 
-/* ────────────────────────────────── E1 ───────────────────────────────────── */
-
 export const profileStatus: Dict<ProfileStatus> = {
   DRAFT: n('Nháp'),
   PENDING_APPROVAL: w('Chờ duyệt'),
@@ -182,23 +139,6 @@ export const profileStatus: Dict<ProfileStatus> = {
   REJECTED: c('Từ chối'),
   EXPIRED: c('Hết hạn'),
   REVOKED: c('Đã thu hồi'),
-}
-
-export const profileRequestType: Dict<ProfileRequestType> = {
-  NEW_REGISTRATION: i('Đăng ký mới'),
-  RENEWAL: i('Gia hạn'),
-  UPDATE: i('Cập nhật thông tin'),
-}
-
-export const linkStatus: Dict<LinkStatus> = {
-  ACTIVE: g('Đang liên kết'),
-  TERMINATED: n('Đã chấm dứt'),
-}
-
-export const verificationStatus: Dict<VerificationStatus> = {
-  UNVERIFIED: w('Chờ xác minh'),
-  VERIFIED: g('Đã xác minh'),
-  REJECTED: c('Không hợp lệ'),
 }
 
 /* ────────────────────────────────── E2 ───────────────────────────────────── */
@@ -330,7 +270,7 @@ export const interviewRequestStatus: Dict<InterviewRequestStatus> = {
   COMPLETED: n('Đã phỏng vấn'),
 }
 
-/* ────────────────────────────────── E6 ───────────────────────────────────── */
+/* ────────────────────── Kho tài nguyên tối thiểu (đính kèm) ──────────────── */
 
 export const mediaType: Dict<MediaType> = {
   DOCUMENT: n('Tài liệu'),
@@ -344,96 +284,11 @@ export const metadataStatus: Dict<MetadataStatus> = {
   INCOMPLETE: w('Thiếu metadata'),
 }
 
-export const tagType: Dict<TagType> = {
-  PERSON: n('Nhân vật'),
-  EVENT: n('Sự kiện'),
-  TOPIC: n('Lĩnh vực'),
-  KEYWORD: n('Từ khóa'),
-}
-
-export const tagSource: Dict<TagSource> = {
-  AI: i('AI gán'),
-  MANUAL: n('Gán thủ công'),
-}
-
-export const tagReviewStatus: Dict<TagReviewStatus> = {
-  PENDING_REVIEW: w('Chờ duyệt nhãn'),
-  CONFIRMED: g('Đã xác nhận'),
-  REJECTED: c('Đã loại'),
-}
-
-export const assetAccessAction: Dict<AssetAccessAction> = {
-  VIEW: n('Xem'),
-  DOWNLOAD: i('Tải về'),
-  DENIED: c('Bị từ chối'),
-}
-
-/* ────────────────────────────────── E7 ───────────────────────────────────── */
-
-export const sourceChannel: Dict<SourceChannel> = {
-  ONLINE_NEWS: n('Báo điện tử'),
-  SOCIAL: n('Mạng xã hội'),
-  BROADCAST: n('Truyền hình'),
-  RADIO: n('Phát thanh'),
-}
-
-export const sourceStatus: Dict<SourceStatus> = {
-  ACTIVE: g('Đang thu thập'),
-  ERROR: c('Lỗi nguồn'),
-  PAUSED: n('Tạm dừng'),
-}
-
-export const sentiment: Dict<Sentiment> = {
-  POSITIVE: g('Tích cực'),
-  NEUTRAL: n('Trung lập'),
-  NEGATIVE: c('Tiêu cực'),
-}
-
-export const fakeNewsFlag: Dict<FakeNewsFlag> = {
-  NONE: n('Không dấu hiệu'),
-  SUSPECTED: w('Nghi ngờ tin giả'),
-  CONFIRMED: c('Xác định tin giả'),
-}
-
-/* ────────────────────────────────── E8 ───────────────────────────────────── */
-
-export const alertStatus: Dict<AlertStatus> = {
-  NEW: c('Mới phát hiện'),
-  ACKNOWLEDGED: w('Đã tiếp nhận'),
-  RESPONDING: w('Đang ứng phó'),
-  RESOLVED: g('Đã xử lý xong'),
-  DISMISSED: n('Bỏ qua'),
-}
-
-export const crisisTaskStatus: Dict<CrisisTaskStatus> = {
-  ASSIGNED: i('Đã giao'),
-  IN_PROGRESS: w('Đang thực hiện'),
-  SUBMITTED: w('Đã báo cáo, chờ duyệt'),
-  DONE: g('Hoàn thành'),
-}
-
-/* ────────────────────────────────── E9 ───────────────────────────────────── */
-
-export const reportJobStatus: Dict<ReportJobStatus> = {
-  QUEUED: n('Trong hàng đợi'),
-  RUNNING: w('Đang xử lý'),
-  READY: g('Sẵn sàng tải'),
-  FAILED: c('Thất bại'),
-}
-
-export const reportFormat: Dict<ReportFormat> = {
-  PDF: n('PDF'),
-  EXCEL: n('Excel'),
-}
-
 /* ─────────────────────────────── Thông báo ───────────────────────────────── */
 
 export const notificationType: Dict<NotificationType> = {
   PROFILE_APPROVED: g('Hồ sơ được duyệt'),
   PROFILE_REJECTED: c('Hồ sơ bị từ chối'),
-  PROFILE_EXPIRING: w('Hồ sơ sắp hết hạn'),
-  PROFILE_EXPIRED: c('Hồ sơ đã hết hạn'),
-  COMPLIANCE_VIOLATION: c('Ghi nhận vi phạm'),
   RELEASE_PUBLISHED: g('Thông cáo mới phát hành'),
   RELEASE_CORRECTED: w('Thông cáo được đính chính'),
   RELEASE_WITHDRAWN: c('Thông cáo bị thu hồi'),
@@ -447,19 +302,12 @@ export const notificationType: Dict<NotificationType> = {
   EXTENSION_APPROVED: g('Gia hạn được duyệt'),
   EXTENSION_REJECTED: c('Gia hạn bị từ chối'),
   ANSWER_RETURNED: w('Bản trả lời bị trả lại'),
-  SENSITIVE_CONTENT: c('Cảnh báo nội dung nhạy cảm'),
-  STATEMENT_CONTRADICTION: w('Phát hiện mâu thuẫn phát ngôn'),
-  STAFF_OVERLOADED: w('Cán bộ quá tải'),
   EVENT_INVITATION: i('Giấy mời sự kiện'),
   EVENT_RESCHEDULED: w('Sự kiện dời lịch'),
   EVENT_CANCELLED: c('Sự kiện bị hủy'),
   BADGE_ISSUED: g('Đã cấp thẻ tác nghiệp'),
   POST_EVENT_PACKAGE: i('Tài liệu sau sự kiện'),
   INTERVIEW_ASSIGNED: i('Yêu cầu phỏng vấn được phân công'),
-  INTERVIEW_SCHEDULE_CONFLICT: w('Trùng lịch phỏng vấn'),
-  INTEGRATION_FAILURE: c('Tích hợp gặp lỗi'),
-  CRISIS_ALERT: c('Cảnh báo khủng hoảng truyền thông'),
-  CRISIS_TASK_ASSIGNED: w('Được giao nhiệm vụ ứng phó'),
 }
 
 /* ───────────────────────────────── Tiện ích ──────────────────────────────── */

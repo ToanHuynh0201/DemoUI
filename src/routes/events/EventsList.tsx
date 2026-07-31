@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { DataTable } from '@/components/common/DataTable'
 import { DocCode, PageHeader } from '@/components/common/PageHeader'
 import { StatusBadge } from '@/components/common/StatusBadge'
-import { can } from '@/lib/permissions'
 import { eventStatus } from '@/lib/enums'
 import { formatDateTime } from '@/lib/format'
 import { useCurrentUser, useDb } from '@/mock/store'
@@ -77,7 +76,7 @@ export function EventsList() {
         title="Sự kiện và giấy mời"
         description="Họp báo, lễ công bố, Festival — quản lý giấy mời điện tử và thẻ tác nghiệp cho báo chí."
         actions={
-          user && can(user.role, 'e5.event.manage') ? (
+          user ? (
             <Button asChild>
               <Link to="/su-kien/moi">
                 <Plus className="size-4" />

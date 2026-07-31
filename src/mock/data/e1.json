@@ -1,92 +1,335 @@
 {
   "journalist_profiles": [
-    { "id": "p-01", "user_id": "u-jn-01", "press_agency_id": "org-baotp", "date_of_birth": "1988-04-12", "national_id_masked": "0460••••••8412", "press_card_no": "IBC-04182", "press_card_issued_date": "2023-01-10", "press_card_expiry_date": "@+310", "status": "APPROVED", "compliance_score": 98, "approved_at": "@-368", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-370" },
-    { "id": "p-02", "user_id": "u-jn-02", "press_agency_id": "org-ptth", "date_of_birth": "1991-09-03", "national_id_masked": "0460••••••1903", "press_card_no": "IBC-04211", "press_card_issued_date": "2023-02-20", "press_card_expiry_date": "@+284", "status": "APPROVED", "compliance_score": 95, "approved_at": "@-367", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-370" },
-    { "id": "p-03", "user_id": "u-jn-03", "press_agency_id": "org-tuoitre", "date_of_birth": "1985-12-25", "national_id_masked": "0790••••••2512", "press_card_no": "IBC-03877", "press_card_issued_date": "2022-11-05", "press_card_expiry_date": "@+220", "status": "APPROVED", "compliance_score": 100, "approved_at": "@-358", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-360" },
-    { "id": "p-04", "user_id": "u-jn-04", "press_agency_id": "org-vnexpress", "date_of_birth": "1993-06-18", "national_id_masked": "0010••••••1806", "press_card_no": "IBC-04502", "press_card_issued_date": "2023-06-14", "press_card_expiry_date": "@+402", "status": "APPROVED", "compliance_score": 92, "approved_at": "@-357", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-360" },
-    { "id": "p-05", "user_id": "u-jn-05", "press_agency_id": "org-tapchivh", "date_of_birth": "1979-03-30", "national_id_masked": "0460••••••3003", "press_card_no": "IBC-02914", "press_card_issued_date": "2022-05-09", "press_card_expiry_date": "@+156", "status": "APPROVED", "compliance_score": 97, "approved_at": "@-347", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-350" },
-    { "id": "p-06", "user_id": "u-jn-06", "press_agency_id": "org-ttxvn", "date_of_birth": "1987-11-08", "national_id_masked": "0010••••••0811", "press_card_no": "IBC-03105", "press_card_issued_date": "2022-08-22", "press_card_expiry_date": "@+265", "status": "APPROVED", "compliance_score": 99, "approved_at": "@-348", "approved_by_id": "u-admin2", "rejection_reason": null, "created_at": "@-350" },
-    { "id": "p-07", "user_id": "u-jn-07", "press_agency_id": "org-baotp", "date_of_birth": "1990-02-14", "national_id_masked": "0460••••••1402", "press_card_no": "IBC-04390", "press_card_issued_date": "2023-04-03", "press_card_expiry_date": "@+188", "status": "APPROVED", "compliance_score": 78.5, "approved_at": "@-338", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-340" },
-    { "id": "p-08", "user_id": "u-jn-08", "press_agency_id": "org-ptth", "date_of_birth": "1994-07-21", "national_id_masked": "0460••••••2107", "press_card_no": "IBC-04688", "press_card_issued_date": "2023-09-01", "press_card_expiry_date": "@+345", "status": "APPROVED", "compliance_score": 94, "approved_at": "@-337", "approved_by_id": "u-admin2", "rejection_reason": null, "created_at": "@-340" },
-    { "id": "p-09", "user_id": "u-jn-09", "press_agency_id": "org-tuoitre", "date_of_birth": "1996-05-05", "national_id_masked": "0790••••••0505", "press_card_no": "IBC-04901", "press_card_issued_date": "2024-01-15", "press_card_expiry_date": "@+430", "status": "APPROVED", "compliance_score": 96, "approved_at": "@-296", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-300" },
-    { "id": "p-10", "user_id": "u-jn-10", "press_agency_id": "org-vnexpress", "date_of_birth": "1992-10-11", "national_id_masked": "0010••••••1110", "press_card_no": "IBC-04455", "press_card_issued_date": "2022-06-30", "press_card_expiry_date": "@-10", "status": "EXPIRED", "compliance_score": 91, "approved_at": "@-295", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-300" },
-    { "id": "p-11", "user_id": "u-jn-11", "press_agency_id": "org-baotp", "date_of_birth": "2000-08-19", "national_id_masked": "0460••••••1908", "press_card_no": null, "press_card_issued_date": null, "press_card_expiry_date": null, "status": "PENDING_APPROVAL", "compliance_score": null, "approved_at": null, "approved_by_id": null, "rejection_reason": null, "created_at": "@-12" },
-    { "id": "p-12", "user_id": "u-jn-12", "press_agency_id": "org-tapchivh", "date_of_birth": "1998-01-27", "national_id_masked": "0460••••••2701", "press_card_no": null, "press_card_issued_date": null, "press_card_expiry_date": null, "status": "REJECTED", "compliance_score": null, "approved_at": null, "approved_by_id": "u-admin", "rejection_reason": "Chưa có thẻ nhà báo còn hiệu lực và thiếu giấy giới thiệu của cơ quan chủ quản. Đề nghị bổ sung rồi nộp lại.", "created_at": "@-88" },
-    { "id": "p-13", "user_id": "u-jn-13", "press_agency_id": "org-tapchivh", "date_of_birth": "1989-12-02", "national_id_masked": "0460••••••0212", "press_card_no": "IBC-03720", "press_card_issued_date": "2022-03-18", "press_card_expiry_date": "@+18", "status": "APPROVED", "compliance_score": 93, "approved_at": "@-328", "approved_by_id": "u-admin", "rejection_reason": null, "created_at": "@-330" },
-    { "id": "p-14", "user_id": "u-jn-14", "press_agency_id": "org-vnexpress", "date_of_birth": "1986-06-06", "national_id_masked": "0010••••••0606", "press_card_no": "IBC-03011", "press_card_issued_date": "2021-09-12", "press_card_expiry_date": "@-62", "status": "REVOKED", "compliance_score": 54, "approved_at": "@-318", "approved_by_id": "u-admin", "rejection_reason": "Thu hồi theo kết luận xử lý vi phạm ngày ghi nhận, đồng thời thẻ nhà báo đã hết hiệu lực.", "created_at": "@-320" }
+    {
+      "id": "p-01",
+      "user_id": "u-jn-01",
+      "press_agency_id": "org-baotp",
+      "date_of_birth": "1988-04-12",
+      "national_id_masked": "0460••••••8412",
+      "press_card_no": "IBC-04182",
+      "press_card_issued_date": "2023-01-10",
+      "press_card_expiry_date": "@+310",
+      "status": "APPROVED",
+      "compliance_score": 98,
+      "approved_at": "@-368",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-370"
+    },
+    {
+      "id": "p-02",
+      "user_id": "u-jn-02",
+      "press_agency_id": "org-ptth",
+      "date_of_birth": "1991-09-03",
+      "national_id_masked": "0460••••••1903",
+      "press_card_no": "IBC-04211",
+      "press_card_issued_date": "2023-02-20",
+      "press_card_expiry_date": "@+284",
+      "status": "APPROVED",
+      "compliance_score": 95,
+      "approved_at": "@-367",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-370"
+    },
+    {
+      "id": "p-03",
+      "user_id": "u-jn-03",
+      "press_agency_id": "org-tuoitre",
+      "date_of_birth": "1985-12-25",
+      "national_id_masked": "0790••••••2512",
+      "press_card_no": "IBC-03877",
+      "press_card_issued_date": "2022-11-05",
+      "press_card_expiry_date": "@+220",
+      "status": "APPROVED",
+      "compliance_score": 100,
+      "approved_at": "@-358",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-360"
+    },
+    {
+      "id": "p-04",
+      "user_id": "u-jn-04",
+      "press_agency_id": "org-vnexpress",
+      "date_of_birth": "1993-06-18",
+      "national_id_masked": "0010••••••1806",
+      "press_card_no": "IBC-04502",
+      "press_card_issued_date": "2023-06-14",
+      "press_card_expiry_date": "@+402",
+      "status": "APPROVED",
+      "compliance_score": 92,
+      "approved_at": "@-357",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-360"
+    },
+    {
+      "id": "p-05",
+      "user_id": "u-jn-05",
+      "press_agency_id": "org-tapchivh",
+      "date_of_birth": "1979-03-30",
+      "national_id_masked": "0460••••••3003",
+      "press_card_no": "IBC-02914",
+      "press_card_issued_date": "2022-05-09",
+      "press_card_expiry_date": "@+156",
+      "status": "APPROVED",
+      "compliance_score": 97,
+      "approved_at": "@-347",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-350"
+    },
+    {
+      "id": "p-06",
+      "user_id": "u-jn-06",
+      "press_agency_id": "org-ttxvn",
+      "date_of_birth": "1987-11-08",
+      "national_id_masked": "0010••••••0811",
+      "press_card_no": "IBC-03105",
+      "press_card_issued_date": "2022-08-22",
+      "press_card_expiry_date": "@+265",
+      "status": "APPROVED",
+      "compliance_score": 99,
+      "approved_at": "@-348",
+      "approved_by_id": "u-admin2",
+      "rejection_reason": null,
+      "created_at": "@-350"
+    },
+    {
+      "id": "p-07",
+      "user_id": "u-jn-07",
+      "press_agency_id": "org-baotp",
+      "date_of_birth": "1990-02-14",
+      "national_id_masked": "0460••••••1402",
+      "press_card_no": "IBC-04390",
+      "press_card_issued_date": "2023-04-03",
+      "press_card_expiry_date": "@+188",
+      "status": "APPROVED",
+      "compliance_score": 78.5,
+      "approved_at": "@-338",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-340"
+    },
+    {
+      "id": "p-08",
+      "user_id": "u-jn-08",
+      "press_agency_id": "org-ptth",
+      "date_of_birth": "1994-07-21",
+      "national_id_masked": "0460••••••2107",
+      "press_card_no": "IBC-04688",
+      "press_card_issued_date": "2023-09-01",
+      "press_card_expiry_date": "@+345",
+      "status": "APPROVED",
+      "compliance_score": 94,
+      "approved_at": "@-337",
+      "approved_by_id": "u-admin2",
+      "rejection_reason": null,
+      "created_at": "@-340"
+    },
+    {
+      "id": "p-09",
+      "user_id": "u-jn-09",
+      "press_agency_id": "org-tuoitre",
+      "date_of_birth": "1996-05-05",
+      "national_id_masked": "0790••••••0505",
+      "press_card_no": "IBC-04901",
+      "press_card_issued_date": "2024-01-15",
+      "press_card_expiry_date": "@+430",
+      "status": "APPROVED",
+      "compliance_score": 96,
+      "approved_at": "@-296",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-300"
+    },
+    {
+      "id": "p-10",
+      "user_id": "u-jn-10",
+      "press_agency_id": "org-vnexpress",
+      "date_of_birth": "1992-10-11",
+      "national_id_masked": "0010••••••1110",
+      "press_card_no": "IBC-04455",
+      "press_card_issued_date": "2022-06-30",
+      "press_card_expiry_date": "@-10",
+      "status": "EXPIRED",
+      "compliance_score": 91,
+      "approved_at": "@-295",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-300"
+    },
+    {
+      "id": "p-11",
+      "user_id": "u-jn-11",
+      "press_agency_id": "org-baotp",
+      "date_of_birth": "2000-08-19",
+      "national_id_masked": "0460••••••1908",
+      "press_card_no": null,
+      "press_card_issued_date": null,
+      "press_card_expiry_date": null,
+      "status": "PENDING_APPROVAL",
+      "compliance_score": null,
+      "approved_at": null,
+      "approved_by_id": null,
+      "rejection_reason": null,
+      "created_at": "@-12"
+    },
+    {
+      "id": "p-12",
+      "user_id": "u-jn-12",
+      "press_agency_id": "org-tapchivh",
+      "date_of_birth": "1998-01-27",
+      "national_id_masked": "0460••••••2701",
+      "press_card_no": null,
+      "press_card_issued_date": null,
+      "press_card_expiry_date": null,
+      "status": "REJECTED",
+      "compliance_score": null,
+      "approved_at": null,
+      "approved_by_id": "u-admin",
+      "rejection_reason": "Chưa có thẻ nhà báo còn hiệu lực và thiếu giấy giới thiệu của cơ quan chủ quản. Đề nghị bổ sung rồi nộp lại.",
+      "created_at": "@-88"
+    },
+    {
+      "id": "p-13",
+      "user_id": "u-jn-13",
+      "press_agency_id": "org-tapchivh",
+      "date_of_birth": "1989-12-02",
+      "national_id_masked": "0460••••••0212",
+      "press_card_no": "IBC-03720",
+      "press_card_issued_date": "2022-03-18",
+      "press_card_expiry_date": "@+18",
+      "status": "APPROVED",
+      "compliance_score": 93,
+      "approved_at": "@-328",
+      "approved_by_id": "u-admin",
+      "rejection_reason": null,
+      "created_at": "@-330"
+    },
+    {
+      "id": "p-14",
+      "user_id": "u-jn-14",
+      "press_agency_id": "org-vnexpress",
+      "date_of_birth": "1986-06-06",
+      "national_id_masked": "0010••••••0606",
+      "press_card_no": "IBC-03011",
+      "press_card_issued_date": "2021-09-12",
+      "press_card_expiry_date": "@-62",
+      "status": "REVOKED",
+      "compliance_score": 54,
+      "approved_at": "@-318",
+      "approved_by_id": "u-admin",
+      "rejection_reason": "Thu hồi theo kết luận xử lý vi phạm ngày ghi nhận, đồng thời thẻ nhà báo đã hết hiệu lực.",
+      "created_at": "@-320"
+    }
   ],
-
-  "profile_requests": [
-    { "id": "pr-01", "profile_id": "p-11", "request_type": "NEW_REGISTRATION", "changed_summary": "Đăng ký hồ sơ phóng viên mới, kèm CCCD và giấy giới thiệu của Báo Thành phố Huế.", "status": "PENDING_APPROVAL", "submitted_at": "@-3T09:20", "handled_by_id": null, "handled_at": null, "reason": null },
-    { "id": "pr-02", "profile_id": "p-13", "request_type": "RENEWAL", "changed_summary": "Gia hạn hồ sơ tác nghiệp, thẻ nhà báo hết hạn trong 18 ngày tới.", "status": "PENDING_APPROVAL", "submitted_at": "@-2T14:05", "handled_by_id": null, "handled_at": null, "reason": null },
-    { "id": "pr-03", "profile_id": "p-10", "request_type": "RENEWAL", "changed_summary": "Gia hạn sau khi thẻ nhà báo hết hạn, đang chờ tòa soạn xác nhận lại giấy giới thiệu.", "status": "DRAFT", "submitted_at": "@-6T11:00", "handled_by_id": null, "handled_at": null, "reason": null },
-    { "id": "pr-04", "profile_id": "p-07", "request_type": "UPDATE", "changed_summary": "Cập nhật lĩnh vực tác nghiệp: bổ sung Kinh tế, đầu tư; thay đổi số điện thoại liên hệ.", "status": "APPROVED", "submitted_at": "@-25T10:30", "handled_by_id": "u-admin", "handled_at": "@-24T08:15", "reason": "Thông tin hợp lệ, đã đối chiếu với cơ quan chủ quản." },
-    { "id": "pr-05", "profile_id": "p-12", "request_type": "NEW_REGISTRATION", "changed_summary": "Đăng ký hồ sơ cộng tác viên chuyên đề văn hóa.", "status": "REJECTED", "submitted_at": "@-88T15:40", "handled_by_id": "u-admin", "handled_at": "@-85T09:00", "reason": "Chưa có thẻ nhà báo còn hiệu lực và thiếu giấy giới thiệu của cơ quan chủ quản." },
-    { "id": "pr-06", "profile_id": "p-04", "request_type": "RENEWAL", "changed_summary": "Gia hạn hồ sơ định kỳ theo thẻ nhà báo cấp mới.", "status": "APPROVED", "submitted_at": "@-40T09:00", "handled_by_id": "u-admin2", "handled_at": "@-39T10:20", "reason": "Đã đối chiếu thẻ nhà báo còn hiệu lực đến 2027." }
-  ],
-
-  "journalist_agency_links": [
-    { "id": "jal-01", "profile_id": "p-01", "press_agency_id": "org-baotp", "start_date": "2019-03-01", "end_date": null, "status": "ACTIVE", "confirmed_by_id": "u-org-baotp", "note": "Phóng viên cơ hữu Ban Chính trị - Xã hội." },
-    { "id": "jal-02", "profile_id": "p-02", "press_agency_id": "org-ptth", "start_date": "2020-07-15", "end_date": null, "status": "ACTIVE", "confirmed_by_id": "u-org-ptth", "note": null },
-    { "id": "jal-03", "profile_id": "p-03", "press_agency_id": "org-tuoitre", "start_date": "2018-01-08", "end_date": null, "status": "ACTIVE", "confirmed_by_id": null, "note": "Phóng viên thường trú tại thành phố Huế." },
-    { "id": "jal-04", "profile_id": "p-04", "press_agency_id": "org-vnexpress", "start_date": "2021-05-04", "end_date": null, "status": "ACTIVE", "confirmed_by_id": null, "note": null },
-    { "id": "jal-05", "profile_id": "p-05", "press_agency_id": "org-tapchivh", "start_date": "2016-09-20", "end_date": null, "status": "ACTIVE", "confirmed_by_id": null, "note": null },
-    { "id": "jal-06", "profile_id": "p-06", "press_agency_id": "org-ttxvn", "start_date": "2019-11-11", "end_date": null, "status": "ACTIVE", "confirmed_by_id": "u-org-ttxvn", "note": null },
-    { "id": "jal-07", "profile_id": "p-07", "press_agency_id": "org-baotp", "start_date": "2021-02-01", "end_date": null, "status": "ACTIVE", "confirmed_by_id": "u-org-baotp", "note": null },
-    { "id": "jal-08", "profile_id": "p-08", "press_agency_id": "org-ptth", "start_date": "2022-04-18", "end_date": null, "status": "ACTIVE", "confirmed_by_id": "u-org-ptth", "note": null },
-    { "id": "jal-09", "profile_id": "p-09", "press_agency_id": "org-tuoitre", "start_date": "2023-08-01", "end_date": null, "status": "ACTIVE", "confirmed_by_id": null, "note": null },
-    { "id": "jal-10", "profile_id": "p-10", "press_agency_id": "org-vnexpress", "start_date": "2020-10-05", "end_date": null, "status": "ACTIVE", "confirmed_by_id": null, "note": null },
-    { "id": "jal-11", "profile_id": "p-11", "press_agency_id": "org-baotp", "start_date": "@-12", "end_date": null, "status": "ACTIVE", "confirmed_by_id": "u-org-baotp", "note": "Phóng viên tập sự, hợp đồng thử việc 6 tháng." },
-    { "id": "jal-12", "profile_id": "p-13", "press_agency_id": "org-tapchivh", "start_date": "2018-06-12", "end_date": null, "status": "ACTIVE", "confirmed_by_id": null, "note": null },
-    { "id": "jal-13", "profile_id": "p-14", "press_agency_id": "org-vnexpress", "start_date": "2017-03-22", "end_date": "@-60", "status": "TERMINATED", "confirmed_by_id": "u-admin", "note": "Chấm dứt liên kết sau khi hồ sơ bị thu hồi." },
-    { "id": "jal-14", "profile_id": "p-05", "press_agency_id": "org-baotp", "start_date": "2013-02-01", "end_date": "2016-08-31", "status": "TERMINATED", "confirmed_by_id": null, "note": "Chuyển công tác sang Tạp chí Văn hóa và Đời sống." }
-  ],
-
   "journalist_topics": [
-    { "profile_id": "p-01", "topic_id": "top-hanhchinh", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-01", "topic_id": "top-antt", "source": "AI", "confidence": 0.86, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-02", "topic_id": "top-yte", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-02", "topic_id": "top-ansinh", "source": "AI", "confidence": 0.79, "confirmed_by_id": null },
-    { "profile_id": "p-03", "topic_id": "top-hatang", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-03", "topic_id": "top-moitruong", "source": "AI", "confidence": 0.91, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-04", "topic_id": "top-kinhte", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin2" },
-    { "profile_id": "p-05", "topic_id": "top-vanhoa", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-05", "topic_id": "top-dulich", "source": "AI", "confidence": 0.88, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-06", "topic_id": "top-kinhte", "source": "AI", "confidence": 0.74, "confirmed_by_id": null },
-    { "profile_id": "p-07", "topic_id": "top-kinhte", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-08", "topic_id": "top-thethao", "source": "MANUAL", "confidence": null, "confirmed_by_id": null },
-    { "profile_id": "p-09", "topic_id": "top-giaoduc", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin" },
-    { "profile_id": "p-10", "topic_id": "top-dulich", "source": "AI", "confidence": 0.82, "confirmed_by_id": null },
-    { "profile_id": "p-13", "topic_id": "top-dulich", "source": "MANUAL", "confidence": null, "confirmed_by_id": "u-admin" }
-  ],
-
-  "press_works": [
-    { "id": "pw-01", "profile_id": "p-01", "title": "Một cửa liên thông sau sáp nhập: người dân bớt đi lại, cán bộ thêm việc", "genre": "Phóng sự", "published_date": "@-45", "publisher": "Báo Thành phố Huế", "url": "https://baohue.vn/mot-cua-lien-thong-sau-sap-nhap", "topic_id": "top-hanhchinh", "verification_status": "VERIFIED", "verified_by_id": "u-admin", "created_at": "@-44" },
-    { "id": "pw-02", "profile_id": "p-01", "title": "Ba tháng vận hành mô hình chính quyền hai cấp", "genre": "Ghi nhận", "published_date": "@-20", "publisher": "Báo Thành phố Huế", "url": "https://baohue.vn/ba-thang-chinh-quyen-hai-cap", "topic_id": "top-hanhchinh", "verification_status": "VERIFIED", "verified_by_id": "u-admin", "created_at": "@-19" },
-    { "id": "pw-03", "profile_id": "p-02", "title": "Phóng sự truyền hình: Chiến dịch phòng chống sốt xuất huyết mùa mưa", "genre": "Phóng sự truyền hình", "published_date": "@-30", "publisher": "Đài PT-TH thành phố Huế", "url": "https://trthue.vn/phong-chong-sxh", "topic_id": "top-yte", "verification_status": "VERIFIED", "verified_by_id": "u-admin2", "created_at": "@-29" },
-    { "id": "pw-04", "profile_id": "p-03", "title": "Dự án nâng cấp đường ven biển chậm tiến độ vì vướng mặt bằng", "genre": "Điều tra", "published_date": "@-15", "publisher": "Báo Tuổi Trẻ", "url": "https://tuoitre.vn/duong-ven-bien-cham-tien-do", "topic_id": "top-hatang", "verification_status": "VERIFIED", "verified_by_id": "u-admin", "created_at": "@-14" },
-    { "id": "pw-05", "profile_id": "p-03", "title": "Sau mưa lớn, nhiều tuyến phố trung tâm vẫn ngập", "genre": "Tin", "published_date": "@-8", "publisher": "Báo Tuổi Trẻ", "url": "https://tuoitre.vn/nhieu-tuyen-pho-ngap", "topic_id": "top-moitruong", "verification_status": "UNVERIFIED", "verified_by_id": null, "created_at": "@-7" },
-    { "id": "pw-06", "profile_id": "p-04", "title": "Vốn FDI đổ vào khu công nghiệp phía nam thành phố tăng 34%", "genre": "Tin kinh tế", "published_date": "@-22", "publisher": "VnExpress", "url": "https://vnexpress.net/fdi-khu-cong-nghiep-phia-nam", "topic_id": "top-kinhte", "verification_status": "VERIFIED", "verified_by_id": "u-admin", "created_at": "@-21" },
-    { "id": "pw-07", "profile_id": "p-05", "title": "Trùng tu điện Thái Hòa: giữ nguyên bản đến từng viên ngói", "genre": "Ký sự", "published_date": "@-60", "publisher": "Tạp chí Văn hóa và Đời sống", "url": "https://vanhoadoisong.vn/trung-tu-dien-thai-hoa", "topic_id": "top-vanhoa", "verification_status": "VERIFIED", "verified_by_id": "u-admin", "created_at": "@-59" },
-    { "id": "pw-08", "profile_id": "p-05", "title": "Đêm nhạc Trịnh bên sông Hương và câu chuyện du lịch đêm", "genre": "Phóng sự", "published_date": "@-35", "publisher": "Tạp chí Văn hóa và Đời sống", "url": "https://vanhoadoisong.vn/du-lich-dem-song-huong", "topic_id": "top-dulich", "verification_status": "VERIFIED", "verified_by_id": "u-admin2", "created_at": "@-34" },
-    { "id": "pw-09", "profile_id": "p-06", "title": "Thành phố Huế công bố quy hoạch phát triển du lịch đến 2035", "genre": "Tin", "published_date": "@-12", "publisher": "TTXVN", "url": "https://vnanet.vn/quy-hoach-du-lich-2035", "topic_id": "top-dulich", "verification_status": "VERIFIED", "verified_by_id": "u-admin", "created_at": "@-11" },
-    { "id": "pw-10", "profile_id": "p-07", "title": "Chợ đầu mối mới: tiểu thương chờ ngày dọn về", "genre": "Ghi nhận", "published_date": "@-28", "publisher": "Báo Thành phố Huế", "url": "https://baohue.vn/cho-dau-moi-moi", "topic_id": "top-kinhte", "verification_status": "UNVERIFIED", "verified_by_id": null, "created_at": "@-27" },
-    { "id": "pw-11", "profile_id": "p-09", "title": "Tuyển sinh đầu cấp: phụ huynh loay hoay với bản đồ tuyến mới", "genre": "Phóng sự", "published_date": "@-18", "publisher": "Báo Tuổi Trẻ", "url": "https://tuoitre.vn/tuyen-sinh-dau-cap-tuyen-moi", "topic_id": "top-giaoduc", "verification_status": "VERIFIED", "verified_by_id": "u-admin", "created_at": "@-17" },
-    { "id": "pw-12", "profile_id": "p-08", "title": "Giải chạy Cố đô Marathon 2026 và bài toán giao thông ngày thi đấu", "genre": "Phóng sự truyền hình", "published_date": "@-40", "publisher": "Đài PT-TH thành phố Huế", "url": "https://trthue.vn/co-do-marathon-2026", "topic_id": "top-thethao", "verification_status": "REJECTED", "verified_by_id": "u-admin2", "created_at": "@-39" }
-  ],
-
-  "press_awards": [
-    { "id": "pa-01", "profile_id": "p-03", "work_id": "pw-04", "award_name": "Giải Báo chí Quốc gia — Giải B, thể loại Điều tra", "award_level": "Quốc gia", "awarding_body": "Hội Nhà báo Việt Nam", "year": 2025, "verification_status": "VERIFIED" },
-    { "id": "pa-02", "profile_id": "p-05", "work_id": "pw-07", "award_name": "Giải Báo chí về Văn hóa và Di sản — Giải Nhất", "award_level": "Thành phố", "awarding_body": "Hội Nhà báo thành phố Huế", "year": 2025, "verification_status": "VERIFIED" },
-    { "id": "pa-03", "profile_id": "p-01", "work_id": "pw-01", "award_name": "Giải Báo chí Cải cách hành chính — Giải Khuyến khích", "award_level": "Thành phố", "awarding_body": "UBND thành phố Huế", "year": 2026, "verification_status": "UNVERIFIED" },
-    { "id": "pa-04", "profile_id": "p-06", "work_id": null, "award_name": "Bằng khen của Chủ tịch UBND thành phố về thông tin đối ngoại", "award_level": "Thành phố", "awarding_body": "UBND thành phố Huế", "year": 2024, "verification_status": "VERIFIED" },
-    { "id": "pa-05", "profile_id": "p-02", "work_id": "pw-03", "award_name": "Giải Báo chí Truyền thông Y tế — Giải Ba", "award_level": "Toàn quốc", "awarding_body": "Bộ Y tế", "year": 2025, "verification_status": "VERIFIED" }
-  ],
-
-  "compliance_violations": [
-    { "id": "cv-01", "profile_id": "p-07", "violation_type": "Đăng nội dung chưa được phép công bố", "description": "Sử dụng số liệu trong tài liệu gắn nhãn Nội bộ của Sở Xây dựng khi chưa có sự đồng ý phát hành.", "severity": "MEDIUM", "penalty_points": 10, "recorded_by_id": "u-admin", "occurred_at": "@-52T14:00" },
-    { "id": "cv-02", "profile_id": "p-07", "violation_type": "Không tuân thủ quy định tác nghiệp tại sự kiện", "description": "Quay phim tại khu vực hạn chế trong buổi họp báo mà chưa xin phép ban tổ chức.", "severity": "LOW", "penalty_points": 5, "recorded_by_id": "u-admin2", "occurred_at": "@-33T10:30" },
-    { "id": "cv-03", "profile_id": "p-14", "violation_type": "Đưa thông tin sai lệch, gây hiểu nhầm", "description": "Trích dẫn phát ngôn không đúng nội dung trả lời chính thức của Sở Y tế, gây phản ứng trên mạng xã hội.", "severity": "HIGH", "penalty_points": 25, "recorded_by_id": "u-admin", "occurred_at": "@-70T09:15" },
-    { "id": "cv-04", "profile_id": "p-14", "violation_type": "Sử dụng thẻ tác nghiệp hết hiệu lực", "description": "Dùng thẻ tác nghiệp đã hết hạn để check-in sự kiện họp báo thường kỳ.", "severity": "CRITICAL", "penalty_points": 21, "recorded_by_id": "u-admin", "occurred_at": "@-64T08:45" }
+    {
+      "profile_id": "p-01",
+      "topic_id": "top-hanhchinh",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-01",
+      "topic_id": "top-antt",
+      "source": "AI",
+      "confidence": 0.86,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-02",
+      "topic_id": "top-yte",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-02",
+      "topic_id": "top-ansinh",
+      "source": "AI",
+      "confidence": 0.79,
+      "confirmed_by_id": null
+    },
+    {
+      "profile_id": "p-03",
+      "topic_id": "top-hatang",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-03",
+      "topic_id": "top-moitruong",
+      "source": "AI",
+      "confidence": 0.91,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-04",
+      "topic_id": "top-kinhte",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin2"
+    },
+    {
+      "profile_id": "p-05",
+      "topic_id": "top-vanhoa",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-05",
+      "topic_id": "top-dulich",
+      "source": "AI",
+      "confidence": 0.88,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-06",
+      "topic_id": "top-kinhte",
+      "source": "AI",
+      "confidence": 0.74,
+      "confirmed_by_id": null
+    },
+    {
+      "profile_id": "p-07",
+      "topic_id": "top-kinhte",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-08",
+      "topic_id": "top-thethao",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": null
+    },
+    {
+      "profile_id": "p-09",
+      "topic_id": "top-giaoduc",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin"
+    },
+    {
+      "profile_id": "p-10",
+      "topic_id": "top-dulich",
+      "source": "AI",
+      "confidence": 0.82,
+      "confirmed_by_id": null
+    },
+    {
+      "profile_id": "p-13",
+      "topic_id": "top-dulich",
+      "source": "MANUAL",
+      "confidence": null,
+      "confirmed_by_id": "u-admin"
+    }
   ]
 }

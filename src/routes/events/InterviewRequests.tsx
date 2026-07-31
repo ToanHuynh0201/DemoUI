@@ -9,7 +9,6 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
-import { can } from '@/lib/permissions'
 import { interviewRequestStatus } from '@/lib/enums'
 import { formatDateTime } from '@/lib/format'
 import { useCurrentUser, useDb, useStore } from '@/mock/store'
@@ -23,8 +22,9 @@ export function InterviewRequests() {
   const store = useStore()
   const profile = profileOfUser(db, user?.id)
 
-  const canHandle = user ? can(user.role, 'e5.interview.handle') : false
-  const canRequest = user ? can(user.role, 'e5.interview.request') : false
+  // Không còn RBAC — tài khoản duy nhất vừa tiếp nhận vừa gửi được yêu cầu.
+  const canHandle = Boolean(user)
+  const canRequest = Boolean(user)
 
   const [subject, setSubject] = useState('')
   const [content, setContent] = useState('')

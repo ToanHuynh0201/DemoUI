@@ -1,14 +1,7 @@
 /** Hàm tra cứu dùng chung giữa các màn hình. Không sửa dữ liệu, chỉ đọc. */
 import type { TimelineEntry } from '@/components/common/ProcessTimeline'
 import * as E from '@/lib/enums'
-import type {
-  Database,
-  ID,
-  Question,
-  QuestionStatus,
-  RoleCode,
-  SecurityLevel,
-} from './types'
+import type { Database, ID, Question, QuestionStatus } from './types'
 
 export function userById(db: Database, id?: ID | null) {
   return id ? db.users.find((user) => user.id === id) ?? null : null
@@ -40,10 +33,6 @@ export function orgFullName(db: Database, id?: ID | null): string {
 
 export function topicName(db: Database, id?: ID | null): string {
   return db.topics.find((topic) => topic.id === id)?.name ?? '—'
-}
-
-export function localityName(db: Database, id?: ID | null): string {
-  return db.localities.find((locality) => locality.id === id)?.name ?? '—'
 }
 
 export function profileById(db: Database, id?: ID | null) {
@@ -221,28 +210,6 @@ export function attachmentsOf(db: Database, targetType: string, targetId: ID) {
     )
 }
 
-const ROLE_ID_BY_CODE: Record<RoleCode, string> = {
-  SUPERADMIN: 'role-superadmin',
-  ADMIN: 'role-admin',
-  COORDINATOR: 'role-coordinator',
-  APPROVER: 'role-approver',
-  STAFF: 'role-staff',
-  MEDIA_ORG: 'role-mediaorg',
-  JOURNALIST: 'role-journalist',
-  LEADER: 'role-leader',
-  OTHER_DEPT: 'role-otherdept',
-  GATE_STAFF: 'role-gatestaff',
-}
-
-/** Quyền xem/tải tài nguyên theo ma trận `asset_access_rules`. */
-export function assetPermission(db: Database, role: RoleCode, level: SecurityLevel) {
-  const rule = db.asset_access_rules.find(
-    (item) => item.security_level === level && item.role_id === ROLE_ID_BY_CODE[role],
-  )
-  // Vai trò chưa có dòng trong ma trận thì chỉ được xem tài nguyên công khai
-  return rule ?? { can_view: level === 'PUBLIC', can_download: level === 'PUBLIC' }
-}
-
 /* ── Thống kê dùng chung cho dashboard ────────────────────────────────────── */
 
 export function isOverdue(question: Question, now = new Date()): boolean {
@@ -250,15 +217,6 @@ export function isOverdue(question: Question, now = new Date()): boolean {
   if (!question.due_at) return false
   const open: QuestionStatus[] = ['ROUTED', 'ASSIGNED', 'IN_PROGRESS', 'AWAITING_CLARIFICATION', 'PENDING_APPROVAL']
   return open.includes(question.status) && new Date(question.due_at) < now
-}
-
-export function onTimeRate(db: Database): number {
-  const finished = db.questions.filter((question) => question.status === 'ANSWERED')
-  if (finished.length === 0) return 0
-  const onTime = finished.filter(
-    (question) => !question.due_at || !question.answered_at || question.answered_at <= question.due_at,
-  )
-  return (onTime.length / finished.length) * 100
 }
 
 export function unreadNotifications(db: Database, userId?: ID | null) {

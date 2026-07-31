@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router'
-import { Bell, LogOut, RotateCcw, ShieldAlert } from 'lucide-react'
+import { Bell, RotateCcw } from 'lucide-react'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
@@ -14,7 +14,7 @@ import {
 import { cn } from '@/lib/utils'
 import { initials } from '@/lib/format'
 import { roleCode as roleLabels } from '@/lib/enums'
-import { COMMON_ITEMS, navFor } from '@/lib/nav'
+import { COMMON_ITEMS, NAV } from '@/lib/nav'
 import { useCurrentUser, useDb, useStore } from '@/mock/store'
 import { orgName, unreadNotifications } from '@/mock/selectors'
 
@@ -23,7 +23,6 @@ export function AppShell() {
   const db = useDb()
   const navigate = useNavigate()
   const location = useLocation()
-  const logout = useStore((state) => state.logout)
   const resetDemoData = useStore((state) => state.resetDemoData)
   const mainRef = useRef<HTMLElement>(null)
 
@@ -35,7 +34,7 @@ export function AppShell() {
 
   if (!user) return null
 
-  const sections = navFor(user.role)
+  const sections = NAV
   const unread = unreadNotifications(db, user.id).length
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
@@ -147,28 +146,16 @@ export function AppShell() {
               <DropdownMenuLabel className="font-normal">
                 <p className="text-sm font-medium">{user.full_name}</p>
                 <p className="text-muted-foreground text-xs">{user.email}</p>
-                <p className="text-muted-foreground mt-1 text-xs">
-                  Xác thực 2 lớp: {user.mfa_required ? 'đang bật' : 'chưa bật'}
-                </p>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem
                 onSelect={() => {
                   resetDemoData()
-                  navigate('/dang-nhap')
+                  navigate('/')
                 }}
               >
                 <RotateCcw className="size-4" />
                 Đặt lại dữ liệu demo
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onSelect={() => {
-                  logout()
-                  navigate('/dang-nhap')
-                }}
-              >
-                <LogOut className="size-4" />
-                Đăng xuất
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -178,22 +165,6 @@ export function AppShell() {
           <Outlet />
         </main>
       </div>
-    </div>
-  )
-}
-
-/** Trang thay thế khi vai trò hiện tại không có quyền vào màn hình. */
-export function NoAccess() {
-  return (
-    <div className="mx-auto max-w-lg py-20 text-center">
-      <ShieldAlert className="text-muted-foreground mx-auto size-10" aria-hidden />
-      <h1 className="mt-4 text-lg font-semibold">Vai trò hiện tại không có quyền vào màn hình này</h1>
-      <p className="text-muted-foreground mt-2 text-sm">
-        Phân quyền theo ma trận RBAC của nền tảng. Chuyển sang tài khoản có vai trò phù hợp để xem nội dung.
-      </p>
-      <Button asChild className="mt-4">
-        <Link to="/">Về trang chính</Link>
-      </Button>
     </div>
   )
 }

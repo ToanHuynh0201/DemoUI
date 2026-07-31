@@ -10,7 +10,6 @@ import { StatusBadge } from '@/components/common/StatusBadge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
-import { can } from '@/lib/permissions'
 import { accessAction, releaseStatus, scopeType, securityLevel } from '@/lib/enums'
 import { formatBytes, formatDateTime } from '@/lib/format'
 import { useCurrentUser, useDb, useStore } from '@/mock/store'
@@ -54,9 +53,9 @@ export function ReleaseDetail() {
     : null
   const accesses = db.release_accesses.filter((item) => item.release_id === release.id)
 
-  const isOwnOrg = release.publishing_org_id === user.org_id
-  const canApprove = can(user.role, 'e2.release.approve') && isOwnOrg
-  const canSubmit = can(user.role, 'e2.release.draft') && isOwnOrg && release.drafted_by_id === user.id
+  // Không còn RBAC — tài khoản duy nhất thao tác được mọi bước của luồng.
+  const canApprove = true
+  const canSubmit = true
   const isJournalistReader = user.role === 'JOURNALIST' || user.role === 'MEDIA_ORG'
 
   const scopeLabel = () => {

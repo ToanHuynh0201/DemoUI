@@ -14,7 +14,6 @@ import e2 from './data/e2.json'
 import e34 from './data/e34.json'
 import e5 from './data/e5.json'
 import e6 from './data/e6.json'
-import e78 from './data/e78.json'
 import platform from './data/platform.json'
 
 const TOKEN = /^@([+-]?\d+)(?:T(\d{2}):(\d{2}))?$/
@@ -51,7 +50,6 @@ export function createSeedDatabase(): Database {
     ...e34,
     ...e5,
     ...e6,
-    ...e78,
     ...platform,
   }
   return resolveDeep(merged) as unknown as Database
