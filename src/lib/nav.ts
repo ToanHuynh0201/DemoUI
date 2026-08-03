@@ -11,7 +11,6 @@ import {
 	ListChecks,
 	Mail,
 	MessageSquareText,
-	Mic,
 	QrCode,
 } from "lucide-react";
 
@@ -82,7 +81,6 @@ export const NAV: NavSection[] = [
 			{ to: "/giay-moi", label: "Giấy mời của tôi", icon: Mail },
 			{ to: "/the-tac-nghiep", label: "Thẻ tác nghiệp", icon: QrCode },
 			{ to: "/check-in", label: "Check-in mã QR", icon: QrCode },
-			// { to: '/phong-van', label: 'Yêu cầu phỏng vấn', icon: Mic },
 		],
 	},
 ];
