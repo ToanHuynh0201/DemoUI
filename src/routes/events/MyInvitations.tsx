@@ -1,4 +1,6 @@
+import { Link } from 'react-router'
 import { toast } from 'sonner'
+import { Paperclip } from 'lucide-react'
 import { PageHeader } from '@/components/common/PageHeader'
 import { EmptyState } from '@/components/common/EmptyState'
 import { StatusBadge } from '@/components/common/StatusBadge'
@@ -8,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { eventStatus, invitationStatus } from '@/lib/enums'
 import { formatDateTime } from '@/lib/format'
 import { useCurrentUser, useDb, useStore } from '@/mock/store'
-import { orgName, profileOfUser } from '@/mock/selectors'
+import { attachmentsOf, orgName, profileOfUser } from '@/mock/selectors'
 import type { EventItem, Invitation } from '@/mock/types'
 
 function TabLabel({ children, count }: { children: React.ReactNode; count: number }) {
@@ -44,15 +46,26 @@ function InvitationList({
         <Card key={invitation.id}>
           <CardContent className="flex flex-wrap items-center justify-between gap-3 py-4">
             <div className="min-w-0">
-              <p className="font-medium">{event.event_name}</p>
+              <Link to={`/su-kien/${event.id}`} className="font-medium hover:underline">
+                {event.event_name}
+              </Link>
               <p className="text-muted-foreground text-xs">
                 {orgName(db, event.org_id)} · {event.venue} · {formatDateTime(event.start_time)}
               </p>
-              <div className="mt-1 flex gap-1.5">
+              <div className="mt-1 flex flex-wrap items-center gap-1.5">
                 <StatusBadge meta={eventStatus[event.status]} />
                 <StatusBadge meta={invitationStatus[invitation.status]} />
                 {invitation.requires_reconfirmation && invitation.status === 'ACCEPTED' && (
                   <span className="text-xs font-medium text-[#8a4f06]">Cần xác nhận lại</span>
+                )}
+                {event.status === 'COMPLETED' && attachmentsOf(db, 'EVENT', event.id).length > 0 && (
+                  <Link
+                    to={`/su-kien/${event.id}`}
+                    className="text-primary flex items-center gap-1 text-xs font-medium hover:underline"
+                  >
+                    <Paperclip className="size-3" aria-hidden />
+                    Có tài liệu sau sự kiện
+                  </Link>
                 )}
               </div>
             </div>

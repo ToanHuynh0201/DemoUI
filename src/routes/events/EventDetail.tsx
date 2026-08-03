@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router'
 import { toast } from 'sonner'
-import { CalendarX2, Send } from 'lucide-react'
+import { CalendarX2, Download, Paperclip, Send } from 'lucide-react'
 import { ActionDialog, Field } from '@/components/common/ActionDialog'
 import { MetaItem, PageHeader } from '@/components/common/PageHeader'
 import { StatusBadge } from '@/components/common/StatusBadge'
@@ -12,9 +12,9 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { badgeStatus, eventStatus, interviewRequestStatus, invitationStatus } from '@/lib/enums'
-import { formatDateTime } from '@/lib/format'
+import { formatBytes, formatDateTime } from '@/lib/format'
 import { useCurrentUser, useDb, useStore } from '@/mock/store'
-import { journalistAgency, journalistName, orgName, userName } from '@/mock/selectors'
+import { attachmentsOf, journalistAgency, journalistName, orgName, userName } from '@/mock/selectors'
 
 export function EventDetail() {
   const { id = '' } = useParams()
@@ -43,6 +43,7 @@ export function EventDetail() {
   const badges = db.press_badges.filter((item) => item.event_id === event.id)
   const checkins = db.event_checkins.filter((item) => item.event_id === event.id)
   const interviews = db.interview_requests.filter((item) => item.event_id === event.id)
+  const attachments = attachmentsOf(db, 'EVENT', event.id)
 
   const stats = {
     accepted: invitations.filter((item) => item.status === 'ACCEPTED').length,
@@ -96,6 +97,32 @@ export function EventDetail() {
               )}
             </CardContent>
           </Card>
+
+          {attachments.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">Tài liệu sự kiện</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                {attachments.map(({ attachment, asset }) => (
+                  <button
+                    key={attachment.id}
+                    type="button"
+                    onClick={() => toast.success(`Đã tải "${asset.display_name}" (giả lập).`)}
+                    className="hover:bg-accent flex w-full items-center gap-2 rounded border px-3 py-2 text-left text-sm"
+                  >
+                    <Paperclip className="text-muted-foreground size-4 shrink-0" aria-hidden />
+                    <span className="flex-1 truncate">{asset.display_name}</span>
+                    <span className="text-muted-foreground shrink-0">{attachment.attachment_role}</span>
+                    <span className="text-muted-foreground font-mono text-xs tabular">
+                      {formatBytes(asset.size_bytes)}
+                    </span>
+                    <Download className="text-muted-foreground size-4 shrink-0" aria-hidden />
+                  </button>
+                ))}
+              </CardContent>
+            </Card>
+          )}
 
           {canManage && (
             <Card>
