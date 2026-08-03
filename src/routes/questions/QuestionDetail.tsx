@@ -125,10 +125,10 @@ export function QuestionDetail() {
 	const openStatuses = ["SUBMITTED", "ROUTING", "ROUTED"];
 	const deadline = deadlineInfo(question.due_at);
 
-	const canRoute = !["ANSWERED", "CANCELLED", "REJECTED"].includes(
+	const canRoute = ["SUBMITTED", "ROUTING", "ROUTED"].includes(
 		question.status,
 	);
-	const canAssign = !["ANSWERED", "CANCELLED", "REJECTED"].includes(
+	const canAssign = ["ROUTED", "ASSIGNED", "IN_PROGRESS", "OVERDUE"].includes(
 		question.status,
 	);
 	const canDraft = ![
