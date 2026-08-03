@@ -15,6 +15,8 @@ luồng.
 
 ## Chạy thử
 
+### Local (cần Node 22+)
+
 ```bash
 npm install
 npm run dev
@@ -26,6 +28,28 @@ Mở `http://localhost:5173` — vào thẳng ứng dụng, không cần đăng 
 npm run build      # kiểm tra type + build production
 npx tsc --noEmit   # chỉ kiểm tra kiểu dữ liệu
 ```
+
+### Docker (dev, hot-reload)
+
+Không cần cài Node trên máy, chỉ cần Docker.
+
+```bash
+docker compose up
+```
+
+Windows Git Bash — cần `MSYS_NO_PATHCONV=1 docker compose up`, nếu không
+Git Bash tự convert sai đường dẫn `/app` (VD: thành `C:\Program Files\Git\app`)
+và mount lệch chỗ. cmd/PowerShell không bị lỗi này, chạy lệnh gốc bình thường.
+
+Không có Docker Compose thì dùng thẳng `docker`:
+
+```bash
+docker build -t webapp-dev .
+docker run --rm -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules webapp-dev
+```
+
+Mở `http://localhost:5173`. Sửa code ngoài host, container tự reload (Vite dev
+server dùng polling để bắt thay đổi qua bind mount, xem `vite.config.ts`).
 
 ## Bản đồ màn hình ↔ use case
 
