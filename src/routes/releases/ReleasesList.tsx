@@ -4,7 +4,7 @@ import type { ColumnDef } from '@tanstack/react-table'
 import { Plus } from 'lucide-react'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
-import { DataTable } from '@/components/common/DataTable'
+import { DataTable, TruncatedText } from '@/components/common/DataTable'
 import { DocCode, PageHeader } from '@/components/common/PageHeader'
 import { StatusBadge } from '@/components/common/StatusBadge'
 import { releaseStatus, releaseVersionType, securityLevel } from '@/lib/enums'
@@ -68,15 +68,19 @@ export function ReleasesList() {
       accessorKey: 'title',
       header: 'Tiêu đề',
       cell: ({ row }) => (
-        <div className="max-w-lg space-y-0.5">
-          <p className="line-clamp-2 font-medium">{row.original.title}</p>
-          <p className="text-muted-foreground text-xs">
+        <div className="max-w-[260px] space-y-0.5">
+          <TruncatedText className="font-medium">{row.original.title}</TruncatedText>
+          <TruncatedText className="text-muted-foreground text-xs">
             {row.original.org} · {row.original.author}
-          </p>
+          </TruncatedText>
         </div>
       ),
     },
-    { accessorKey: 'topic', header: 'Lĩnh vực' },
+    {
+      accessorKey: 'topic',
+      header: 'Lĩnh vực',
+      cell: ({ row }) => <TruncatedText className="max-w-[140px]">{row.original.topic}</TruncatedText>,
+    },
     {
       accessorKey: 'securityLabel',
       header: 'Bảo mật',

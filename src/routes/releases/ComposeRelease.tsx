@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import { toast } from "sonner";
 import { AiPanel } from "@/components/common/AiPanel";
 import { Field } from "@/components/common/ActionDialog";
@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
 	Select,
@@ -26,8 +27,14 @@ type SimpleScope = "ALL" | "ORGANIZATION";
 export function ComposeRelease() {
 	const db = useDb();
 	const navigate = useNavigate();
+	const { id: routeId } = useParams();
 	const createRelease = useStore((state) => state.createRelease);
+	const updateRelease = useStore((state) => state.updateRelease);
 	const submitRelease = useStore((state) => state.submitRelease);
+
+	const release = routeId ? db.press_releases.find((item) => item.id === routeId) : undefined;
+	const isEdit = Boolean(routeId);
+	const editable = !isEdit || (release && (release.status === "DRAFT" || release.status === "NEEDS_REVISION"));
 
 	const [title, setTitle] = useState("");
 	const [summary, setSummary] = useState("");
@@ -35,7 +42,36 @@ export function ComposeRelease() {
 	const [topicId, setTopicId] = useState("");
 	const [level, setLevel] = useState<SecurityLevel>("PUBLIC");
 	const [scopeType, setScopeType] = useState<SimpleScope>("ALL");
-	const [scopeOrgId, setScopeOrgId] = useState("");
+	const [scopeOrgIds, setScopeOrgIds] = useState<string[]>([]);
+
+	useEffect(() => {
+		if (!release) return;
+		setTitle(release.title);
+		setSummary(release.summary ?? "");
+		setContent(release.content);
+		setTopicId(release.topic_id ?? "");
+		setLevel(release.security_level);
+		const scopes = db.release_scopes.filter((item) => item.release_id === release.id);
+		if (scopes.some((item) => item.scope_type === "ORGANIZATION")) {
+			setScopeType("ORGANIZATION");
+			setScopeOrgIds(
+				scopes
+					.filter((item) => item.scope_type === "ORGANIZATION" && item.org_id)
+					.map((item) => item.org_id as string),
+			);
+		} else {
+			setScopeType("ALL");
+			setScopeOrgIds([]);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [release?.id]);
+
+	if (isEdit && !release) {
+		return <p className="text-muted-foreground py-10 text-center text-sm">Không tìm thấy thông cáo.</p>;
+	}
+	if (isEdit && !editable) {
+		return <p className="text-muted-foreground py-10 text-center text-sm">Thông cáo này không còn ở trạng thái nháp nên không thể sửa.</p>;
+	}
 
 	const ready =
 		title.trim().length > 8 &&
@@ -47,25 +83,32 @@ export function ComposeRelease() {
 	);
 
 	const saveDraft = () => {
-		const id = createRelease({
+		const patch = {
 			title: title.trim(),
 			summary: summary.trim(),
 			content: content.trim(),
 			topicId: topicId || null,
 			securityLevel: level,
 			scopeType,
-			scopeOrgId:
-				scopeType === "ORGANIZATION" ? scopeOrgId || null : null,
-		});
-		return id;
+			scopeOrgIds: scopeType === "ORGANIZATION" ? scopeOrgIds : undefined,
+		};
+		if (isEdit && release) {
+			updateRelease(release.id, patch);
+			return release.id;
+		}
+		return createRelease(patch);
 	};
 
 	return (
 		<div className="mx-auto max-w-3xl space-y-5">
 			<PageHeader
 				module="E2"
-				title="Soạn thông tin nguồn"
-				description="Thông cáo, tài liệu, ảnh hoặc video gửi tới báo chí qua một kênh chính thống duy nhất."
+				title={isEdit ? "Sửa thông tin nguồn" : "Soạn thông tin nguồn"}
+				description={
+					isEdit
+						? "Chỉnh sửa nội dung, lĩnh vực, mức bảo mật và phạm vi phát hành của bản nháp."
+						: "Thông cáo, tài liệu, ảnh hoặc video gửi tới báo chí qua một kênh chính thống duy nhất."
+				}
 			/>
 
 			<Card>
@@ -164,27 +207,32 @@ export function ComposeRelease() {
 							chí đã đăng ký
 						</label>
 						<label className="flex items-center gap-2 text-sm">
-							<RadioGroupItem value="ORGANIZATION" /> Một cơ quan
-							báo chí cụ thể
+							<RadioGroupItem value="ORGANIZATION" /> Một số cơ
+							quan báo chí cụ thể
 						</label>
 					</RadioGroup>
 					{scopeType === "ORGANIZATION" && (
-						<Select
-							value={scopeOrgId}
-							onValueChange={setScopeOrgId}>
-							<SelectTrigger className="w-full max-w-sm">
-								<SelectValue placeholder="Chọn cơ quan báo chí" />
-							</SelectTrigger>
-							<SelectContent>
-								{pressAgencies.map((org) => (
-									<SelectItem
-										key={org.id}
-										value={org.id}>
-										{org.org_name}
-									</SelectItem>
-								))}
-							</SelectContent>
-						</Select>
+						<div className="max-w-sm max-h-64 space-y-1 overflow-y-auto rounded border p-2">
+							{pressAgencies.map((org) => (
+								<label
+									key={org.id}
+									className="hover:bg-accent flex items-center gap-2 rounded px-2 py-1.5 text-sm">
+									<Checkbox
+										checked={scopeOrgIds.includes(org.id)}
+										onCheckedChange={(checked) =>
+											setScopeOrgIds((previous) =>
+												checked
+													? [...previous, org.id]
+													: previous.filter(
+															(id) => id !== org.id,
+														),
+											)
+										}
+									/>
+									<span>{org.org_name}</span>
+								</label>
+							))}
+						</div>
 					)}
 				</CardContent>
 			</Card>
@@ -204,7 +252,7 @@ export function ComposeRelease() {
 			<div className="flex justify-end gap-2">
 				<Button
 					variant="outline"
-					onClick={() => navigate("/thong-cao")}>
+					onClick={() => navigate(isEdit && release ? `/thong-cao/${release.id}` : "/thong-cao")}>
 					Hủy
 				</Button>
 				<Button

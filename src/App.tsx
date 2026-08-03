@@ -82,6 +82,10 @@ export function App() {
 					element={<ComposeRelease />}
 				/>
 				<Route
+					path="/thong-cao/:id/sua"
+					element={<ComposeRelease />}
+				/>
+				<Route
 					path="/thong-cao/:id"
 					element={<ReleaseDetail />}
 				/>

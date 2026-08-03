@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { DataTable } from "@/components/common/DataTable";
+import { DataTable, TruncatedText } from "@/components/common/DataTable";
 import { DocCode, PageHeader } from "@/components/common/PageHeader";
 import { StatusBadge, ToneText } from "@/components/common/StatusBadge";
 import { questionStatus } from "@/lib/enums";
@@ -67,12 +67,20 @@ export function MyQuestions() {
 			accessorKey: "title",
 			header: "Câu hỏi",
 			cell: ({ row }) => (
-				<p className="line-clamp-2 max-w-lg font-medium">
+				<TruncatedText className="max-w-[260px] font-medium">
 					{row.original.title}
-				</p>
+				</TruncatedText>
 			),
 		},
-		{ accessorKey: "handlingOrg", header: "Đơn vị xử lý" },
+		{
+			accessorKey: "handlingOrg",
+			header: "Đơn vị xử lý",
+			cell: ({ row }) => (
+				<TruncatedText className="max-w-[160px]">
+					{row.original.handlingOrg}
+				</TruncatedText>
+			),
+		},
 		{
 			accessorKey: "statusLabel",
 			header: "Trạng thái",
@@ -83,6 +91,7 @@ export function MyQuestions() {
 		{
 			accessorKey: "submittedAt",
 			header: "Ngày gửi",
+			meta: { className: "hidden sm:table-cell" },
 			cell: ({ row }) => (
 				<span className="font-mono text-xs tabular">
 					{formatDate(row.original.submittedAt)}

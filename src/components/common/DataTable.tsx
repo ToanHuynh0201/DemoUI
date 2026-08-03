@@ -20,8 +20,29 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 import { EmptyState } from './EmptyState'
+
+declare module '@tanstack/react-table' {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface ColumnMeta<TData, TValue> {
+    /** Class áp cho cả TableHead và TableCell của cột này, vd ẩn theo breakpoint */
+    className?: string
+  }
+}
+
+/** Cắt nội dung dài về 1 dòng kèm dấu "...", hiện đầy đủ qua tooltip khi hover. */
+export function TruncatedText({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <span className={cn('block truncate', className)}>{children}</span>
+      </TooltipTrigger>
+      <TooltipContent>{children}</TooltipContent>
+    </Tooltip>
+  )
+}
 
 export interface FacetFilter {
   /** Tên cột trong dữ liệu (accessorKey) */
@@ -97,6 +118,7 @@ export function DataTable<T>({
   const hasToolbar = Boolean(searchColumn) || facets.length > 0 || Boolean(onExport) || Boolean(toolbarExtra)
 
   return (
+    <TooltipProvider delayDuration={200}>
     <div className="space-y-3">
       {hasToolbar && (
         <div className="flex flex-wrap items-center gap-2">
@@ -153,7 +175,10 @@ export function DataTable<T>({
                     return (
                       <TableHead
                         key={header.id}
-                        className="text-foreground h-10 text-xs font-semibold tracking-wide whitespace-nowrap uppercase"
+                        className={cn(
+                          'text-foreground h-10 text-xs font-semibold tracking-wide whitespace-nowrap uppercase',
+                          header.column.columnDef.meta?.className,
+                        )}
                       >
                         {header.isPlaceholder ? null : sortable ? (
                           <button
@@ -188,7 +213,10 @@ export function DataTable<T>({
                     className={cn('align-top', onRowClick && 'hover:bg-accent/60 cursor-pointer')}
                   >
                     {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id} className="py-2.5 text-sm">
+                      <TableCell
+                        key={cell.id}
+                        className={cn('py-2.5 text-sm', cell.column.columnDef.meta?.className)}
+                      >
                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
                       </TableCell>
                     ))}
@@ -228,5 +256,6 @@ export function DataTable<T>({
         </div>
       )}
     </div>
+    </TooltipProvider>
   )
 }

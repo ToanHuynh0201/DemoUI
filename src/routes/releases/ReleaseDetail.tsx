@@ -9,7 +9,6 @@ import { ProcessTimeline } from '@/components/common/ProcessTimeline'
 import { StatusBadge } from '@/components/common/StatusBadge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { accessAction, releaseStatus, scopeType, securityLevel } from '@/lib/enums'
 import { formatBytes, formatDateTime } from '@/lib/format'
@@ -27,20 +26,10 @@ export function ReleaseDetail() {
   const [note, setNote] = useState('')
   const [correctionContent, setCorrectionContent] = useState('')
   const [withdrawReason, setWithdrawReason] = useState('')
-  const [title, setTitle] = useState('')
-  const [summary, setSummary] = useState('')
-  const [content, setContent] = useState('')
 
   useEffect(() => {
     if (release) setCorrectionContent(release.content)
   }, [release?.id, release?.content])
-
-  useEffect(() => {
-    if (!release) return
-    setTitle(release.title)
-    setSummary(release.summary ?? '')
-    setContent(release.content)
-  }, [release?.id, release?.title, release?.summary, release?.content])
 
   useEffect(() => {
     if (!release || !user) return
@@ -55,7 +44,7 @@ export function ReleaseDetail() {
     return <p className="text-muted-foreground py-10 text-center text-sm">Không tìm thấy thông cáo.</p>
   }
 
-  const scope = db.release_scopes.find((item) => item.release_id === release.id)
+  const scopes = db.release_scopes.filter((item) => item.release_id === release.id)
   const attachments = attachmentsOf(db, 'PRESS_RELEASE', release.id)
   const timeline = releaseTimeline(db, release.id)
   const correction = db.press_releases.find((item) => item.original_release_id === release.id)
@@ -72,10 +61,16 @@ export function ReleaseDetail() {
   const isEditable = release.status === 'DRAFT' || release.status === 'NEEDS_REVISION'
 
   const scopeLabel = () => {
-    if (!scope) return 'Toàn bộ báo chí'
+    if (scopes.length === 0) return 'Toàn bộ báo chí'
+    const scope = scopes[0]
     if (scope.scope_type === 'ALL') return 'Toàn bộ báo chí'
     if (scope.scope_type === 'TOPIC') return `Theo lĩnh vực: ${topicName(db, scope.topic_id)}`
-    if (scope.scope_type === 'ORGANIZATION') return `Theo cơ quan: ${orgName(db, scope.org_id)}`
+    if (scope.scope_type === 'ORGANIZATION') {
+      const orgNames = scopes
+        .filter((item) => item.scope_type === 'ORGANIZATION')
+        .map((item) => orgName(db, item.org_id))
+      return `Theo cơ quan: ${orgNames.join(', ')}`
+    }
     return `Theo phóng viên: ${journalistName(db, scope.journalist_profile_id)}`
   }
 
@@ -100,40 +95,22 @@ export function ReleaseDetail() {
           <Card>
             <CardHeader className="flex-row items-center justify-between gap-2">
               <CardTitle className="text-base">Nội dung thông cáo</CardTitle>
-              <DocCode>{release.release_code}</DocCode>
+              <div className="flex items-center gap-2">
+                <DocCode>{release.release_code}</DocCode>
+                {isEditable && (
+                  <Button variant="outline" size="sm" onClick={() => navigate(`/thong-cao/${release.id}/sua`)}>
+                    Sửa
+                  </Button>
+                )}
+              </div>
             </CardHeader>
             <CardContent className="space-y-4">
-              {isEditable ? (
-                <>
-                  <Field label="Tiêu đề">
-                    <Input value={title} onChange={(event) => setTitle(event.target.value)} />
-                  </Field>
-                  <Field label="Tóm tắt">
-                    <Textarea value={summary} onChange={(event) => setSummary(event.target.value)} rows={2} />
-                  </Field>
-                  <Field label="Nội dung">
-                    <Textarea value={content} onChange={(event) => setContent(event.target.value)} rows={10} />
-                  </Field>
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      store.updateRelease(release.id, { title, summary, content })
-                      toast.success('Đã lưu nháp.')
-                    }}
-                  >
-                    Lưu nháp
-                  </Button>
-                </>
-              ) : (
-                <>
-                  {release.summary && (
-                    <p className="bg-muted/40 rounded border p-3 text-sm leading-6 font-medium text-pretty">
-                      {release.summary}
-                    </p>
-                  )}
-                  <p className="text-sm leading-7 whitespace-pre-line text-pretty">{release.content}</p>
-                </>
+              {release.summary && (
+                <p className="bg-muted/40 rounded border p-3 text-sm leading-6 font-medium text-pretty">
+                  {release.summary}
+                </p>
               )}
+              <p className="text-sm leading-7 whitespace-pre-line text-pretty">{release.content}</p>
 
               {attachments.length > 0 && (
                 <div className="space-y-2 border-t pt-3">
@@ -338,8 +315,8 @@ export function ReleaseDetail() {
               </MetaItem>
               <MetaItem label="Phạm vi phát hành">{scopeLabel()}</MetaItem>
               <MetaItem label="Mức bảo mật">{securityLevel[release.security_level].label}</MetaItem>
-              {scope && (
-                <MetaItem label="Loại phạm vi">{scopeType[scope.scope_type].label}</MetaItem>
+              {scopes[0] && (
+                <MetaItem label="Loại phạm vi">{scopeType[scopes[0].scope_type].label}</MetaItem>
               )}
             </CardContent>
           </Card>

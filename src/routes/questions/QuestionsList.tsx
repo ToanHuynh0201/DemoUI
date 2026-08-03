@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { useNavigate } from 'react-router'
 import type { ColumnDef } from '@tanstack/react-table'
 import { toast } from 'sonner'
-import { DataTable } from '@/components/common/DataTable'
+import { DataTable, TruncatedText } from '@/components/common/DataTable'
 import { DocCode, PageHeader } from '@/components/common/PageHeader'
 import { StatusBadge, ToneText } from '@/components/common/StatusBadge'
 import { priority as priorityLabels, questionStatus } from '@/lib/enums'
@@ -80,17 +80,32 @@ export function QuestionsList() {
       accessorKey: 'title',
       header: 'Nội dung',
       cell: ({ row }) => (
-        <div className="max-w-md space-y-0.5">
-          <p className="line-clamp-2 font-medium">{row.original.title}</p>
-          <p className="text-muted-foreground text-xs">
+        <div className="max-w-[200px] space-y-0.5">
+          <TruncatedText className="font-medium">{row.original.title}</TruncatedText>
+          <TruncatedText className="text-muted-foreground text-xs">
             {row.original.journalist} · {row.original.agency}
-          </p>
+          </TruncatedText>
         </div>
       ),
     },
-    { accessorKey: 'topic', header: 'Lĩnh vực' },
-    { accessorKey: 'handlingOrg', header: 'Đơn vị xử lý' },
-    { accessorKey: 'assignee', header: 'Người xử lý' },
+    {
+      accessorKey: 'topic',
+      header: 'Lĩnh vực',
+      meta: { className: 'hidden md:table-cell' },
+      cell: ({ row }) => <TruncatedText className="max-w-[100px]">{row.original.topic}</TruncatedText>,
+    },
+    {
+      accessorKey: 'handlingOrg',
+      header: 'Đơn vị xử lý',
+      meta: { className: 'hidden lg:table-cell' },
+      cell: ({ row }) => <TruncatedText className="max-w-[120px]">{row.original.handlingOrg}</TruncatedText>,
+    },
+    {
+      accessorKey: 'assignee',
+      header: 'Người xử lý',
+      meta: { className: 'hidden lg:table-cell' },
+      cell: ({ row }) => <TruncatedText className="max-w-[100px]">{row.original.assignee}</TruncatedText>,
+    },
     {
       accessorKey: 'priorityLabel',
       header: 'Ưu tiên',

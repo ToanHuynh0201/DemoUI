@@ -23,6 +23,7 @@ import type {
   Priority,
   Question,
   QuestionStatus,
+  ReleaseScope,
   SecurityLevel,
   Severity,
   User,
@@ -30,6 +31,30 @@ import type {
 
 let idCounter = 0
 const nid = (prefix: string) => `${prefix}-n${(idCounter += 1)}`
+
+const buildScopeRows = (
+  releaseId: ID,
+  draft: { scopeType: ReleaseDraft['scopeType']; scopeOrgIds?: ID[]; topicId: ID | null },
+): Omit<ReleaseScope, 'id'>[] => {
+  if (draft.scopeType === 'ORGANIZATION') {
+    return (draft.scopeOrgIds ?? []).map((orgId) => ({
+      release_id: releaseId,
+      scope_type: 'ORGANIZATION',
+      org_id: orgId,
+      journalist_profile_id: null,
+      topic_id: null,
+    }))
+  }
+  return [
+    {
+      release_id: releaseId,
+      scope_type: draft.scopeType,
+      org_id: null,
+      journalist_profile_id: null,
+      topic_id: draft.scopeType === 'TOPIC' ? draft.topicId : null,
+    },
+  ]
+}
 const now = () => new Date().toISOString()
 const addDays = (days: number, hour = 17) => {
   const date = new Date()
@@ -72,7 +97,7 @@ export interface ReleaseDraft {
   topicId: ID | null
   securityLevel: SecurityLevel
   scopeType: 'ALL' | 'ORGANIZATION' | 'TOPIC'
-  scopeOrgId?: ID | null
+  scopeOrgIds?: ID[]
 }
 
 export interface EventDraft {
@@ -268,14 +293,7 @@ export const useStore = create<Store>((set, get) => {
         created_at: now(),
         updated_at: now(),
       })
-      db.release_scopes.push({
-        id: nid('rs'),
-        release_id: id,
-        scope_type: draft.scopeType,
-        org_id: draft.scopeType === 'ORGANIZATION' ? draft.scopeOrgId ?? null : null,
-        journalist_profile_id: null,
-        topic_id: draft.scopeType === 'TOPIC' ? draft.topicId : null,
-      })
+      buildScopeRows(id, draft).forEach((row) => db.release_scopes.push({ id: nid('rs'), ...row }))
       audit({ action: 'Tạo bản thảo thông tin nguồn', targetType: 'PRESS_RELEASE', targetId: id })
       touch()
       return id
@@ -291,12 +309,12 @@ export const useStore = create<Store>((set, get) => {
       if (patch.topicId !== undefined) release.topic_id = patch.topicId
       if (patch.securityLevel !== undefined) release.security_level = patch.securityLevel
       if (patch.scopeType !== undefined) {
-        const scope = db.release_scopes.find((item) => item.release_id === releaseId)
-        if (scope) {
-          scope.scope_type = patch.scopeType
-          scope.org_id = patch.scopeType === 'ORGANIZATION' ? patch.scopeOrgId ?? null : null
-          scope.topic_id = patch.scopeType === 'TOPIC' ? release.topic_id : null
-        }
+        db.release_scopes = db.release_scopes.filter((item) => item.release_id !== releaseId)
+        buildScopeRows(releaseId, {
+          scopeType: patch.scopeType,
+          scopeOrgIds: patch.scopeOrgIds,
+          topicId: release.topic_id,
+        }).forEach((row) => db.release_scopes.push({ id: nid('rs'), ...row }))
       }
       release.updated_at = now()
       if (release.status === 'NEEDS_REVISION') release.status = 'DRAFT'
