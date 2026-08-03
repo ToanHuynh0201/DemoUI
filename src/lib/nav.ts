@@ -29,6 +29,23 @@ export interface NavSection {
 
 export const NAV: NavSection[] = [
 	{
+		code: "E2",
+		title: "Thông tin nguồn",
+		items: [
+			{ to: "/thong-cao", label: "Thông cáo báo chí", icon: FileText },
+			{
+				to: "/thong-tin-nguon",
+				label: "Thông tin nhận được",
+				icon: Mail,
+			},
+			{
+				to: "/hieu-qua-khai-thac",
+				label: "Hiệu quả khai thác",
+				icon: BarChart3,
+			},
+		],
+	},
+	{
 		code: "E3·E4",
 		title: "Hỏi và đáp báo chí",
 		items: [
@@ -53,23 +70,6 @@ export const NAV: NavSection[] = [
 				to: "/duyet-tra-loi",
 				label: "Duyệt trả lời",
 				icon: ClipboardCheck,
-			},
-		],
-	},
-	{
-		code: "E2",
-		title: "Thông tin nguồn",
-		items: [
-			{ to: "/thong-cao", label: "Thông cáo báo chí", icon: FileText },
-			{
-				to: "/thong-tin-nguon",
-				label: "Thông tin nhận được",
-				icon: Mail,
-			},
-			{
-				to: "/hieu-qua-khai-thac",
-				label: "Hiệu quả khai thác",
-				icon: BarChart3,
 			},
 		],
 	},
